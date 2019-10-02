@@ -1,5 +1,5 @@
 import XCTest
-@testable import giphy_sample_ios
+@testable import fur_ever
 
 class SearchResultCollectionViewControllerTests: XCTestCase {
 

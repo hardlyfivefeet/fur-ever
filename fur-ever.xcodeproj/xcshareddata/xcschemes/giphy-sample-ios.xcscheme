@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F71390072162C87C002B158F"
-               BuildableName = "fur-ever.app"
+               BuildableName = "FurEver.app"
                BlueprintName = "fur-ever"
                ReferencedContainer = "container:fur-ever.xcodeproj">
             </BuildableReference>
@@ -65,7 +65,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F71390072162C87C002B158F"
-            BuildableName = "fur-ever.app"
+            BuildableName = "FurEver.app"
             BlueprintName = "fur-ever"
             ReferencedContainer = "container:fur-ever.xcodeproj">
          </BuildableReference>
@@ -82,7 +82,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F71390072162C87C002B158F"
-            BuildableName = "fur-ever.app"
+            BuildableName = "FurEver.app"
             BlueprintName = "fur-ever"
             ReferencedContainer = "container:fur-ever.xcodeproj">
          </BuildableReference>

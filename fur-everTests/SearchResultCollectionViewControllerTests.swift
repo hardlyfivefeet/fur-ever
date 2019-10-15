@@ -1,5 +1,5 @@
 import XCTest
-@testable import fur_ever
+@testable import FurEver
 
 class SearchResultCollectionViewControllerTests: XCTestCase {
 

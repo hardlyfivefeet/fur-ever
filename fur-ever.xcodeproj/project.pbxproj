@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C90709CD2355A6F500DC0B99 /* AnimalsSearchResultCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90709CC2355A6F500DC0B99 /* AnimalsSearchResultCollectionViewController.swift */; };
+		C94B962423558ABA004EDE93 /* SearchByLocationFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94B962323558ABA004EDE93 /* SearchByLocationFormViewController.swift */; };
+		C94B962F23558C5B004EDE93 /* SearchByOrganizationFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94B962E23558C5B004EDE93 /* SearchByOrganizationFormViewController.swift */; };
 		F713900C2162C87C002B158F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F713900B2162C87C002B158F /* AppDelegate.swift */; };
 		F713900E2162C87C002B158F /* SearchFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F713900D2162C87C002B158F /* SearchFormViewController.swift */; };
 		F71390112162C87C002B158F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F713900F2162C87C002B158F /* Main.storyboard */; };
@@ -150,7 +153,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		F71390082162C87C002B158F /* fur-ever.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "fur-ever.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C90709CC2355A6F500DC0B99 /* AnimalsSearchResultCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalsSearchResultCollectionViewController.swift; sourceTree = "<group>"; };
+		C94B962323558ABA004EDE93 /* SearchByLocationFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchByLocationFormViewController.swift; sourceTree = "<group>"; };
+		C94B962E23558C5B004EDE93 /* SearchByOrganizationFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchByOrganizationFormViewController.swift; sourceTree = "<group>"; };
+		F71390082162C87C002B158F /* FurEver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FurEver.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F713900B2162C87C002B158F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F713900D2162C87C002B158F /* SearchFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFormViewController.swift; sourceTree = "<group>"; };
 		F71390102162C87C002B158F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -215,7 +221,7 @@
 		F71390092162C87C002B158F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F71390082162C87C002B158F /* fur-ever.app */,
+				F71390082162C87C002B158F /* FurEver.app */,
 				F713901C2162C87D002B158F /* fur-everTests.xctest */,
 				F71390272162C87D002B158F /* fur-everUITests.xctest */,
 			);
@@ -230,7 +236,10 @@
 				F728C27C216332FB00B97379 /* Model.swift */,
 				F713900B2162C87C002B158F /* AppDelegate.swift */,
 				F713900D2162C87C002B158F /* SearchFormViewController.swift */,
+				C94B962323558ABA004EDE93 /* SearchByLocationFormViewController.swift */,
 				F728C27E21634A8700B97379 /* SearchResultCollectionViewController.swift */,
+				C90709CC2355A6F500DC0B99 /* AnimalsSearchResultCollectionViewController.swift */,
+				C94B962E23558C5B004EDE93 /* SearchByOrganizationFormViewController.swift */,
 				F728C2B6216484E400B97379 /* SearchResultCollectionViewCell.swift */,
 				F728C2B92164932900B97379 /* SearchResultViewController.swift */,
 				F713900F2162C87C002B158F /* Main.storyboard */,
@@ -305,7 +314,7 @@
 			);
 			name = "fur-ever";
 			productName = "giphy-sample-ios";
-			productReference = F71390082162C87C002B158F /* fur-ever.app */;
+			productReference = F71390082162C87C002B158F /* FurEver.app */;
 			productType = "com.apple.product-type.application";
 		};
 		F713901B2162C87D002B158F /* fur-everTests */ = {
@@ -356,13 +365,16 @@
 				TargetAttributes = {
 					F71390072162C87C002B158F = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1100;
 					};
 					F713901B2162C87D002B158F = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1100;
 						TestTargetID = F71390072162C87C002B158F;
 					};
 					F71390262162C87D002B158F = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1100;
 						TestTargetID = F71390072162C87C002B158F;
 					};
 				};
@@ -510,10 +522,13 @@
 				F728C2BA2164932900B97379 /* SearchResultViewController.swift in Sources */,
 				F728C2B7216484E400B97379 /* SearchResultCollectionViewCell.swift in Sources */,
 				F728C27F21634A8700B97379 /* SearchResultCollectionViewController.swift in Sources */,
+				C90709CD2355A6F500DC0B99 /* AnimalsSearchResultCollectionViewController.swift in Sources */,
 				F713900E2162C87C002B158F /* SearchFormViewController.swift in Sources */,
+				C94B962423558ABA004EDE93 /* SearchByLocationFormViewController.swift in Sources */,
 				F713900C2162C87C002B158F /* AppDelegate.swift in Sources */,
 				F728C2C42164A1FA00B97379 /* RealApiService.swift in Sources */,
 				F728C27D216332FB00B97379 /* Model.swift in Sources */,
+				C94B962F23558C5B004EDE93 /* SearchByOrganizationFormViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -636,6 +651,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -676,6 +692,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -690,6 +707,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -699,15 +717,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3CWQTF6K7P;
+				DEVELOPMENT_TEAM = 27Q82T3DWF;
 				INFOPLIST_FILE = "$(SRCROOT)/fur-ever/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "edu.lmu.fur-ever";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				PRODUCT_NAME = FurEver;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -717,15 +735,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3CWQTF6K7P;
+				DEVELOPMENT_TEAM = 27Q82T3DWF;
 				INFOPLIST_FILE = "$(SRCROOT)/fur-ever/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "edu.lmu.fur-ever";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				PRODUCT_NAME = FurEver;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -745,9 +763,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "edu.lmu.fur-everTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/fur-ever.app/fur-ever";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FurEver.app/FurEver";
 			};
 			name = Debug;
 		};
@@ -766,9 +784,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "edu.lmu.fur-everTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/fur-ever.app/fur-ever";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FurEver.app/FurEver";
 			};
 			name = Release;
 		};
@@ -787,7 +805,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "edu.lmu.fur-everUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = "fur-ever";
 			};
@@ -808,7 +826,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "edu.lmu.fur-everUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = "fur-ever";
 			};

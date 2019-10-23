@@ -393,6 +393,9 @@ FUR-EVER HOME</string>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="21"/>
                                 <color key="tintColor" red="0.89283058189999998" green="0.96454022449999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Search"/>
+                                <connections>
+                                    <segue destination="jGw-OH-Dpd" kind="show" id="JYU-cx-MgO"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.89283058189999998" green="0.96454022449999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -422,6 +425,54 @@ FUR-EVER HOME</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5z0-tQ-bW0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1936.2318840579712" y="514.95535714285711"/>
+        </scene>
+        <!--Organization Search Result Table View Controller-->
+        <scene sceneID="asH-f0-FQf">
+            <objects>
+                <tableViewController storyboardIdentifier="OrganizationSearchResultTableViewController" id="jGw-OH-Dpd" customClass="OrganizationSearchResultTableViewController" customModule="FurEver" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="YmO-dy-2p2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.89283058189999998" green="0.96454022449999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="sectionIndexBackgroundColor" red="0.89283058189999998" green="0.96454022449999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="organizationTableCell" rowHeight="75" id="RZY-sx-8Le" customClass="OrganizationSearchResultTableViewCell" customModule="FurEver" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="75"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RZY-sx-8Le" id="KA3-gQ-NJ2">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="75"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Organization Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="orj-3g-3yu">
+                                            <rect key="frame" x="10" y="22.5" width="414" height="30.5"/>
+                                            <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="22"/>
+                                            <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="orj-3g-3yu" firstAttribute="width" secondItem="KA3-gQ-NJ2" secondAttribute="width" id="2gk-ZJ-Vj3"/>
+                                        <constraint firstItem="orj-3g-3yu" firstAttribute="leading" secondItem="KA3-gQ-NJ2" secondAttribute="leading" constant="10" id="7q8-3t-lU0"/>
+                                        <constraint firstItem="orj-3g-3yu" firstAttribute="centerY" secondItem="KA3-gQ-NJ2" secondAttribute="centerY" id="9qi-sy-jZR"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="orj-3g-3yu" secondAttribute="trailing" constant="-10" id="eEp-ET-ABM"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.89283058189999998" green="0.96454022449999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="organizationName" destination="orj-3g-3yu" id="xyT-Rb-lyH"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="jGw-OH-Dpd" id="xOM-5a-L9m"/>
+                            <outlet property="delegate" destination="jGw-OH-Dpd" id="yHh-71-q2t"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="MNk-Bi-Wob"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IFo-80-71P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2911.594202898551" y="514.95535714285711"/>
         </scene>
         <!--Search Result View Controller-->
         <scene sceneID="NOa-RG-lhi">

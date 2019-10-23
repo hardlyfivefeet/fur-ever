@@ -14,7 +14,6 @@ class SearchByLocationFormViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let animalSearchResultCollectionViewController = segue.destination as? AnimalSearchResultCollectionViewController,
            let location = locationField.text {

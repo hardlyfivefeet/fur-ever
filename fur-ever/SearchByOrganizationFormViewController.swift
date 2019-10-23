@@ -15,10 +15,11 @@ class SearchByOrganizationFormViewController : UIViewController {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if let animalsSearchResultCollectionViewController = segue.destination as? AnimalsSearchResultCollectionViewController,
-//           let query = searchLocation.text {
-//            animalsSearchResultCollectionViewController.searchParams = SearchParams(rating: .PG13, query: query)
-//        }
+        if let organizationSearchResultTableViewController = segue.destination as? OrganizationSearchResultTableViewController,
+            let name = nameField.text,
+            let location = locationField.text {
+            organizationSearchResultTableViewController.searchParams = OrganizationSearchParams(name: name, location: location)
+        }
     }
 
     @objc func keyboardWillShow(notification: NSNotification) {

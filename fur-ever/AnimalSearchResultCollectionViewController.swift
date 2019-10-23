@@ -14,14 +14,14 @@ class AnimalSearchResultCollectionViewController: UICollectionViewController, UI
 
     var selectedRow = 0
 
-    private let itemsPerRow: CGFloat = 3
-
     override func viewDidLoad() {
         super.viewDidLoad()
         api.api(host: "https://api.petfinder.com/v2/")
         api.searchAnimals(with: searchParams, then: display, fail: failureCallback ?? report)
     }
 
+    // heckin broken if you try to go back and change the location
+    // determine size of cells
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
         let numberOfCell: CGFloat = 2
@@ -29,17 +29,19 @@ class AnimalSearchResultCollectionViewController: UICollectionViewController, UI
         return CGSize(width: cellWidth, height: cellWidth)
     }
     
+    // set number of cells in section to be number of search results returned
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
        return searchResults.count
     }
 
+    // Set the image and name for each cell
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) ->
            UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: REUSE_IDENTIFIER, for: indexPath)
            as! AnimalSearchResultCollectionViewCell
             
-            cell.thumbnailPhoto.imageURL = searchResults[indexPath.row].image.url
-            cell.thumbnailName.text = searchResults[indexPath.row].name
+        cell.thumbnailPhoto.imageURL = searchResults[indexPath.row].image.url
+        cell.thumbnailName.text = searchResults[indexPath.row].name
         return cell
     }
 
@@ -48,6 +50,7 @@ class AnimalSearchResultCollectionViewController: UICollectionViewController, UI
         return true
     }
     
+    // Pass the name of the location from the controller to the text field in the header of the results page
     override func collectionView(_ collectionView: UICollectionView,
                                  viewForSupplementaryElementOfKind kind: String,
                                  at indexPath: IndexPath) -> UICollectionReusableView {
@@ -60,7 +63,7 @@ class AnimalSearchResultCollectionViewController: UICollectionViewController, UI
             for: indexPath) as? SearchResultCollectionHeaderView
           else {
             fatalError("Invalid view type")
-        }
+          }
         headerView.locationField.text = searchParams.location
         return headerView
       default:
@@ -70,8 +73,8 @@ class AnimalSearchResultCollectionViewController: UICollectionViewController, UI
 
     private func display(searchResult: AnimalSearchResult) {
         searchResults = searchResult.animals
-        
         collectionView.reloadData()
+//        collectionView.collectionViewLayout.invalidateLayout()
     }
 
     private func report(error: Error) {

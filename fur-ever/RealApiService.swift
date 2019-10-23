@@ -30,7 +30,13 @@ class RealApiService: Api {
             try jsonDecoder.decode(SearchResult.self, from: $0.content)
         }
     }
-
+    
+    func searchAnimals(with params: AnimalSearchParams,
+            then: ((AnimalSearchResult) -> Void)?,
+            fail: ((Error) -> Void)?) {
+        // No-op for now
+    }
+    
     func searchGifs(with params: SearchParams,
             then: ((SearchResult) -> Void)?,
             fail: ((Error) -> Void)?) {

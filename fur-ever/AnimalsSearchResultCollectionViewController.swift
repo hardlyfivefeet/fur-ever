@@ -9,5 +9,5 @@
 import Foundation
 import UIKit
 
-class AnimalsSearchResultCollectionViewController: UICollectionViewController {
+class AnimalSearchResultCollectionViewController: UICollectionViewController {
 }

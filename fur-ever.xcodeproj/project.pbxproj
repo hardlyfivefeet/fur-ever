@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C912674823639675007B1E40 /* OrganizationSearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C912674723639675007B1E40 /* OrganizationSearchResultViewController.swift */; };
 		C935307D235AC82F004F152D /* AnimalSearchResultCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C935307C235AC82F004F152D /* AnimalSearchResultCollectionViewCell.swift */; };
 		C94B962423558ABA004EDE93 /* SearchByLocationFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94B962323558ABA004EDE93 /* SearchByLocationFormViewController.swift */; };
 		C94B962F23558C5B004EDE93 /* SearchByOrganizationFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94B962E23558C5B004EDE93 /* SearchByOrganizationFormViewController.swift */; };
@@ -157,6 +158,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C912674723639675007B1E40 /* OrganizationSearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationSearchResultViewController.swift; sourceTree = "<group>"; };
 		C935307C235AC82F004F152D /* AnimalSearchResultCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalSearchResultCollectionViewCell.swift; sourceTree = "<group>"; };
 		C94B962323558ABA004EDE93 /* SearchByLocationFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchByLocationFormViewController.swift; sourceTree = "<group>"; };
 		C94B962E23558C5B004EDE93 /* SearchByOrganizationFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchByOrganizationFormViewController.swift; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 				F728C27C216332FB00B97379 /* Model.swift */,
 				C9DA8B522360EAAC00E63BCD /* OrganizationSearchResultTableViewCell.swift */,
 				C9DA8B452360E83000E63BCD /* OrganizationSearchResultTableViewController.swift */,
+				C912674723639675007B1E40 /* OrganizationSearchResultViewController.swift */,
 				F728C2C32164A1FA00B97379 /* RealApiService.swift */,
 				C94B962323558ABA004EDE93 /* SearchByLocationFormViewController.swift */,
 				C94B962E23558C5B004EDE93 /* SearchByOrganizationFormViewController.swift */,
@@ -545,6 +548,7 @@
 				C9DA8B462360E83100E63BCD /* OrganizationSearchResultTableViewController.swift in Sources */,
 				C999F85E235910FB00DA8353 /* SearchResultCollectionHeaderView.swift in Sources */,
 				C94B962F23558C5B004EDE93 /* SearchByOrganizationFormViewController.swift in Sources */,
+				C912674823639675007B1E40 /* OrganizationSearchResultViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -65,4 +65,14 @@ class OrganizationSearchResultTableViewController: UITableViewController {
        alert.addAction(UIAlertAction(title: "Acknowledge", style: .default, handler: nil))
        present(alert, animated: true, completion: nil)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "organizationSearchResultCollectionToSingleResult" {
+            if let organizationSearchResultViewController = segue.destination as? OrganizationSearchResultViewController {
+                if let indexPath = tableView.indexPathForSelectedRow {
+                    organizationSearchResultViewController.organization = searchResults[indexPath.row]
+                }
+            }
+        }
+    }
 }

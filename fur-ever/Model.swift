@@ -39,6 +39,7 @@ struct Contact: Codable, Equatable {
     var email: String?
     var phone: String?
     var location: Location
+    var website: String?
 }
 
 struct Breed: Codable, Equatable {
@@ -62,6 +63,8 @@ struct OrganizationSearchResult: Codable, Equatable {
 
 struct Organization: Codable, Equatable {
     let id: String
+    let image: Image
     let name: String
     let contact: Contact
+    let missionStatement: String
 }

@@ -32,8 +32,15 @@ class AnimalSearchResultViewController: UIViewController {
         size.text = animal.size
         info.text = animal.description
         attributes.text = (animal.attributes.house_trained ? "House-trained\n" : "") + (animal.attributes.spayed_neutered ? "Spayed/Neutered" : "")
-//        contact.text = (animal.contact.email ? (animal.contact.email ?? "") + "\n" : "") +
-//            (animal.contact.phone ? animal.contact.phone + "\n" : "") +
-//            (animal.contact.location.street ?? "" + animal.contact.location.city ?? "" + animal.contact.location.state ?? "")
+
+        let email = animal.contact.email ?? ""
+        let phone = animal.contact.phone ?? ""
+        let address = (animal.contact.location.street ?? "") + (animal.contact.location.city ?? "") + (animal.contact.location.state ?? "")
+        var contactInfo: String = ""
+        contactInfo = contactInfo + (email.isEmpty ? "" : "Email: " + email + "\n")
+        contactInfo = contactInfo + (phone.isEmpty ? "" : "Phone: " + phone + "\n")
+        contactInfo = contactInfo + (address.isEmpty ? "" : "Address: " + address + "\n")
+        contact.text = contactInfo
+        print("CONTACT TEXT IS" + (contact.text ?? ""))
     }
 }

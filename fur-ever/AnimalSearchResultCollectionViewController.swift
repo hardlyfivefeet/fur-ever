@@ -86,14 +86,12 @@ class AnimalSearchResultCollectionViewController: UICollectionViewController, UI
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "animalSearchResultCollectionToSingleResult", let animalSearchResultViewController = segue.destination as? AnimalSearchResultViewController {
-            if let cell = sender as? UICollectionViewCell, let indexPath = collectionView.indexPath(for: cell) {
-                animalSearchResultViewController.animal = searchResults[indexPath.row]
+        if segue.identifier == "animalSearchResultCollectionToSingleResult" {
+            if let animalSearchResultViewController = segue.destination as? AnimalSearchResultViewController {
+                if let indexPath = collectionView.indexPathsForSelectedItems?.first {
+                    animalSearchResultViewController.animal = searchResults[indexPath.row]
+                }
             }
         }
-    }
-    
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "animalSearchResultCollectionToSingleResult", sender: indexPath)
     }
 }

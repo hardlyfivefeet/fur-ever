@@ -20,7 +20,6 @@ class AnimalSearchResultCollectionViewController: UICollectionViewController, UI
         api.searchAnimals(with: searchParams, then: display, fail: failureCallback ?? report)
     }
 
-    // heckin broken if you try to go back and change the location
     // determine size of cells
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 

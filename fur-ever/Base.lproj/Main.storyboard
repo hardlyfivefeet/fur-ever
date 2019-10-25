@@ -330,20 +330,20 @@ FUR-EVER HOME</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Fqn-B3-paG" customClass="RemoteImageView" customModule="SiestaUI">
-                                <rect key="frame" x="134.5" y="128" width="145" height="145"/>
+                                <rect key="frame" x="116.5" y="128" width="181" height="181.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Fqn-B3-paG" secondAttribute="height" multiplier="1:1" id="PrF-Ji-trE"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hg9-cG-Dgi">
-                                <rect key="frame" x="134.5" y="291" width="145" height="30.5"/>
+                                <rect key="frame" x="116.5" y="327.5" width="181" height="30.5"/>
                                 <accessibility key="accessibilityConfiguration" identifier="animalName"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="22"/>
                                 <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7x2-ue-qjt">
-                                <rect key="frame" x="31" y="346.5" width="352" height="461.5"/>
+                                <rect key="frame" x="31" y="373" width="352" height="435"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="VU7-YD-CYI">
                                         <rect key="frame" x="0.0" y="0.0" width="352" height="321"/>
@@ -428,8 +428,8 @@ FUR-EVER HOME</string>
                             <constraint firstItem="7x2-ue-qjt" firstAttribute="centerX" secondItem="zSC-zm-XPz" secondAttribute="centerX" id="OAs-Bm-84f"/>
                             <constraint firstItem="Fqn-B3-paG" firstAttribute="top" secondItem="zSC-zm-XPz" secondAttribute="top" constant="40" id="PsD-Ja-K8e"/>
                             <constraint firstItem="Fqn-B3-paG" firstAttribute="centerX" secondItem="zSC-zm-XPz" secondAttribute="centerX" id="lAc-7e-hTQ"/>
-                            <constraint firstItem="7x2-ue-qjt" firstAttribute="top" secondItem="hg9-cG-Dgi" secondAttribute="bottom" constant="25" id="nTm-7e-AKq"/>
-                            <constraint firstItem="Fqn-B3-paG" firstAttribute="height" secondItem="zSC-zm-XPz" secondAttribute="height" multiplier="0.2" id="xgl-1t-ZWz"/>
+                            <constraint firstItem="7x2-ue-qjt" firstAttribute="top" secondItem="hg9-cG-Dgi" secondAttribute="bottom" constant="15" id="nTm-7e-AKq"/>
+                            <constraint firstItem="Fqn-B3-paG" firstAttribute="height" secondItem="zSC-zm-XPz" secondAttribute="height" multiplier="0.25" id="xgl-1t-ZWz"/>
                             <constraint firstItem="7x2-ue-qjt" firstAttribute="width" secondItem="zSC-zm-XPz" secondAttribute="width" multiplier="0.85" id="y8H-bD-NXF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zSC-zm-XPz"/>

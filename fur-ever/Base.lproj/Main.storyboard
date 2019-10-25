@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="peZ-90-bbh">
-                                <rect key="frame" x="89.5" y="116" width="235.5" height="82"/>
+                                <rect key="frame" x="89.5" y="111" width="235.5" height="82"/>
                                 <string key="text">PROVIDE A
 FUR-EVER HOME</string>
                                 <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="30"/>
@@ -26,7 +26,7 @@ FUR-EVER HOME</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find an adoptable pet by:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PKM-ts-gNB">
-                                <rect key="frame" x="65.5" y="217.5" width="283.5" height="33"/>
+                                <rect key="frame" x="65.5" y="212.5" width="283.5" height="33"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="24"/>
                                 <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -44,6 +44,9 @@ FUR-EVER HOME</string>
                                 <state key="normal" image="cat">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="locationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hyX-st-lCT"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tn0-BP-6gg">
                                 <rect key="frame" x="168" y="439.5" width="78.5" height="27.5"/>
@@ -61,6 +64,9 @@ FUR-EVER HOME</string>
                                 <state key="normal" image="dog">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="organizationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bo9-Q3-uqE"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Organization" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5va-I7-qI3">
                                 <rect key="frame" x="147" y="658.5" width="120" height="27.5"/>
@@ -85,7 +91,7 @@ FUR-EVER HOME</string>
                             <constraint firstItem="jft-op-eim" firstAttribute="width" secondItem="jft-op-eim" secondAttribute="height" multiplier="1:1" id="dVa-Kl-Aef"/>
                             <constraint firstItem="5va-I7-qI3" firstAttribute="centerX" secondItem="jft-op-eim" secondAttribute="centerX" id="e2C-5g-Oew"/>
                             <constraint firstItem="UQw-uY-Sxk" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="gsb-ET-qjJ"/>
-                            <constraint firstItem="UQw-uY-Sxk" firstAttribute="top" secondItem="PKM-ts-gNB" secondAttribute="bottom" constant="15" id="lnU-uh-NDu"/>
+                            <constraint firstItem="UQw-uY-Sxk" firstAttribute="top" secondItem="PKM-ts-gNB" secondAttribute="bottom" constant="20" id="lnU-uh-NDu"/>
                             <constraint firstItem="peZ-90-bbh" firstAttribute="top" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="rPp-u2-Q8G"/>
                             <constraint firstItem="tn0-BP-6gg" firstAttribute="top" secondItem="UQw-uY-Sxk" secondAttribute="bottom" constant="10" id="rbd-vg-ZeQ"/>
                             <constraint firstItem="jft-op-eim" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.2" priority="950" id="ulS-jm-Xwp"/>
@@ -93,10 +99,13 @@ FUR-EVER HOME</string>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="0Gg-TD-UDQ"/>
+                    <connections>
+                        <segue destination="aCl-yF-mvQ" kind="show" identifier="tabBarSegue" id="mJa-kI-Hz9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="43" y="-662"/>
+            <point key="canvasLocation" x="-700" y="299"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="wqd-ed-b4a">
@@ -109,14 +118,31 @@ FUR-EVER HOME</string>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="KbK-px-wgY" kind="relationship" relationship="viewControllers" id="kgl-Uq-gDm"/>
-                        <segue destination="HaY-1C-Mb2" kind="relationship" relationship="viewControllers" id="JIW-8A-fYb"/>
-                        <segue destination="437-Pq-XKW" kind="relationship" relationship="viewControllers" id="fOJ-Kb-gIv"/>
+                        <segue destination="dCT-Id-8lC" kind="relationship" relationship="viewControllers" id="Qbf-lQ-ar2"/>
+                        <segue destination="qwE-7d-FaZ" kind="relationship" relationship="viewControllers" id="hlG-sD-2t0"/>
+                        <segue destination="437-Pq-XKW" kind="relationship" relationship="viewControllers" id="8US-m0-7Ri"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sUY-q1-5eE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="913" y="515"/>
+            <point key="canvasLocation" x="71" y="299"/>
+        </scene>
+        <!--Search by Location-->
+        <scene sceneID="dPP-fU-EM2">
+            <objects>
+                <navigationController id="dCT-Id-8lC" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Search by Location" image="location.fill" catalog="system" id="ktD-Kd-7gA"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zNv-OQ-UZw">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="KbK-px-wgY" kind="relationship" relationship="rootViewController" id="gbX-wd-SeT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zky-ch-ne7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1093" y="-116"/>
         </scene>
         <!--Search by Location-->
         <scene sceneID="ldv-56-wqg">
@@ -127,22 +153,22 @@ FUR-EVER HOME</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type of Pet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vPd-P7-BgY">
-                                <rect key="frame" x="148.5" y="306.5" width="117" height="32"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="23"/>
+                                <rect key="frame" x="151.5" y="309" width="111.5" height="30.5"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="22"/>
                                 <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rP6-3y-P4c">
-                                <rect key="frame" x="162" y="434.5" width="90" height="32"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="23"/>
+                                <rect key="frame" x="164" y="435.5" width="86" height="30.5"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="22"/>
                                 <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Zip Code/City/State" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="f3S-0V-J9R">
-                                <rect key="frame" x="82" y="481.5" width="250" height="34"/>
+                                <rect key="frame" x="82" y="481" width="250" height="34"/>
                                 <accessibility key="accessibilityConfiguration" identifier="locationField"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="pvo-a2-Ht0"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" identifier="id24" id="pvo-a2-Ht0"/>
                                 </constraints>
                                 <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -153,9 +179,9 @@ FUR-EVER HOME</string>
                                 </connections>
                             </textField>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="TUE-mY-Mt2">
-                                <rect key="frame" x="97" y="353.5" width="220" height="32"/>
+                                <rect key="frame" x="97" y="354.5" width="220" height="32"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="220" id="QHQ-bZ-UUo"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="220" identifier="id23" id="QHQ-bZ-UUo"/>
                                 </constraints>
                                 <segments>
                                     <segment title="Dog"/>
@@ -164,12 +190,12 @@ FUR-EVER HOME</string>
                                 </segments>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9JQ-UA-21S">
-                                <rect key="frame" x="157" y="622" width="100" height="41"/>
+                                <rect key="frame" x="157" y="672" width="100" height="41"/>
                                 <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <accessibility key="accessibilityConfiguration" identifier="searchButton"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="dB3-PV-PlT"/>
-                                    <constraint firstAttribute="height" constant="41" id="ixU-N0-eI1"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" identifier="id21" id="dB3-PV-PlT"/>
+                                    <constraint firstAttribute="height" constant="41" identifier="id22" id="ixU-N0-eI1"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="21"/>
                                 <state key="normal" title="Search"/>
@@ -181,18 +207,18 @@ FUR-EVER HOME</string>
                         <color key="backgroundColor" red="0.89283058189999998" green="0.96454022449999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="0.89283058189999998" green="0.96454022449999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="TUE-mY-Mt2" firstAttribute="centerX" secondItem="Vf8-BJ-eWc" secondAttribute="centerX" id="63f-zN-Ogh"/>
-                            <constraint firstItem="vPd-P7-BgY" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Vf8-BJ-eWc" secondAttribute="top" priority="500" constant="100" id="CyM-NK-b0J"/>
-                            <constraint firstItem="Vf8-BJ-eWc" firstAttribute="bottom" secondItem="9JQ-UA-21S" secondAttribute="bottom" priority="950" constant="150" id="HIe-2a-rle"/>
-                            <constraint firstItem="9JQ-UA-21S" firstAttribute="centerX" secondItem="Vf8-BJ-eWc" secondAttribute="centerX" id="Lab-c9-R5R"/>
-                            <constraint firstItem="rP6-3y-P4c" firstAttribute="centerX" secondItem="Vf8-BJ-eWc" secondAttribute="centerX" id="M6J-26-uQ1"/>
-                            <constraint firstItem="vPd-P7-BgY" firstAttribute="centerX" secondItem="Vf8-BJ-eWc" secondAttribute="centerX" id="OXE-5c-eDU"/>
-                            <constraint firstItem="TUE-mY-Mt2" firstAttribute="top" secondItem="vPd-P7-BgY" secondAttribute="bottom" constant="15" id="PJB-j6-0pL"/>
-                            <constraint firstItem="9JQ-UA-21S" firstAttribute="top" relation="greaterThanOrEqual" secondItem="f3S-0V-J9R" secondAttribute="bottom" priority="750" constant="100" id="TS1-hF-egt"/>
-                            <constraint firstItem="rP6-3y-P4c" firstAttribute="centerY" secondItem="Vf8-BJ-eWc" secondAttribute="centerY" priority="500" id="bdn-gy-yTd"/>
-                            <constraint firstItem="f3S-0V-J9R" firstAttribute="centerX" secondItem="Vf8-BJ-eWc" secondAttribute="centerX" id="edk-iv-rf7"/>
-                            <constraint firstItem="f3S-0V-J9R" firstAttribute="top" secondItem="rP6-3y-P4c" secondAttribute="bottom" constant="15" id="kGI-5F-XBr"/>
-                            <constraint firstItem="rP6-3y-P4c" firstAttribute="top" secondItem="TUE-mY-Mt2" secondAttribute="bottom" constant="50" id="pS8-8F-Fpi"/>
+                            <constraint firstItem="rP6-3y-P4c" firstAttribute="centerY" secondItem="Vf8-BJ-eWc" secondAttribute="centerY" priority="500" identifier="id14" id="15d-qJ-dSp"/>
+                            <constraint firstItem="TUE-mY-Mt2" firstAttribute="centerX" secondItem="Vf8-BJ-eWc" secondAttribute="centerX" identifier="id12" id="63f-zN-Ogh"/>
+                            <constraint firstItem="Vf8-BJ-eWc" firstAttribute="bottom" secondItem="9JQ-UA-21S" secondAttribute="bottom" priority="950" constant="100" identifier="id9" id="HIe-2a-rle"/>
+                            <constraint firstItem="9JQ-UA-21S" firstAttribute="centerX" secondItem="Vf8-BJ-eWc" secondAttribute="centerX" identifier="id19" id="Lab-c9-R5R"/>
+                            <constraint firstItem="rP6-3y-P4c" firstAttribute="centerX" secondItem="Vf8-BJ-eWc" secondAttribute="centerX" identifier="id15" id="M6J-26-uQ1"/>
+                            <constraint firstItem="vPd-P7-BgY" firstAttribute="centerX" secondItem="Vf8-BJ-eWc" secondAttribute="centerX" identifier="id10" id="OXE-5c-eDU"/>
+                            <constraint firstItem="TUE-mY-Mt2" firstAttribute="top" secondItem="vPd-P7-BgY" secondAttribute="bottom" constant="15" identifier="id13" id="PJB-j6-0pL"/>
+                            <constraint firstItem="9JQ-UA-21S" firstAttribute="top" relation="greaterThanOrEqual" secondItem="f3S-0V-J9R" secondAttribute="bottom" priority="750" constant="100" identifier="id20" id="TS1-hF-egt"/>
+                            <constraint firstItem="vPd-P7-BgY" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Vf8-BJ-eWc" secondAttribute="top" priority="500" constant="100" identifier="id11" id="UVu-7v-hKp"/>
+                            <constraint firstItem="f3S-0V-J9R" firstAttribute="centerX" secondItem="Vf8-BJ-eWc" secondAttribute="centerX" identifier="id17" id="edk-iv-rf7"/>
+                            <constraint firstItem="f3S-0V-J9R" firstAttribute="top" secondItem="rP6-3y-P4c" secondAttribute="bottom" constant="15" identifier="id18" id="kGI-5F-XBr"/>
+                            <constraint firstItem="rP6-3y-P4c" firstAttribute="top" secondItem="TUE-mY-Mt2" secondAttribute="bottom" constant="50" identifier="id16" id="pS8-8F-Fpi"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Vf8-BJ-eWc"/>
                     </view>
@@ -206,7 +232,7 @@ FUR-EVER HOME</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1ca-JS-zYB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1934.7826086956522" y="-150"/>
+            <point key="canvasLocation" x="1935" y="-117"/>
         </scene>
         <!--Animal Search Result Collection View Controller-->
         <scene sceneID="TnI-yc-1S9">
@@ -241,18 +267,18 @@ FUR-EVER HOME</string>
                                             <rect key="frame" x="15" y="0.0" width="120" height="120"/>
                                             <accessibility key="accessibilityConfiguration" identifier="animalPhoto"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" secondItem="oKd-L7-ta9" secondAttribute="height" multiplier="1:1" id="PmE-pi-Hn6"/>
-                                                <constraint firstAttribute="height" relation="lessThanOrEqual" constant="150" id="rxy-3q-spg"/>
+                                                <constraint firstAttribute="width" secondItem="oKd-L7-ta9" secondAttribute="height" multiplier="1:1" identifier="id1" id="PmE-pi-Hn6"/>
+                                                <constraint firstAttribute="height" relation="lessThanOrEqual" constant="150" identifier="id2" id="rxy-3q-spg"/>
                                             </constraints>
                                         </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="oKd-L7-ta9" firstAttribute="top" secondItem="D0Y-nq-JPS" secondAttribute="top" id="3cE-3X-iNl"/>
-                                        <constraint firstItem="oKd-L7-ta9" firstAttribute="height" secondItem="D0Y-nq-JPS" secondAttribute="height" multiplier="0.8" priority="950" id="DmF-Ry-ED0"/>
-                                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="4QV-vf-cEb" secondAttribute="bottom" priority="900" id="DyA-Ak-Bmv"/>
-                                        <constraint firstItem="4QV-vf-cEb" firstAttribute="centerX" secondItem="oKd-L7-ta9" secondAttribute="centerX" id="QmA-zG-SRx"/>
-                                        <constraint firstItem="oKd-L7-ta9" firstAttribute="centerX" secondItem="D0Y-nq-JPS" secondAttribute="centerX" id="tyq-ov-Kne"/>
-                                        <constraint firstItem="4QV-vf-cEb" firstAttribute="top" secondItem="oKd-L7-ta9" secondAttribute="bottom" constant="5" id="vvx-sK-n3m"/>
+                                        <constraint firstItem="oKd-L7-ta9" firstAttribute="top" secondItem="D0Y-nq-JPS" secondAttribute="top" identifier="id3" id="3cE-3X-iNl"/>
+                                        <constraint firstItem="oKd-L7-ta9" firstAttribute="height" secondItem="D0Y-nq-JPS" secondAttribute="height" multiplier="0.8" priority="950" identifier="id4" id="DmF-Ry-ED0"/>
+                                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="4QV-vf-cEb" secondAttribute="bottom" priority="900" identifier="id6" id="DyA-Ak-Bmv"/>
+                                        <constraint firstItem="4QV-vf-cEb" firstAttribute="centerX" secondItem="oKd-L7-ta9" secondAttribute="centerX" identifier="id7" id="QmA-zG-SRx"/>
+                                        <constraint firstItem="oKd-L7-ta9" firstAttribute="centerX" secondItem="D0Y-nq-JPS" secondAttribute="centerX" identifier="id5" id="tyq-ov-Kne"/>
+                                        <constraint firstItem="4QV-vf-cEb" firstAttribute="top" secondItem="oKd-L7-ta9" secondAttribute="bottom" constant="5" identifier="id8" id="vvx-sK-n3m"/>
                                     </constraints>
                                 </collectionViewCellContentView>
                                 <size key="customSize" width="150" height="150"/>
@@ -292,7 +318,24 @@ FUR-EVER HOME</string>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E3W-mU-286" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2911.594202898551" y="-150"/>
+            <point key="canvasLocation" x="2813" y="-117"/>
+        </scene>
+        <!--Search by Organization-->
+        <scene sceneID="tZD-Z0-ThE">
+            <objects>
+                <navigationController id="qwE-7d-FaZ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Search by Organization" image="house.fill" catalog="system" id="PeC-p2-xku"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Mh8-H8-hAc">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="HaY-1C-Mb2" kind="relationship" relationship="rootViewController" id="vRX-E9-GON"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nvf-IM-r8h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1093" y="639"/>
         </scene>
         <!--Search by Organization-->
         <scene sceneID="84W-Vd-6Ib">
@@ -303,19 +346,19 @@ FUR-EVER HOME</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WqL-jO-KMw">
-                                <rect key="frame" x="175" y="304" width="64" height="32"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="23"/>
+                                <rect key="frame" x="176.5" y="306" width="61.5" height="30.5"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="22"/>
                                 <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F13-37-g1i">
-                                <rect key="frame" x="162" y="435" width="90" height="31.5"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="23"/>
+                                <rect key="frame" x="164" y="435.5" width="86" height="30.5"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="22"/>
                                 <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Keyword, e.g. Rescue" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="JGY-PT-Gfu">
-                                <rect key="frame" x="82" y="351" width="250" height="34"/>
+                                <rect key="frame" x="82" y="351.5" width="250" height="34"/>
                                 <accessibility key="accessibilityConfiguration" identifier="nameField"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="jyU-Se-5Bf"/>
@@ -328,7 +371,7 @@ FUR-EVER HOME</string>
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Zip Code/City/State" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ypD-E5-wOo">
-                                <rect key="frame" x="82" y="481.5" width="250" height="34"/>
+                                <rect key="frame" x="82" y="481" width="250" height="34"/>
                                 <accessibility key="accessibilityConfiguration" identifier="locationField"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="HKy-Fx-eI6"/>
@@ -342,7 +385,7 @@ FUR-EVER HOME</string>
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U2U-BK-rZP">
-                                <rect key="frame" x="157" y="622" width="100" height="41"/>
+                                <rect key="frame" x="157" y="672" width="100" height="41"/>
                                 <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <accessibility key="accessibilityConfiguration" identifier="searchButton"/>
                                 <constraints>
@@ -361,7 +404,7 @@ FUR-EVER HOME</string>
                             <constraint firstItem="ypD-E5-wOo" firstAttribute="centerX" secondItem="Rn4-cE-4S4" secondAttribute="centerX" id="1Sq-Mf-iyj"/>
                             <constraint firstItem="WqL-jO-KMw" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Rn4-cE-4S4" secondAttribute="top" priority="500" constant="100" id="2y7-wn-kpk"/>
                             <constraint firstItem="WqL-jO-KMw" firstAttribute="centerX" secondItem="Rn4-cE-4S4" secondAttribute="centerX" id="3eU-aS-ga9"/>
-                            <constraint firstItem="Rn4-cE-4S4" firstAttribute="bottom" secondItem="U2U-BK-rZP" secondAttribute="bottom" priority="950" constant="150" id="6sr-yG-G8T"/>
+                            <constraint firstItem="Rn4-cE-4S4" firstAttribute="bottom" secondItem="U2U-BK-rZP" secondAttribute="bottom" priority="950" constant="100" id="6sr-yG-G8T"/>
                             <constraint firstItem="JGY-PT-Gfu" firstAttribute="top" secondItem="WqL-jO-KMw" secondAttribute="bottom" constant="15" id="9Rd-dY-F9F"/>
                             <constraint firstItem="F13-37-g1i" firstAttribute="centerY" secondItem="Rn4-cE-4S4" secondAttribute="centerY" priority="500" id="Aqa-ik-8qA"/>
                             <constraint firstItem="F13-37-g1i" firstAttribute="centerX" secondItem="Rn4-cE-4S4" secondAttribute="centerX" id="VdB-2r-mjv"/>
@@ -383,7 +426,7 @@ FUR-EVER HOME</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5z0-tQ-bW0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1936.2318840579712" y="514.95535714285711"/>
+            <point key="canvasLocation" x="1935" y="639"/>
         </scene>
         <!--Info-->
         <scene sceneID="ve6-gW-cPv">
@@ -399,7 +442,7 @@ FUR-EVER HOME</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ODc-b1-yud" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1936" y="1234"/>
+            <point key="canvasLocation" x="71" y="1124"/>
         </scene>
         <!--Organization Search Result Table View Controller-->
         <scene sceneID="asH-f0-FQf">
@@ -447,25 +490,24 @@ FUR-EVER HOME</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IFo-80-71P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2911.594202898551" y="514.95535714285711"/>
+            <point key="canvasLocation" x="2814" y="639"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1Ls-xY-ejs">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qJk-IZ-9OC" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="qJk-IZ-9OC" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iOJ-mI-ZLv">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="aCl-yF-mvQ" kind="relationship" relationship="rootViewController" id="Sfl-X1-Rdd"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="HbT-JK-SEy"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="smw-eW-Ee3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="42" y="515"/>
+            <point key="canvasLocation" x="-1516" y="299"/>
         </scene>
     </scenes>
     <resources>

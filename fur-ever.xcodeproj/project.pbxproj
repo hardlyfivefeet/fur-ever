@@ -15,6 +15,7 @@
 		C9DA8B512360E86800E63BCD /* SearchResultListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DA8B502360E86800E63BCD /* SearchResultListHeaderView.swift */; };
 		C9DA8B532360EAAC00E63BCD /* OrganizationSearchResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DA8B522360EAAC00E63BCD /* OrganizationSearchResultTableViewCell.swift */; };
 		C9E9EE42235AC96400066405 /* AnimalSearchResultCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E9EE41235AC96300066405 /* AnimalSearchResultCollectionViewController.swift */; };
+		C9FCBE48236291F900D5F5DD /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FCBE47236291F900D5F5DD /* HomePageViewController.swift */; };
 		F713900C2162C87C002B158F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F713900B2162C87C002B158F /* AppDelegate.swift */; };
 		F71390112162C87C002B158F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F713900F2162C87C002B158F /* Main.storyboard */; };
 		F71390132162C87D002B158F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F71390122162C87D002B158F /* Assets.xcassets */; };
@@ -162,6 +163,7 @@
 		C9DA8B502360E86800E63BCD /* SearchResultListHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultListHeaderView.swift; sourceTree = "<group>"; };
 		C9DA8B522360EAAC00E63BCD /* OrganizationSearchResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationSearchResultTableViewCell.swift; sourceTree = "<group>"; };
 		C9E9EE41235AC96300066405 /* AnimalSearchResultCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalSearchResultCollectionViewController.swift; sourceTree = "<group>"; };
+		C9FCBE47236291F900D5F5DD /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 		F71390082162C87C002B158F /* FurEver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FurEver.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F713900B2162C87C002B158F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F71390102162C87C002B158F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -241,6 +243,7 @@
 				F71390172162C87D002B158F /* Info.plist */,
 				F71390142162C87D002B158F /* LaunchScreen.storyboard */,
 				F713900F2162C87C002B158F /* Main.storyboard */,
+				C9FCBE47236291F900D5F5DD /* HomePageViewController.swift */,
 				F758FDE12165FBC1008A0136 /* MockApiService.swift */,
 				F728C27C216332FB00B97379 /* Model.swift */,
 				F728C2C32164A1FA00B97379 /* RealApiService.swift */,
@@ -528,6 +531,7 @@
 				C9DA8B512360E86800E63BCD /* SearchResultListHeaderView.swift in Sources */,
 				C94B962423558ABA004EDE93 /* SearchByLocationFormViewController.swift in Sources */,
 				F713900C2162C87C002B158F /* AppDelegate.swift in Sources */,
+				C9FCBE48236291F900D5F5DD /* HomePageViewController.swift in Sources */,
 				F728C2C42164A1FA00B97379 /* RealApiService.swift in Sources */,
 				F728C27D216332FB00B97379 /* Model.swift in Sources */,
 				C9DA8B462360E83100E63BCD /* OrganizationSearchResultTableViewController.swift in Sources */,

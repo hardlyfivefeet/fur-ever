@@ -431,18 +431,74 @@ FUR-EVER HOME</string>
         <!--Info-->
         <scene sceneID="ve6-gW-cPv">
             <objects>
-                <viewController id="437-Pq-XKW" sceneMemberID="viewController">
+                <viewController id="437-Pq-XKW" customClass="InfoPageViewController" customModule="FurEver" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ixT-om-jCy">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ClearLogo" translatesAutoresizingMaskIntoConstraints="NO" id="X5G-55-nMl">
+                                <rect key="frame" x="157" y="193" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="9bG-ty-4kb"/>
+                                    <constraint firstAttribute="width" secondItem="X5G-55-nMl" secondAttribute="height" multiplier="1:1" id="Oci-Xr-Qfq"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Dn4-e3-T9O">
+                                <rect key="frame" x="41.5" y="313" width="331" height="150"/>
+                                <color key="backgroundColor" red="0.89283058189999998" green="0.96454022449999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="pAZ-qK-POm"/>
+                                </constraints>
+                                <string key="text">Fur-ever is created by Merissa Tan with the Petfinder API.  For more pet adoption info, please visit the Petfinder website below.</string>
+                                <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="To report any bugs or provide any suggestions on how to improve the app, please email ltan5@lion.lmu.edu" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="cah-26-sDO">
+                                <rect key="frame" x="41.5" y="533" width="331" height="130"/>
+                                <color key="backgroundColor" red="0.89283058189999998" green="0.96454022449999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="130" id="nw0-WJ-KaH"/>
+                                </constraints>
+                                <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" textContentType="email"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="508-br-MnK">
+                                <rect key="frame" x="132" y="473" width="150" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="508-br-MnK" secondAttribute="height" multiplier="3:1" id="96h-WO-Ele"/>
+                                    <constraint firstAttribute="height" constant="50" id="GC6-Dz-1Y5"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="petfinder-logo"/>
+                                <connections>
+                                    <action selector="openURL:" destination="437-Pq-XKW" eventType="touchUpInside" id="6j8-Xf-tGn"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="0.89283058189999998" green="0.96454022449999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="cah-26-sDO" firstAttribute="top" secondItem="508-br-MnK" secondAttribute="bottom" constant="10" id="895-Hk-9s6"/>
+                            <constraint firstItem="cah-26-sDO" firstAttribute="centerX" secondItem="2zR-YG-LLk" secondAttribute="centerX" id="Adj-EL-bfx"/>
+                            <constraint firstItem="cah-26-sDO" firstAttribute="width" secondItem="Dn4-e3-T9O" secondAttribute="width" id="FrI-a3-fwo"/>
+                            <constraint firstItem="X5G-55-nMl" firstAttribute="centerX" secondItem="2zR-YG-LLk" secondAttribute="centerX" id="Gdh-sX-ytA"/>
+                            <constraint firstItem="508-br-MnK" firstAttribute="centerY" secondItem="2zR-YG-LLk" secondAttribute="centerY" priority="500" id="Paq-Sa-xv7"/>
+                            <constraint firstItem="Dn4-e3-T9O" firstAttribute="top" secondItem="X5G-55-nMl" secondAttribute="bottom" constant="20" id="Rip-0O-RQe"/>
+                            <constraint firstItem="Dn4-e3-T9O" firstAttribute="centerX" secondItem="2zR-YG-LLk" secondAttribute="centerX" id="V2q-HP-i5v"/>
+                            <constraint firstItem="508-br-MnK" firstAttribute="top" secondItem="Dn4-e3-T9O" secondAttribute="bottom" constant="10" id="gbk-gJ-AbV"/>
+                            <constraint firstItem="Dn4-e3-T9O" firstAttribute="width" secondItem="2zR-YG-LLk" secondAttribute="width" multiplier="0.8" id="kdm-yo-afh"/>
+                            <constraint firstItem="X5G-55-nMl" firstAttribute="top" relation="greaterThanOrEqual" secondItem="2zR-YG-LLk" secondAttribute="top" constant="50" id="ks8-RH-six"/>
+                            <constraint firstItem="2zR-YG-LLk" firstAttribute="bottom" secondItem="cah-26-sDO" secondAttribute="bottom" priority="800" constant="150" id="w3m-qw-PhP"/>
+                            <constraint firstItem="508-br-MnK" firstAttribute="centerX" secondItem="2zR-YG-LLk" secondAttribute="centerX" id="wwh-xZ-ApH"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="2zR-YG-LLk"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Info" image="info.circle.fill" catalog="system" id="zGi-LZ-sQ5"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ODc-b1-yud" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="71" y="1124"/>
+            <point key="canvasLocation" x="69.565217391304358" y="1123.6607142857142"/>
         </scene>
         <!--Organization Search Result Table View Controller-->
         <scene sceneID="asH-f0-FQf">
@@ -511,11 +567,13 @@ FUR-EVER HOME</string>
         </scene>
     </scenes>
     <resources>
+        <image name="ClearLogo" width="600" height="600"/>
         <image name="cat" width="450" height="450"/>
         <image name="dog" width="450" height="450"/>
         <image name="house.fill" catalog="system" width="64" height="52"/>
         <image name="info.circle.fill" catalog="system" width="64" height="60"/>
         <image name="location.fill" catalog="system" width="64" height="56"/>
+        <image name="petfinder-logo" width="1000" height="292"/>
     </resources>
     <color key="tintColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

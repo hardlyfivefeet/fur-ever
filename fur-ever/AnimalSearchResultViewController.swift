@@ -15,7 +15,7 @@ class AnimalSearchResultViewController: UIViewController {
     @IBOutlet weak var size: UILabel!
     @IBOutlet weak var info: UILabel!
     @IBOutlet weak var attributes: UILabel!
-    @IBOutlet weak var contact: UILabel!
+    @IBOutlet weak var contact: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,12 +35,19 @@ class AnimalSearchResultViewController: UIViewController {
 
         let email = animal.contact.email ?? ""
         let phone = animal.contact.phone ?? ""
-        let address = (animal.contact.location.street ?? "") + (animal.contact.location.city ?? "") + (animal.contact.location.state ?? "")
+        let street = animal.contact.location.street ?? ""
+        let city = animal.contact.location.city ?? ""
+        let state = animal.contact.location.state ?? ""
+
+        var address: String = ""
+        address = address + (street.isEmpty ? "" : street + ", ")
+        address = address + (city.isEmpty ? "" : city + " ")
+        address = address + (state.isEmpty ? "" : state)
+
         var contactInfo: String = ""
         contactInfo = contactInfo + (email.isEmpty ? "" : "Email: " + email + "\n")
         contactInfo = contactInfo + (phone.isEmpty ? "" : "Phone: " + phone + "\n")
-        contactInfo = contactInfo + (address.isEmpty ? "" : "Address: " + address + "\n")
+        contactInfo = contactInfo + (address.isEmpty ? "" : "Address: " + address)
         contact.text = contactInfo
-        print("CONTACT TEXT IS" + (contact.text ?? ""))
     }
 }

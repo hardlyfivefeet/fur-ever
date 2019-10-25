@@ -73,7 +73,6 @@ class AnimalSearchResultCollectionViewController: UICollectionViewController, UI
     private func display(searchResult: AnimalSearchResult) {
         searchResults = searchResult.animals
         collectionView.reloadData()
-//        collectionView.collectionViewLayout.invalidateLayout()
     }
 
     private func report(error: Error) {

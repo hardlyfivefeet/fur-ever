@@ -12,20 +12,37 @@ struct AnimalSearchResult: Codable, Equatable {
 }
 
 struct Animal: Codable, Equatable {
-    let id: Int64
+    let image: Image
     let name: String
     let type: String
-    let breeds: Breed
+    let breed: Breed
     let age: String
     let gender: String
     let size: String
     let description: String
-    let organization_id: String
-    let image: Image
+    let attributes: Attributes
+    let contact: Contact
+}
+
+struct Attributes: Codable, Equatable {
+    let spayed_neutered: Bool
+    let house_trained: Bool
+}
+
+struct Location: Codable, Equatable {
+    var street: String?
+    var city: String?
+    var state: String?
+}
+
+struct Contact: Codable, Equatable {
+    var email: String?
+    var phone: String?
+    var location: Location
 }
 
 struct Breed: Codable, Equatable {
-    let primary: String
+    var primary: String?
     var secondary: String?
     var mixed: Bool?
 }
@@ -46,7 +63,5 @@ struct OrganizationSearchResult: Codable, Equatable {
 struct Organization: Codable, Equatable {
     let id: String
     let name: String
-    let email: String
-    let phone: String
-    let address: [String]
+    let contact: Contact
 }

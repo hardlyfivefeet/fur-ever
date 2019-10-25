@@ -30,7 +30,7 @@ class AnimalSearchResultCollectionViewController: UICollectionViewController, UI
     
     // set number of cells in section to be number of search results returned
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-       return searchResults.count
+        return searchResults.count
     }
 
     // Set the image and name for each cell
@@ -52,22 +52,22 @@ class AnimalSearchResultCollectionViewController: UICollectionViewController, UI
     // Pass the name of the location from the controller to the text field in the header of the results page
     override func collectionView(_ collectionView: UICollectionView,
                                  viewForSupplementaryElementOfKind kind: String,
-                                 at indexPath: IndexPath) -> UICollectionReusableView {
-      switch kind {
-      case UICollectionView.elementKindSectionHeader:
-        guard
-          let headerView = collectionView.dequeueReusableSupplementaryView(
-            ofKind: kind,
-            withReuseIdentifier: "\(SearchResultCollectionHeaderView.self)",
-            for: indexPath) as? SearchResultCollectionHeaderView
-          else {
-            fatalError("Invalid view type")
-          }
-        headerView.locationField.text = searchParams.location
-        return headerView
-      default:
-        assert(false, "Invalid element type")
-      }
+                                     at indexPath: IndexPath) -> UICollectionReusableView {
+        switch kind {
+          case UICollectionView.elementKindSectionHeader:
+            guard
+              let headerView = collectionView.dequeueReusableSupplementaryView(
+                ofKind: kind,
+                withReuseIdentifier: "\(SearchResultCollectionHeaderView.self)",
+                for: indexPath) as? SearchResultCollectionHeaderView
+              else {
+                fatalError("Invalid view type")
+              }
+            headerView.locationField.text = searchParams.location
+            return headerView
+          default:
+            assert(false, "Invalid element type")
+        }
     }
 
     private func display(searchResult: AnimalSearchResult) {
@@ -77,11 +77,23 @@ class AnimalSearchResultCollectionViewController: UICollectionViewController, UI
     }
 
     private func report(error: Error) {
-       let alert = UIAlertController(title: "Network Issue",
+        let alert = UIAlertController(title: "Network Issue",
            message: "Sorry, we seem to have encountered a network problem: \(error.localizedDescription)",
            preferredStyle: .alert)
 
-       alert.addAction(UIAlertAction(title: "Acknowledge", style: .default, handler: nil))
-       present(alert, animated: true, completion: nil)
+        alert.addAction(UIAlertAction(title: "Acknowledge", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "animalSearchResultCollectionToSingleResult", let animalSearchResultViewController = segue.destination as? AnimalSearchResultViewController {
+            if let cell = sender as? UICollectionViewCell, let indexPath = collectionView.indexPath(for: cell) {
+                animalSearchResultViewController.animal = searchResults[indexPath.row]
+            }
+        }
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "animalSearchResultCollectionToSingleResult", sender: indexPath)
     }
 }

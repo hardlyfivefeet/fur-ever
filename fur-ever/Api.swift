@@ -15,11 +15,11 @@ class ApiService: Api {
         // No-op in our initial mock version.
     }
     
-    let animalResult1 = Animal(id: 0001, name: "Hopper", type: "Dog", breeds: Breed(primary: "Dachshund"), age: "Young", gender: "Male", size: "Small", description: "A good boi", organization_id: "Org0001", image: Image(url: "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/46278443/1/?bust=1571149006&width=1080"))
-    let animalResult2 = Animal(id: 0002, name: "Gracie", type: "Dog", breeds: Breed(primary: "Dachshund"), age: "Young", gender: "Female", size: "Small", description: "A good gal", organization_id: "Org0002", image: Image(url: "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/46278443/3/?bust=1571149034&width=1080"))
-    let animalResult3 = Animal(id: 0003, name: "Arlo", type: "Dog", breeds: Breed(primary: "Dachshund"), age: "Baby", gender: "Male", size: "Small", description: "LOOK AT HIM", organization_id: "Org0003", image: Image(url: "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/46296039/2/?bust=1571268294&width=1080"))
+    let animalResult1 = Animal(image: Image(url: "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/46278443/1/?bust=1571149006&width=1080"), name: "Hopper", type: "Dog", breed: Breed(primary: "Dachshund"), age: "Young", gender: "Male", size: "Small", description: "A good boi", attributes: Attributes(spayed_neutered: true, house_trained: true), contact: Contact(email: "fake@gmail.com", phone: "012-3456-789", location: Location(city: "Santa Ana,", state: "CA")))
+    let animalResult2 = Animal(image: Image(url: "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/46278443/3/?bust=1571149034&width=1080"), name: "Gracie", type: "Dog", breed: Breed(primary: "Dachshund"), age: "Young", gender: "Female", size: "Small", description: "A good gal", attributes: Attributes(spayed_neutered: true, house_trained: false), contact: Contact(email: "fake1@gmail.com", phone: "012-3456-789", location: Location(city: "Fountain Valley,", state: "CA")))
+    let animalResult3 = Animal(image: Image(url: "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/46296039/2/?bust=1571268294&width=1080"), name: "Arlo", type: "Dog", breed: Breed(primary: "Dachshund", secondary: "Chihuahua"), age: "Baby", gender: "Male", size: "Small", description: "LOOK AT HIM", attributes: Attributes(spayed_neutered: true, house_trained: true), contact: Contact(email: "fake2@gmail.com", phone: "424-312-9265", location: Location(street:"Sunn Ave", city: "Fountain Valley", state: "CA")))
 
-    let organizationResult1 = Organization(id: "0001", name: "PetSpace", email: "petspace@gmail.com", phone: "0123456789", address: ["StreetA", "TownB"])
+    let organizationResult1 = Organization(id: "0001", name: "PetSpace", contact: Contact(email: "petspace@gmail.com", phone: "012-345-6789", location: Location(city: "Culver City", state: "CA")))
     
     func searchAnimals(with params: AnimalSearchParams,
                        then: ((AnimalSearchResult) -> Void)?,

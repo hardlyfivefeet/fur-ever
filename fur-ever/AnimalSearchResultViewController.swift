@@ -4,7 +4,12 @@ import UIKit
 
 class AnimalSearchResultViewController: UIViewController {
     
+    var api: Api = ProcessInfo.processInfo.arguments.contains(TESTING_UI) ?
+           MockApiService() : ApiService()
+    var failureCallback: ((Error) -> Void)?
+    
     var animal: Animal!
+    var animalId: Int!
 
     @IBOutlet weak var image: RemoteImageView!
     @IBOutlet weak var name: UILabel!
@@ -21,19 +26,26 @@ class AnimalSearchResultViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadAnimalInfo()
+        makeApiCall()
     }
-    
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         scrollView.flashScrollIndicators()
     }
     
-    private func loadAnimalInfo() {
-        image.imageURL = animal.image.url
-        name.text = animal.name
+    private func makeApiCall() {
+        api.api(host: "https://api.petfinder.com/v2/")
+        api.getAnimal(with: animalId, then: display, fail: failureCallback ?? report)
+    }
+    
+    private func display(selectedAnimal: Animal) {
+        animal = selectedAnimal
+        image.imageURL = animal.basicInfo.image.url
+        name.text = animal.basicInfo.name
         type.text = animal.type
-        breed.text = (animal.breed.primary ?? "None") + (animal.breed.secondary ?? "") + (animal.breed.mixed ?? false ? "Mix" : "")
+        let secondaryBreed = animal.breed.secondary ?? ""
+        breed.text = (animal.breed.primary ?? "Unknown") + (secondaryBreed.isEmpty ? "" : ", " + secondaryBreed) + (animal.breed.mixed ?? false ? " Mix" : "")
         age.text = animal.age
         gender.text = animal.gender
         size.text = animal.size
@@ -46,15 +58,22 @@ class AnimalSearchResultViewController: UIViewController {
         let city = animal.contact.location.city ?? ""
         let state = animal.contact.location.state ?? ""
 
-        var address: String = ""
-        address = address + (street.isEmpty ? "" : street + ", ")
+        var address = (street.isEmpty ? "" : street + ", ")
         address = address + (city.isEmpty ? "" : city + " ")
         address = address + (state.isEmpty ? "" : state)
 
-        var contactInfo: String = ""
-        contactInfo = contactInfo + (email.isEmpty ? "" : "Email: " + email + "\n")
+        var contactInfo = (email.isEmpty ? "" : "Email: " + email + "\n")
         contactInfo = contactInfo + (phone.isEmpty ? "" : "Phone: " + phone + "\n")
         contactInfo = contactInfo + (address.isEmpty ? "" : "Address: " + address)
         contact.text = contactInfo
+    }
+    
+    private func report(error: Error) {
+        let alert = UIAlertController(title: "Network Issue",
+           message: "Sorry, we seem to have encountered a network problem: \(error.localizedDescription)",
+           preferredStyle: .alert)
+
+        alert.addAction(UIAlertAction(title: "Acknowledge", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
     }
 }

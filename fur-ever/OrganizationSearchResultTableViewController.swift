@@ -10,10 +10,8 @@ class OrganizationSearchResultTableViewController: UITableViewController {
     var failureCallback: ((Error) -> Void)?
 
     var searchParams = OrganizationSearchParams(name: "", location: "")
-    var searchResults: [Organization] = []
-
-    var selectedRow = 0
-
+    var searchResults: [OrganizationBasicInfo] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         api.api(host: "https://api.petfinder.com/v2/")
@@ -40,17 +38,6 @@ class OrganizationSearchResultTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return searchResults.count
     }
-            
-//    // set up header
-//    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        let headerView = Bundle.main.loadNibNamed("SearchResultListHeaderView", owner: self, options: nil)?.first as! SearchResultListHeaderView;
-//        return headerView;
-//    }
-//
-//    // fix header height
-//    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-//        return 100;
-//    }
     
     private func display(searchResult: OrganizationSearchResult) {
             searchResults = searchResult.organizations
@@ -70,7 +57,7 @@ class OrganizationSearchResultTableViewController: UITableViewController {
         if segue.identifier == "organizationSearchResultCollectionToSingleResult" {
             if let organizationSearchResultViewController = segue.destination as? OrganizationSearchResultViewController {
                 if let indexPath = tableView.indexPathForSelectedRow {
-                    organizationSearchResultViewController.organization = searchResults[indexPath.row]
+                    organizationSearchResultViewController.organizationId = searchResults[indexPath.row].id
                 }
             }
         }

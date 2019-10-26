@@ -3,18 +3,23 @@ import UIKit
 let TESTING_UI = "UI_TESTING"
 
 struct AnimalSearchParams {
-    let animal_type: String
-    let location: String
-    var organizationId: String?
+    var animal_type: String
+    var location: String
+    var organizationId: Int?
 }
 
 struct AnimalSearchResult: Codable, Equatable {
-    let animals: [Animal]
+    let animals: [AnimalBasicInfo]
+}
+
+struct AnimalBasicInfo: Codable, Equatable {
+    let id: Int
+    let image: Image
+    let name: String
 }
 
 struct Animal: Codable, Equatable {
-    let image: Image
-    let name: String
+    let basicInfo: AnimalBasicInfo
     let type: String
     let breed: Breed
     let age: String
@@ -34,6 +39,7 @@ struct Location: Codable, Equatable {
     var street: String?
     var city: String?
     var state: String?
+    var distance: String?
 }
 
 struct Contact: Codable, Equatable {
@@ -59,13 +65,17 @@ struct OrganizationSearchParams {
 }
 
 struct OrganizationSearchResult: Codable, Equatable {
-    let organizations: [Organization]
+    let organizations: [OrganizationBasicInfo]
+}
+
+struct OrganizationBasicInfo: Codable, Equatable {
+    let id: Int
+    let name: String
 }
 
 struct Organization: Codable, Equatable {
-    let id: String
+    let basicInfo: OrganizationBasicInfo
     let image: Image
-    let name: String
     let contact: Contact
     let missionStatement: String
 }

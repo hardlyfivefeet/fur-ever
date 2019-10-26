@@ -48,6 +48,6 @@ class SearchByOrganizationFormViewController : UIViewController {
     }
     
     private func updateViews() {
-        searchButton.isEnabled = (nameField.text ?? "").count > 0 && (locationField.text ?? "").count > 0
+        searchButton.isEnabled = (nameField.text ?? "").count > 0 || (locationField.text ?? "").count > 0
     }
 }

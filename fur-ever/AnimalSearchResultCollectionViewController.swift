@@ -3,23 +3,29 @@ import UIKit
 
 private let REUSE_IDENTIFIER = "animalThumbnailCell"
 
-class AnimalSearchResultCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+class AnimalSearchResultCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
     
     var api: Api = ProcessInfo.processInfo.arguments.contains(TESTING_UI) ?
            MockApiService() : ApiService()
     var failureCallback: ((Error) -> Void)?
 
     var searchParams = AnimalSearchParams(animal_type: "", location: "")
-    var searchResults: [Animal] = []
+    var searchResults: [AnimalBasicInfo] = []
 
     var selectedRow = 0
+    var shouldShowHeader = true
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            layout.sectionHeadersPinToVisibleBounds = true
+        }
+        makeApiCall()
+    }
+    
+    private func makeApiCall() {
         api.api(host: "https://api.petfinder.com/v2/")
         api.searchAnimals(with: searchParams, then: display, fail: failureCallback ?? report)
-        print("ORGANIZATION ID IS")
-        print(searchParams.organizationId)
     }
 
     // determine size of cells
@@ -51,7 +57,7 @@ class AnimalSearchResultCollectionViewController: UICollectionViewController, UI
         return true
     }
     
-    // Pass the name of the location from the controller to the text field in the header of the results page
+    // Pass the name of the location from the controller to the search bar in the header of the results page
     override func collectionView(_ collectionView: UICollectionView,
                                  viewForSupplementaryElementOfKind kind: String,
                                      at indexPath: IndexPath) -> UICollectionReusableView {
@@ -65,11 +71,27 @@ class AnimalSearchResultCollectionViewController: UICollectionViewController, UI
               else {
                 fatalError("Invalid view type")
               }
-            headerView.locationField.text = searchParams.location
+            headerView.searchField.text = searchParams.location
+            headerView.searchField.delegate = self
             return headerView
           default:
             assert(false, "Invalid element type")
         }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                          layout collectionViewLayout: UICollectionViewLayout,
+                          referenceSizeForHeaderInSection section: Int) -> CGSize {
+        if shouldShowHeader {
+            return CGSize(width: self.view.frame.width, height: 85)
+        } else {
+            return CGSize(width: 0, height: 0)
+        }
+    }
+        
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchParams.location = searchBar.text ?? searchParams.location
+        makeApiCall()
     }
 
     private func display(searchResult: AnimalSearchResult) {
@@ -90,7 +112,7 @@ class AnimalSearchResultCollectionViewController: UICollectionViewController, UI
         if segue.identifier == "animalSearchResultCollectionToSingleResult" {
             if let animalSearchResultViewController = segue.destination as? AnimalSearchResultViewController {
                 if let indexPath = collectionView.indexPathsForSelectedItems?.first {
-                    animalSearchResultViewController.animal = searchResults[indexPath.row]
+                    animalSearchResultViewController.animalId = searchResults[indexPath.row].id
                 }
             }
         }

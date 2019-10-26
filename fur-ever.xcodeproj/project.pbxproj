@@ -15,7 +15,7 @@
 		C9B6E05F2362D25A003452B7 /* InfoPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B6E05E2362D25A003452B7 /* InfoPageViewController.swift */; };
 		C9B6E06A2362D742003452B7 /* AnimalSearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B6E0692362D742003452B7 /* AnimalSearchResultViewController.swift */; };
 		C9DA8B462360E83100E63BCD /* OrganizationSearchResultTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DA8B452360E83000E63BCD /* OrganizationSearchResultTableViewController.swift */; };
-		C9DA8B512360E86800E63BCD /* SearchResultListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DA8B502360E86800E63BCD /* SearchResultListHeaderView.swift */; };
+		C9DA8B512360E86800E63BCD /* SearchResultTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DA8B502360E86800E63BCD /* SearchResultTableHeaderView.swift */; };
 		C9DA8B532360EAAC00E63BCD /* OrganizationSearchResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DA8B522360EAAC00E63BCD /* OrganizationSearchResultTableViewCell.swift */; };
 		C9E9EE42235AC96400066405 /* AnimalSearchResultCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E9EE41235AC96300066405 /* AnimalSearchResultCollectionViewController.swift */; };
 		C9FCBE48236291F900D5F5DD /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FCBE47236291F900D5F5DD /* HomePageViewController.swift */; };
@@ -166,7 +166,7 @@
 		C9B6E05E2362D25A003452B7 /* InfoPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoPageViewController.swift; sourceTree = "<group>"; };
 		C9B6E0692362D742003452B7 /* AnimalSearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalSearchResultViewController.swift; sourceTree = "<group>"; };
 		C9DA8B452360E83000E63BCD /* OrganizationSearchResultTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationSearchResultTableViewController.swift; sourceTree = "<group>"; };
-		C9DA8B502360E86800E63BCD /* SearchResultListHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultListHeaderView.swift; sourceTree = "<group>"; };
+		C9DA8B502360E86800E63BCD /* SearchResultTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTableHeaderView.swift; sourceTree = "<group>"; };
 		C9DA8B522360EAAC00E63BCD /* OrganizationSearchResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationSearchResultTableViewCell.swift; sourceTree = "<group>"; };
 		C9E9EE41235AC96300066405 /* AnimalSearchResultCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalSearchResultCollectionViewController.swift; sourceTree = "<group>"; };
 		C9FCBE47236291F900D5F5DD /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
@@ -261,7 +261,7 @@
 				C94B962323558ABA004EDE93 /* SearchByLocationFormViewController.swift */,
 				C94B962E23558C5B004EDE93 /* SearchByOrganizationFormViewController.swift */,
 				C999F85D235910FB00DA8353 /* SearchResultCollectionHeaderView.swift */,
-				C9DA8B502360E86800E63BCD /* SearchResultListHeaderView.swift */,
+				C9DA8B502360E86800E63BCD /* SearchResultTableHeaderView.swift */,
 			);
 			path = "fur-ever";
 			sourceTree = "<group>";
@@ -538,7 +538,7 @@
 				C9B6E05F2362D25A003452B7 /* InfoPageViewController.swift in Sources */,
 				C9DA8B532360EAAC00E63BCD /* OrganizationSearchResultTableViewCell.swift in Sources */,
 				C9E9EE42235AC96400066405 /* AnimalSearchResultCollectionViewController.swift in Sources */,
-				C9DA8B512360E86800E63BCD /* SearchResultListHeaderView.swift in Sources */,
+				C9DA8B512360E86800E63BCD /* SearchResultTableHeaderView.swift in Sources */,
 				C9B6E06A2362D742003452B7 /* AnimalSearchResultViewController.swift in Sources */,
 				C94B962423558ABA004EDE93 /* SearchByLocationFormViewController.swift in Sources */,
 				F713900C2162C87C002B158F /* AppDelegate.swift in Sources */,

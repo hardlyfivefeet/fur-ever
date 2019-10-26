@@ -34,14 +34,27 @@ class RealApiService: Api {
     func searchAnimals(with params: AnimalSearchParams,
             then: ((AnimalSearchResult) -> Void)?,
             fail: ((Error) -> Void)?) {
-        // TODO: Implement API calls
+        // TODO: Implement API call
+    }
+
+    func getAnimal(with id: Int,
+                          then: ((Animal) -> Void)?,
+                          fail: ((Error) -> Void)?) {
+        // TODO: Implement API call
     }
     
     func searchOrganizations(with params: OrganizationSearchParams,
             then: ((OrganizationSearchResult) -> Void)?,
             fail: ((Error) -> Void)?) {
-        // TODO: Implement API calls
+        // TODO: Implement API call
     }
+    
+    func getOrganization(with id: Int,
+                         then: ((Organization) -> Void)?,
+                         fail: ((Error) -> Void)?) {
+        // TODO: Implement API call
+    }
+
 
 //    func searchGifs(with params: SearchParams,
 //            then: ((SearchResult) -> Void)?,

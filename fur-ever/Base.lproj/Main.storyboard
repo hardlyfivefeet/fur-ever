@@ -244,27 +244,27 @@ FUR-EVER HOME</string>
                         <color key="backgroundColor" red="0.89283058189999998" green="0.96454022449999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="cby-fB-IUX">
                             <size key="itemSize" width="150" height="150"/>
-                            <size key="headerReferenceSize" width="50" height="100"/>
+                            <size key="headerReferenceSize" width="50" height="87"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="animalThumbnailCell" id="V0S-VJ-cva" customClass="AnimalSearchResultCollectionViewCell" customModule="FurEver" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="100" width="150" height="150"/>
+                                <rect key="frame" x="0.0" y="87" width="150" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="D0Y-nq-JPS">
                                     <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4QV-vf-cEb">
-                                            <rect key="frame" x="50" y="125" width="50" height="25"/>
+                                            <rect key="frame" x="50" y="135" width="50" height="15"/>
                                             <accessibility key="accessibilityConfiguration" identifier="animalName"/>
                                             <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
                                             <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oKd-L7-ta9" customClass="RemoteImageView" customModule="SiestaUI">
-                                            <rect key="frame" x="15" y="0.0" width="120" height="120"/>
+                                            <rect key="frame" x="15" y="10" width="120" height="120"/>
                                             <accessibility key="accessibilityConfiguration" identifier="animalPhoto"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="oKd-L7-ta9" secondAttribute="height" multiplier="1:1" identifier="id1" id="PmE-pi-Hn6"/>
@@ -273,7 +273,7 @@ FUR-EVER HOME</string>
                                         </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="oKd-L7-ta9" firstAttribute="top" secondItem="D0Y-nq-JPS" secondAttribute="top" identifier="id3" id="3cE-3X-iNl"/>
+                                        <constraint firstItem="oKd-L7-ta9" firstAttribute="top" secondItem="D0Y-nq-JPS" secondAttribute="top" constant="10" identifier="id3" id="3cE-3X-iNl"/>
                                         <constraint firstItem="oKd-L7-ta9" firstAttribute="height" secondItem="D0Y-nq-JPS" secondAttribute="height" multiplier="0.8" priority="950" identifier="id4" id="DmF-Ry-ED0"/>
                                         <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="4QV-vf-cEb" secondAttribute="bottom" priority="900" identifier="id6" id="DyA-Ak-Bmv"/>
                                         <constraint firstItem="4QV-vf-cEb" firstAttribute="centerX" secondItem="oKd-L7-ta9" secondAttribute="centerX" identifier="id7" id="QmA-zG-SRx"/>
@@ -290,24 +290,22 @@ FUR-EVER HOME</string>
                             </collectionViewCell>
                         </cells>
                         <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="SearchResultCollectionHeaderView" id="Yhg-rL-cqq" customClass="SearchResultCollectionHeaderView" customModule="FurEver" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="87"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="WVe-GI-RgG">
-                                    <rect key="frame" x="20.5" y="15" width="373" height="34"/>
-                                    <accessibility key="accessibilityConfiguration" identifier="locationField"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="wm0-qv-YVA">
+                                    <rect key="frame" x="20.5" y="15" width="373" height="56"/>
                                     <textInputTraits key="textInputTraits" returnKeyType="search"/>
-                                </textField>
+                                </searchBar>
                             </subviews>
                             <color key="backgroundColor" red="0.89283058189999998" green="0.96454022449999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
-                                <constraint firstItem="WVe-GI-RgG" firstAttribute="width" secondItem="Yhg-rL-cqq" secondAttribute="width" multiplier="0.9" id="3eP-QP-aAp"/>
-                                <constraint firstItem="WVe-GI-RgG" firstAttribute="centerX" secondItem="Yhg-rL-cqq" secondAttribute="centerX" id="SzT-7E-i4g"/>
-                                <constraint firstItem="WVe-GI-RgG" firstAttribute="top" secondItem="Yhg-rL-cqq" secondAttribute="top" constant="15" id="yDw-4B-8bS"/>
+                                <constraint firstItem="wm0-qv-YVA" firstAttribute="top" secondItem="Yhg-rL-cqq" secondAttribute="top" constant="15" id="Pfw-tO-Lhe"/>
+                                <constraint firstItem="wm0-qv-YVA" firstAttribute="width" secondItem="Yhg-rL-cqq" secondAttribute="width" multiplier="0.9" id="gtL-oh-OoJ"/>
+                                <constraint firstItem="wm0-qv-YVA" firstAttribute="centerX" secondItem="Yhg-rL-cqq" secondAttribute="centerX" id="rB2-8p-NsL"/>
                             </constraints>
                             <connections>
-                                <outlet property="locationField" destination="WVe-GI-RgG" id="KJW-8B-6Od"/>
+                                <outlet property="searchField" destination="wm0-qv-YVA" id="OPc-Im-Fzq"/>
                             </connections>
                         </collectionReusableView>
                         <connections>
@@ -478,20 +476,20 @@ FUR-EVER HOME</string>
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WqL-jO-KMw">
-                                <rect key="frame" x="176.5" y="306" width="61.5" height="30.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name of Organization" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WqL-jO-KMw">
+                                <rect key="frame" x="94.5" y="305" width="225" height="31"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="22"/>
                                 <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F13-37-g1i">
-                                <rect key="frame" x="164" y="435.5" width="86" height="30.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location of Organization" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F13-37-g1i">
+                                <rect key="frame" x="82" y="435" width="250" height="31"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="22"/>
                                 <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Keyword, e.g. Rescue" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="JGY-PT-Gfu">
-                                <rect key="frame" x="82" y="351.5" width="250" height="34"/>
+                                <rect key="frame" x="82" y="351" width="250" height="34"/>
                                 <accessibility key="accessibilityConfiguration" identifier="nameField"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="jyU-Se-5Bf"/>
@@ -813,7 +811,7 @@ FUR-EVER HOME</string>
         <image name="petfinder-logo" width="1000" height="292"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="hep-kZ-hCc"/>
+        <segue reference="qh5-jY-TLQ"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

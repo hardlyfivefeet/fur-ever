@@ -1,6 +1,7 @@
 import UIKit
 
 class SearchResultCollectionHeaderView: UICollectionReusableView {
-        
-    @IBOutlet weak var locationField: UITextField!
+    
+    @IBOutlet weak var searchField: UISearchBar!
+    
 }

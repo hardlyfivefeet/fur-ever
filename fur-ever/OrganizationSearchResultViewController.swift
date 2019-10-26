@@ -4,7 +4,12 @@ import SiestaUI
 
 class OrganizationSearchResultViewController: UIViewController {
     
+    var api: Api = ProcessInfo.processInfo.arguments.contains(TESTING_UI) ?
+           MockApiService() : ApiService()
+    var failureCallback: ((Error) -> Void)?
+    
     var organization: Organization!
+    var organizationId: Int!
 
     @IBOutlet weak var image: RemoteImageView!
     @IBOutlet weak var name: UILabel!
@@ -15,7 +20,7 @@ class OrganizationSearchResultViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadOrganizationInfo()
+        makeApiCall()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -23,9 +28,15 @@ class OrganizationSearchResultViewController: UIViewController {
         scrollView.flashScrollIndicators()
     }
     
-    private func loadOrganizationInfo() {
+    private func makeApiCall() {
+        api.api(host: "https://api.petfinder.com/v2/")
+        api.getOrganization(with: organizationId, then: display, fail: failureCallback ?? report)
+    }
+    
+    private func display(selectedOrganization: Organization) {
+        organization = selectedOrganization
         image.imageURL = organization.image.url
-        name.text = organization.name
+        name.text = organization.basicInfo.name
         missionStatement.text = organization.missionStatement
         
         let email = organization.contact.email ?? ""
@@ -51,8 +62,18 @@ class OrganizationSearchResultViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "organizationToAnimalSearchResult" {
             if let animalSearchResultCollectionViewController = segue.destination as? AnimalSearchResultCollectionViewController {
-                 animalSearchResultCollectionViewController.searchParams = AnimalSearchParams(animal_type: "", location: organization.contact.location.state ?? "", organizationId: organization.id)
+                animalSearchResultCollectionViewController.searchParams = AnimalSearchParams(animal_type: "", location: "", organizationId: organizationId)
+                animalSearchResultCollectionViewController.shouldShowHeader = false
              }
         }
+    }
+    
+    private func report(error: Error) {
+        let alert = UIAlertController(title: "Network Issue",
+           message: "Sorry, we seem to have encountered a network problem: \(error.localizedDescription)",
+           preferredStyle: .alert)
+
+        alert.addAction(UIAlertAction(title: "Acknowledge", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
     }
 }

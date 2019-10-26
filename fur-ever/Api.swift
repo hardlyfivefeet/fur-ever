@@ -28,7 +28,7 @@ class ApiService: Api {
             callback(AnimalSearchResult(animals: [animalBasicInfo1, animalBasicInfo2, animalBasicInfo3, animalBasicInfo1, animalBasicInfo3, animalBasicInfo1, animalBasicInfo2, animalBasicInfo1, animalBasicInfo3]))
         }
     }
-    
+
     func getAnimal(with id: Int,
                        then: ((Animal) -> Void)?,
                        fail: ((Error) -> Void)?) {
@@ -44,7 +44,7 @@ class ApiService: Api {
                callback(OrganizationSearchResult(organizations: [organizationBasicInfo1, organizationBasicInfo2]))
         }
     }
-    
+
     func getOrganization(with id: Int,
                        then: ((Organization) -> Void)?,
                        fail: ((Error) -> Void)?) {
@@ -61,7 +61,6 @@ let animalBasicInfo2 = AnimalBasicInfo(id: 0002, image: Image(url: "https://dl5z
 let animalBasicInfo3 = AnimalBasicInfo(id: 0003, image: Image(url: "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/46296039/2/?bust=1571268294&width=1080"), name: "Arlo")
 
 let animal1 = Animal(basicInfo: animalBasicInfo1, type: "Dog", breed: Breed(primary: "Dachshund", secondary: "Chihuahua"), age: "Baby", gender: "Male", size: "Small", description: placeholderText, attributes: Attributes(spayed_neutered: true, house_trained: true), contact: Contact(email: "fake2@gmail.com", phone: "424-312-9265", location: Location(state: "CA")))
-
 
 let organizationBasicInfo1 = OrganizationBasicInfo(id: 0001, name: "Silky Terrier Rescue Charitable Trust Charity")
 

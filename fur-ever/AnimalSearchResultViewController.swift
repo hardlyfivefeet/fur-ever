@@ -3,11 +3,11 @@ import SiestaUI
 import UIKit
 
 class AnimalSearchResultViewController: UIViewController {
-    
+
     var api: Api = ProcessInfo.processInfo.arguments.contains(TESTING_UI) ?
            MockApiService() : ApiService()
     var failureCallback: ((Error) -> Void)?
-    
+
     var animal: Animal!
     var animalId: Int!
 
@@ -21,9 +21,9 @@ class AnimalSearchResultViewController: UIViewController {
     @IBOutlet weak var info: UILabel!
     @IBOutlet weak var attributes: UILabel!
     @IBOutlet weak var contact: UITextView!
-    
+
     @IBOutlet weak var scrollView: UIScrollView!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         makeApiCall()
@@ -33,12 +33,12 @@ class AnimalSearchResultViewController: UIViewController {
         super.viewDidAppear(animated)
         scrollView.flashScrollIndicators()
     }
-    
+
     private func makeApiCall() {
         api.api(host: "https://api.petfinder.com/v2/")
         api.getAnimal(with: animalId, then: display, fail: failureCallback ?? report)
     }
-    
+
     private func display(selectedAnimal: Animal) {
         animal = selectedAnimal
         image.imageURL = animal.basicInfo.image.url
@@ -67,7 +67,7 @@ class AnimalSearchResultViewController: UIViewController {
         contactInfo = contactInfo + (address.isEmpty ? "" : "Address: " + address)
         contact.text = contactInfo
     }
-    
+
     private func report(error: Error) {
         let alert = UIAlertController(title: "Network Issue",
            message: "Sorry, we seem to have encountered a network problem: \(error.localizedDescription)",

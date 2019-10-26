@@ -1,7 +1,7 @@
 import Foundation
 import UIKit
 
-class SearchByOrganizationFormViewController : UIViewController {
+class SearchByOrganizationFormViewController: UIViewController {
 
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var locationField: UITextField!
@@ -38,15 +38,15 @@ class SearchByOrganizationFormViewController : UIViewController {
             self.view.frame.origin.y = 0
         }
     }
-    
+
     @IBAction func keyboardSearchReturn(_ sender: Any) {
         searchButton.sendActions(for: .touchUpInside)
     }
-    
+
     @IBAction func textFieldChanged(_ sender: Any) {
         updateViews()
     }
-    
+
     private func updateViews() {
         searchButton.isEnabled = (nameField.text ?? "").count > 0 || (locationField.text ?? "").count > 0
     }

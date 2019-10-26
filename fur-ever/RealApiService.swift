@@ -30,7 +30,7 @@ class RealApiService: Api {
 //            try jsonDecoder.decode(SearchResult.self, from: $0.content)
 //        }
     }
-    
+
     func searchAnimals(with params: AnimalSearchParams,
             then: ((AnimalSearchResult) -> Void)?,
             fail: ((Error) -> Void)?) {
@@ -42,19 +42,18 @@ class RealApiService: Api {
                           fail: ((Error) -> Void)?) {
         // TODO: Implement API call
     }
-    
+
     func searchOrganizations(with params: OrganizationSearchParams,
             then: ((OrganizationSearchResult) -> Void)?,
             fail: ((Error) -> Void)?) {
         // TODO: Implement API call
     }
-    
+
     func getOrganization(with id: Int,
                          then: ((Organization) -> Void)?,
                          fail: ((Error) -> Void)?) {
         // TODO: Implement API call
     }
-
 
 //    func searchGifs(with params: SearchParams,
 //            then: ((SearchResult) -> Void)?,

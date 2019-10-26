@@ -4,7 +4,7 @@ import UIKit
 private let REUSE_IDENTIFIER = "animalThumbnailCell"
 
 class AnimalSearchResultCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
-    
+
     var api: Api = ProcessInfo.processInfo.arguments.contains(TESTING_UI) ?
            MockApiService() : ApiService()
     var failureCallback: ((Error) -> Void)?
@@ -22,7 +22,7 @@ class AnimalSearchResultCollectionViewController: UICollectionViewController, UI
         }
         makeApiCall()
     }
-    
+
     private func makeApiCall() {
         api.api(host: "https://api.petfinder.com/v2/")
         api.searchAnimals(with: searchParams, then: display, fail: failureCallback ?? report)
@@ -35,7 +35,7 @@ class AnimalSearchResultCollectionViewController: UICollectionViewController, UI
         let cellWidth = (self.view.frame.width - 15) / numberOfCell
         return CGSize(width: cellWidth, height: cellWidth)
     }
-    
+
     // set number of cells in section to be number of search results returned
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return searchResults.count
@@ -46,7 +46,7 @@ class AnimalSearchResultCollectionViewController: UICollectionViewController, UI
            UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: REUSE_IDENTIFIER, for: indexPath)
            as! AnimalSearchResultCollectionViewCell
-            
+
         cell.thumbnailPhoto.imageURL = searchResults[indexPath.row].image.url
         cell.thumbnailName.text = searchResults[indexPath.row].name
         return cell
@@ -56,7 +56,7 @@ class AnimalSearchResultCollectionViewController: UICollectionViewController, UI
         selectedRow = indexPath.row
         return true
     }
-    
+
     // Pass the name of the location from the controller to the search bar in the header of the results page
     override func collectionView(_ collectionView: UICollectionView,
                                  viewForSupplementaryElementOfKind kind: String,
@@ -78,7 +78,7 @@ class AnimalSearchResultCollectionViewController: UICollectionViewController, UI
             assert(false, "Invalid element type")
         }
     }
-    
+
     func collectionView(_ collectionView: UICollectionView,
                           layout collectionViewLayout: UICollectionViewLayout,
                           referenceSizeForHeaderInSection section: Int) -> CGSize {
@@ -88,7 +88,7 @@ class AnimalSearchResultCollectionViewController: UICollectionViewController, UI
             return CGSize(width: 0, height: 0)
         }
     }
-        
+
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchParams.location = searchBar.text ?? searchParams.location
         makeApiCall()
@@ -107,7 +107,7 @@ class AnimalSearchResultCollectionViewController: UICollectionViewController, UI
         alert.addAction(UIAlertAction(title: "Acknowledge", style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
     }
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "animalSearchResultCollectionToSingleResult" {
             if let animalSearchResultViewController = segue.destination as? AnimalSearchResultViewController {

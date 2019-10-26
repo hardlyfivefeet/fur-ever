@@ -1,7 +1,7 @@
 import Foundation
 import UIKit
 
-class OrganizationSearchResultTableViewCell : UITableViewCell {
-    
+class OrganizationSearchResultTableViewCell: UITableViewCell {
+
     @IBOutlet weak var organizationName: UILabel!
 }

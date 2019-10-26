@@ -2,11 +2,11 @@ import Foundation
 import UIKit
 
 class SearchByLocationFormViewController: UIViewController {
-    
+
     @IBOutlet weak var petType: UISegmentedControl!
     @IBOutlet weak var locationField: UITextField!
     @IBOutlet weak var searchButton: UIButton!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         updateViews()
@@ -38,15 +38,15 @@ class SearchByLocationFormViewController: UIViewController {
             self.view.frame.origin.y = 0
         }
     }
-    
+
     @IBAction func keyboardSearchReturn(_ sender: Any) {
         searchButton.sendActions(for: .touchUpInside)
     }
-    
+
     @IBAction func textFieldChanged(_ sender: Any) {
         updateViews()
     }
-    
+
     private func updateViews() {
         searchButton.isEnabled = (locationField.text ?? "").count > 0
     }

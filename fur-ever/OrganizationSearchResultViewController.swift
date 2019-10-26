@@ -3,11 +3,11 @@ import UIKit
 import SiestaUI
 
 class OrganizationSearchResultViewController: UIViewController {
-    
+
     var api: Api = ProcessInfo.processInfo.arguments.contains(TESTING_UI) ?
            MockApiService() : ApiService()
     var failureCallback: ((Error) -> Void)?
-    
+
     var organization: Organization!
     var organizationId: Int!
 
@@ -22,23 +22,23 @@ class OrganizationSearchResultViewController: UIViewController {
         super.viewDidLoad()
         makeApiCall()
     }
-    
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         scrollView.flashScrollIndicators()
     }
-    
+
     private func makeApiCall() {
         api.api(host: "https://api.petfinder.com/v2/")
         api.getOrganization(with: organizationId, then: display, fail: failureCallback ?? report)
     }
-    
+
     private func display(selectedOrganization: Organization) {
         organization = selectedOrganization
         image.imageURL = organization.image.url
         name.text = organization.basicInfo.name
         missionStatement.text = organization.missionStatement
-        
+
         let email = organization.contact.email ?? ""
         let phone = organization.contact.phone ?? ""
         let website = organization.contact.website ?? ""
@@ -58,7 +58,7 @@ class OrganizationSearchResultViewController: UIViewController {
         contactInfo = contactInfo + (address.isEmpty ? "" : "Address: " + address)
         contact.text = contactInfo
     }
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "organizationToAnimalSearchResult" {
             if let animalSearchResultCollectionViewController = segue.destination as? AnimalSearchResultCollectionViewController {
@@ -67,7 +67,7 @@ class OrganizationSearchResultViewController: UIViewController {
              }
         }
     }
-    
+
     private func report(error: Error) {
         let alert = UIAlertController(title: "Network Issue",
            message: "Sorry, we seem to have encountered a network problem: \(error.localizedDescription)",

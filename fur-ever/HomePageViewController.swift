@@ -11,6 +11,7 @@ class HomePageViewController : UIViewController {
         (sender as! UIButton).tag = 0
         performSegue(withIdentifier: "tabBarSegue", sender: sender)
     }
+    
     @IBAction func organizationButton(_ sender: Any) {
         (sender as! UIButton).tag = 1
         performSegue(withIdentifier: "tabBarSegue", sender: sender)

@@ -8,12 +8,19 @@ class OrganizationSearchResultViewController: UIViewController {
 
     @IBOutlet weak var image: RemoteImageView!
     @IBOutlet weak var name: UILabel!
-    @IBOutlet weak var missionStatement: UILabel!
+    @IBOutlet weak var missionStatement: UITextView!
     @IBOutlet weak var contact: UITextView!
-    
+
+    @IBOutlet weak var scrollView: UIScrollView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         loadOrganizationInfo()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        scrollView.flashScrollIndicators()
     }
     
     private func loadOrganizationInfo() {
@@ -41,7 +48,11 @@ class OrganizationSearchResultViewController: UIViewController {
         contact.text = contactInfo
     }
     
-    @IBAction func buttonPressed(_ sender: Any) {
-    // TODO: implement this
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "organizationToAnimalSearchResult" {
+            if let animalSearchResultCollectionViewController = segue.destination as? AnimalSearchResultCollectionViewController {
+                 animalSearchResultCollectionViewController.searchParams = AnimalSearchParams(animal_type: "", location: organization.contact.location.state ?? "", organizationId: organization.id)
+             }
+        }
     }
 }

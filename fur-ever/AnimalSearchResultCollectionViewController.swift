@@ -18,6 +18,8 @@ class AnimalSearchResultCollectionViewController: UICollectionViewController, UI
         super.viewDidLoad()
         api.api(host: "https://api.petfinder.com/v2/")
         api.searchAnimals(with: searchParams, then: display, fail: failureCallback ?? report)
+        print("ORGANIZATION ID IS")
+        print(searchParams.organizationId)
     }
 
     // determine size of cells

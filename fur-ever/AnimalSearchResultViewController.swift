@@ -17,9 +17,16 @@ class AnimalSearchResultViewController: UIViewController {
     @IBOutlet weak var attributes: UILabel!
     @IBOutlet weak var contact: UITextView!
     
+    @IBOutlet weak var scrollView: UIScrollView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         loadAnimalInfo()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        scrollView.flashScrollIndicators()
     }
     
     private func loadAnimalInfo() {

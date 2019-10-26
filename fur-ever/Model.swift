@@ -5,6 +5,7 @@ let TESTING_UI = "UI_TESTING"
 struct AnimalSearchParams {
     let animal_type: String
     let location: String
+    var organizationId: String?
 }
 
 struct AnimalSearchResult: Codable, Equatable {

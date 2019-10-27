@@ -3,9 +3,9 @@ import UIKit
 let TESTING_UI = "UI_TESTING"
 
 struct AnimalSearchParams {
-    var animal_type: String
-    var location: String
-    var organizationId: Int?
+    var animal_type: String?
+    var location: String?
+    var organizationId: String?
 }
 
 struct AnimalSearchResult: Codable, Equatable {
@@ -69,7 +69,7 @@ struct OrganizationSearchResult: Codable, Equatable {
 }
 
 struct OrganizationBasicInfo: Codable, Equatable {
-    let id: Int
+    let id: String
     let name: String
 }
 

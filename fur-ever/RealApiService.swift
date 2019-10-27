@@ -49,7 +49,7 @@ class RealApiService: Api {
         // TODO: Implement API call
     }
 
-    func getOrganization(with id: Int,
+    func getOrganization(with id: String,
                          then: ((Organization) -> Void)?,
                          fail: ((Error) -> Void)?) {
         // TODO: Implement API call

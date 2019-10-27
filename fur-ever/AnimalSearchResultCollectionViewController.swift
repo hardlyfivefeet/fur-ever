@@ -41,6 +41,11 @@ class AnimalSearchResultCollectionViewController: UICollectionViewController, UI
         return searchResults.count
     }
 
+    // set number of sections in collection view to be 1
+    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+
     // Set the image and name for each cell
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) ->
            UICollectionViewCell {

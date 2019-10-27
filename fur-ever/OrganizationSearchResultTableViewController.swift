@@ -39,6 +39,11 @@ class OrganizationSearchResultTableViewController: UITableViewController {
         return searchResults.count
     }
 
+    // set number of sections to be 1
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+
     private func display(searchResult: OrganizationSearchResult) {
             searchResults = searchResult.organizations
             tableView.reloadData()

@@ -9,7 +9,7 @@ class OrganizationSearchResultViewController: UIViewController {
     var failureCallback: ((Error) -> Void)?
 
     var organization: Organization!
-    var organizationId: Int!
+    var organizationId: String!
 
     @IBOutlet weak var image: RemoteImageView!
     @IBOutlet weak var name: UILabel!

@@ -29,16 +29,16 @@ class MockApiService: Api {
             fail: ((Error) -> Void)?) {
         if let callback = then {
             callback(OrganizationSearchResult(organizations: [
-                OrganizationBasicInfo(id: 0001, name: "Annenberg Pet Space LA")
+                OrganizationBasicInfo(id: "0001", name: "Annenberg Pet Space LA")
             ]))
         }
     }
 
-    func getOrganization(with id: Int,
+    func getOrganization(with id: String,
                          then: ((Organization) -> Void)?,
                          fail: ((Error) -> Void)?) {
         if let callback = then {
-            callback(Organization(basicInfo: OrganizationBasicInfo(id: 0001, name: "Pacific Pups Rescue"), image: Image(url: "https://s3.amazonaws.com/petfinder-us-east-1-petimages-prod/organization-photos/46947/46947-1.jpg?bust=2017-11-29+07%3A54%3A33"), contact: Contact(email: "pacificpupsrescue@gmail.com", phone: "012-345-6789", location: Location(city: "Sacramento", state: "CA"), website: "http://pacificpupsrescue.org"), missionStatement: placeholderText)
+            callback(Organization(basicInfo: OrganizationBasicInfo(id: "0001", name: "Pacific Pups Rescue"), image: Image(url: "https://s3.amazonaws.com/petfinder-us-east-1-petimages-prod/organization-photos/46947/46947-1.jpg?bust=2017-11-29+07%3A54%3A33"), contact: Contact(email: "pacificpupsrescue@gmail.com", phone: "012-345-6789", location: Location(city: "Sacramento", state: "CA"), website: "http://pacificpupsrescue.org"), missionStatement: placeholderText)
             )
         }
     }

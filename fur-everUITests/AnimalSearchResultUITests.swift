@@ -19,6 +19,16 @@ class AnimalSearchResultUITests: XCTestCase {
         let searchButton = app.buttons["searchButton"]
         searchButton.tap()
     }
+    
+    func testShouldDisableReturnKeyWhenSearchBarIsEmpty() {
+        let searchBar = app.searchFields.element
+        searchBar.tap()
+        let searchText = searchBar.value as? String ?? ""
+        let deleteString = String(repeating: XCUIKeyboardKey.delete.rawValue, count: searchText.count)
+        searchBar.typeText(deleteString)
+        
+        XCTAssert(!app.buttons["search"].isEnabled)
+    }
 
     func testShouldDisplayViewWhenSearchResultIsTapped() {
         let collectionView = app.collectionViews.element

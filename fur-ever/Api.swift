@@ -11,7 +11,7 @@ protocol Api {
     func searchOrganizations(with params: OrganizationSearchParams,
             then: ((OrganizationSearchResult) -> Void)?,
             fail: ((Error) -> Void)?)
-    func getOrganization(with id: Int,
+    func getOrganization(with id: String,
                        then: ((Organization) -> Void)?,
                        fail: ((Error) -> Void)?)
 }
@@ -45,7 +45,7 @@ class ApiService: Api {
         }
     }
 
-    func getOrganization(with id: Int,
+    func getOrganization(with id: String,
                        then: ((Organization) -> Void)?,
                        fail: ((Error) -> Void)?) {
         if let callback = then {
@@ -62,9 +62,9 @@ let animalBasicInfo3 = AnimalBasicInfo(id: 0003, image: Image(url: "https://dl5z
 
 let animal1 = Animal(basicInfo: animalBasicInfo1, type: "Dog", breed: Breed(primary: "Dachshund", secondary: "Chihuahua"), age: "Baby", gender: "Male", size: "Small", description: placeholderText, attributes: Attributes(spayed_neutered: true, house_trained: true), contact: Contact(email: "fake2@gmail.com", phone: "012-345-6789", location: Location(state: "CA")))
 
-let organizationBasicInfo1 = OrganizationBasicInfo(id: 0001, name: "Silky Terrier Rescue Charitable Trust Charity")
+let organizationBasicInfo1 = OrganizationBasicInfo(id: "0001", name: "Silky Terrier Rescue Charitable Trust Charity")
 
-let organizationBasicInfo2 = OrganizationBasicInfo(id: 0002, name: "Marley's Pit Stop Rescue")
+let organizationBasicInfo2 = OrganizationBasicInfo(id: "0002", name: "Marley's Pit Stop Rescue")
 
 let organization1 = Organization(basicInfo: organizationBasicInfo1, image: Image(url: "https://s3.amazonaws.com/petfinder-us-east-1-petimages-prod/organization-photos/27452/27452-1.jpg?bust=2017-07-23+19%3A42%3A27"), contact: Contact(email: "silky-rescue@gmail.com", phone: "012-345-6789", location: Location(city: "Culver City", state: "CA"), website: "http://silkyrescue.org"), missionStatement: placeholderText)
 

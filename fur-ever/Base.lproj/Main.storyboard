@@ -292,9 +292,9 @@ FUR-EVER HOME</string>
                             <rect key="frame" x="0.0" y="0.0" width="414" height="87"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
-                                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="wm0-qv-YVA">
+                                <searchBar contentMode="redraw" placeholder="Zip Code/City/State" translatesAutoresizingMaskIntoConstraints="NO" id="wm0-qv-YVA">
                                     <rect key="frame" x="20.5" y="15" width="373" height="56"/>
-                                    <textInputTraits key="textInputTraits" returnKeyType="search"/>
+                                    <textInputTraits key="textInputTraits" returnKeyType="search" enablesReturnKeyAutomatically="YES"/>
                                 </searchBar>
                             </subviews>
                             <color key="backgroundColor" red="0.89283058189999998" green="0.96454022449999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -832,7 +832,7 @@ FUR-EVER HOME</string>
         <image name="petfinder-logo" width="1000" height="292"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="hep-kZ-hCc"/>
+        <segue reference="qh5-jY-TLQ"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

@@ -33,7 +33,7 @@ FUR-EVER HOME</string>
                             </label>
                             <button autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UQw-uY-Sxk">
                                 <rect key="frame" x="125" y="265.5" width="164" height="164"/>
-                                <accessibility key="accessibilityConfiguration">
+                                <accessibility key="accessibilityConfiguration" identifier="locationButton">
                                     <accessibilityTraits key="traits" button="YES" image="YES" staticText="YES"/>
                                 </accessibility>
                                 <constraints>
@@ -56,7 +56,7 @@ FUR-EVER HOME</string>
                             </label>
                             <button autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jft-op-eim">
                                 <rect key="frame" x="125" y="485" width="164" height="163.5"/>
-                                <accessibility key="accessibilityConfiguration">
+                                <accessibility key="accessibilityConfiguration" identifier="organizationButton">
                                     <accessibilityTraits key="traits" button="YES" image="YES"/>
                                 </accessibility>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
@@ -147,7 +147,7 @@ FUR-EVER HOME</string>
         <!--Search by Location-->
         <scene sceneID="ldv-56-wqg">
             <objects>
-                <viewController storyboardIdentifier="SearchByLocationFormViewController" id="KbK-px-wgY" customClass="SearchByLocationFormViewController" customModule="FurEver" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="searchByLocationFormViewController" id="KbK-px-wgY" customClass="SearchByLocationFormViewController" customModule="FurEver" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sIC-AM-SYL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -172,9 +172,8 @@ FUR-EVER HOME</string>
                                 </constraints>
                                 <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="search" enablesReturnKeyAutomatically="YES"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                 <connections>
-                                    <action selector="keyboardSearchReturn:" destination="KbK-px-wgY" eventType="primaryActionTriggered" id="z9b-n8-3Nm"/>
                                     <action selector="textFieldChanged:" destination="KbK-px-wgY" eventType="editingChanged" id="0MR-dU-vAC"/>
                                 </connections>
                             </textField>
@@ -237,7 +236,7 @@ FUR-EVER HOME</string>
         <!--Animal Search Result Collection View Controller-->
         <scene sceneID="TnI-yc-1S9">
             <objects>
-                <collectionViewController storyboardIdentifier="AnimalSearchResultCollectionViewController" id="9m7-Rq-VOe" customClass="AnimalSearchResultCollectionViewController" customModule="FurEver" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="animalSearchResultCollectionViewController" id="9m7-Rq-VOe" customClass="AnimalSearchResultCollectionViewController" customModule="FurEver" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="ugi-6m-fYS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -329,6 +328,7 @@ FUR-EVER HOME</string>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Fqn-B3-paG" customClass="RemoteImageView" customModule="SiestaUI">
                                 <rect key="frame" x="116.5" y="118" width="181" height="181.5"/>
+                                <accessibility key="accessibilityConfiguration" identifier="animalImage"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Fqn-B3-paG" secondAttribute="height" multiplier="1:1" id="PrF-Ji-trE"/>
                                 </constraints>
@@ -471,7 +471,7 @@ FUR-EVER HOME</string>
         <!--Search by Organization-->
         <scene sceneID="84W-Vd-6Ib">
             <objects>
-                <viewController storyboardIdentifier="SearchByOrganizationFormViewController" id="HaY-1C-Mb2" customClass="SearchByOrganizationFormViewController" customModule="FurEver" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="searchByOrganizationFormViewController" id="HaY-1C-Mb2" customClass="SearchByOrganizationFormViewController" customModule="FurEver" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="y0s-wm-kCT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -496,7 +496,7 @@ FUR-EVER HOME</string>
                                 </constraints>
                                 <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                 <connections>
                                     <action selector="textFieldChanged:" destination="HaY-1C-Mb2" eventType="editingChanged" id="sLb-q8-7Ty"/>
                                 </connections>
@@ -509,9 +509,8 @@ FUR-EVER HOME</string>
                                 </constraints>
                                 <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="search" enablesReturnKeyAutomatically="YES"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                 <connections>
-                                    <action selector="keyboardSearchReturn:" destination="HaY-1C-Mb2" eventType="primaryActionTriggered" id="1Jt-uP-NqG"/>
                                     <action selector="textFieldChanged:" destination="HaY-1C-Mb2" eventType="editingChanged" id="WLD-Ed-uKm"/>
                                 </connections>
                             </textField>
@@ -634,7 +633,7 @@ FUR-EVER HOME</string>
         <!--Organization Search Result Table View Controller-->
         <scene sceneID="asH-f0-FQf">
             <objects>
-                <tableViewController storyboardIdentifier="OrganizationSearchResultTableViewController" id="jGw-OH-Dpd" customClass="OrganizationSearchResultTableViewController" customModule="FurEver" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="organizationSearchResultTableViewController" id="jGw-OH-Dpd" customClass="OrganizationSearchResultTableViewController" customModule="FurEver" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="YmO-dy-2p2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -663,6 +662,9 @@ FUR-EVER HOME</string>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.89283058189999998" green="0.96454022449999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <accessibility key="accessibilityConfiguration" identifier="cells">
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
                                 <connections>
                                     <outlet property="organizationName" destination="orj-3g-3yu" id="xyT-Rb-lyH"/>
                                     <segue destination="oQa-l8-Iqh" kind="show" identifier="organizationSearchResultCollectionToSingleResult" id="Mka-qv-UWA"/>
@@ -707,13 +709,14 @@ FUR-EVER HOME</string>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eUR-Kt-AHU" customClass="RemoteImageView" customModule="SiestaUI">
                                 <rect key="frame" x="134.5" y="118" width="145" height="145"/>
+                                <accessibility key="accessibilityConfiguration" identifier="organizationImage"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="eUR-Kt-AHU" secondAttribute="height" multiplier="1:1" id="8KR-lb-ZGb"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bao-RU-Dzz">
                                 <rect key="frame" x="31" y="278" width="352" height="27.5"/>
-                                <accessibility key="accessibilityConfiguration" identifier="animalName"/>
+                                <accessibility key="accessibilityConfiguration" identifier="organizationName"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
                                 <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>

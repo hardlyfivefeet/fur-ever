@@ -1,7 +1,7 @@
 import Foundation
 import UIKit
 
-class SearchByOrganizationFormViewController: UIViewController {
+class SearchByOrganizationFormViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var locationField: UITextField!
@@ -10,6 +10,8 @@ class SearchByOrganizationFormViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateViews()
+        self.locationField.delegate = self
+        self.nameField.delegate = self
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
@@ -39,8 +41,9 @@ class SearchByOrganizationFormViewController: UIViewController {
         }
     }
 
-    @IBAction func keyboardSearchReturn(_ sender: Any) {
-        searchButton.sendActions(for: .touchUpInside)
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
 
     @IBAction func textFieldChanged(_ sender: Any) {

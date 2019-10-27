@@ -8,7 +8,7 @@ class AnimalSearchResultUITests: XCTestCase {
         app.launchArguments.append("UI_TESTING")
         continueAfterFailure = false
         app.launch()
-        XCUIApplication().buttons["locationButton"].tap()
+        app.buttons["locationButton"].tap()
 
         let locationField = app.textFields["locationField"]
         locationField.tap()

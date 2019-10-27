@@ -78,4 +78,5 @@ struct Organization: Codable, Equatable {
     let image: Image
     let contact: Contact
     let missionStatement: String
+    var distance: Double?
 }

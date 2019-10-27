@@ -7,7 +7,7 @@ class HomePageUITests: XCTestCase {
     override func setUp() {
         app.launchArguments.append("UI_TESTING")
         continueAfterFailure = false
-        XCUIApplication().launch()
+        app.launch()
     }
 
     func testShouldDisplaySearchByLocationFormWhenLocationButtonIsPressed() {

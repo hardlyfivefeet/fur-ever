@@ -8,7 +8,7 @@ class SearchByOrganizationFormUITests: XCTestCase {
         app.launchArguments.append("UI_TESTING")
         continueAfterFailure = false
         app.launch()
-        XCUIApplication().buttons["organizationButton"].tap()
+        app.buttons["organizationButton"].tap()
     }
 
     func testAppShouldStartWithEmptySearchFields() {

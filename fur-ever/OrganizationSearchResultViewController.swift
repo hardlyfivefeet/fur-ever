@@ -13,6 +13,7 @@ class OrganizationSearchResultViewController: UIViewController {
 
     @IBOutlet weak var image: RemoteImageView!
     @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var distance: UITextView!
     @IBOutlet weak var missionStatement: UITextView!
     @IBOutlet weak var contact: UITextView!
 
@@ -38,6 +39,7 @@ class OrganizationSearchResultViewController: UIViewController {
         image.imageURL = organization.image.url
         name.text = organization.basicInfo.name
         missionStatement.text = organization.missionStatement
+        distance.text = "Distance: " + (organization.distance == nil ? "Not available" : "\(organization.distance!)")
 
         let email = organization.contact.email ?? ""
         let phone = organization.contact.phone ?? ""

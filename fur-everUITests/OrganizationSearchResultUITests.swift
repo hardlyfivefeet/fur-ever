@@ -8,7 +8,7 @@ class OrganizationSearchResultUITests: XCTestCase {
         app.launchArguments.append("UI_TESTING")
         continueAfterFailure = false
         app.launch()
-        XCUIApplication().buttons["organizationButton"].tap()
+        app.buttons["organizationButton"].tap()
         
         let locationField = app.textFields["locationField"]
         locationField.tap()
@@ -31,7 +31,13 @@ class OrganizationSearchResultUITests: XCTestCase {
     }
     
     func testShouldNavigateToAnimalSearchResultCollectionViewWhenButtonIsTapped() {
+        testShouldDisplayViewWhenSearchResultIsTapped()
         
+        app.buttons["getPetsButton"].tap()
+
+        let collectionView = app.collectionViews.element
+        XCTAssertTrue(collectionView.exists)
+        XCTAssertEqual(1, collectionView.children(matching: .cell).count)
     }
     
     func testShouldScrollToBottomOfTextField() {

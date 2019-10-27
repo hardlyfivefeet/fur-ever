@@ -8,7 +8,7 @@ class AnimalSearchResultUITests: XCTestCase {
         app.launchArguments.append("UI_TESTING")
         continueAfterFailure = false
         app.launch()
-        XCUIApplication().buttons["organizationButton"].tap()
+        XCUIApplication().buttons["locationButton"].tap()
 
         let locationField = app.textFields["locationField"]
         locationField.tap()
@@ -22,10 +22,22 @@ class AnimalSearchResultUITests: XCTestCase {
 
     func testShouldDisplayViewWhenSearchResultIsTapped() {
         let collectionView = app.collectionViews.element
-        let cell = collectionView.cells.element(boundBy: 0).tap()
+        let cell = collectionView.cells.element(boundBy: 0)
+        XCTAssertNotNil(cell)
+        cell.tap()
+
+        XCTAssertNotNil(app.staticTexts["animalName"])
+        XCTAssert(app.images["animalImage"].exists)
     }
     
     func testShouldScrollToBottomOfTextField() {
+        let collectionView = app.collectionViews.element
+        let cell = collectionView.cells.element(boundBy: 0)
+        cell.tap()
         
+        let scroll = app.scrollViews.element
+        let contact = app.staticTexts["contact"]
+        scroll.swipeUp()
+        XCTAssertTrue(contact.isHittable)
     }
 }

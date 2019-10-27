@@ -11,14 +11,23 @@ class HomePageUITests: XCTestCase {
     }
 
     func testShouldDisplaySearchByLocationFormWhenLocationButtonIsPressed() {
-        XCUIApplication()/*@START_MENU_TOKEN@*/.buttons["locationButton"]/*[[".buttons[\"cat\"]",".buttons[\"locationButton\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app/*@START_MENU_TOKEN@*/.buttons["locationButton"]/*[[".buttons[\"cat\"]",".buttons[\"locationButton\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
         XCTAssertEqual(app.navigationBars.element.identifier, "FurEver.SearchByLocationFormView")
 
     }
     
     func testShouldDisplaySearchByOrganizationFormWhenOrganizationButtonIsPressed() {
-        XCUIApplication().buttons["organizationButton"].tap()
+        app.buttons["organizationButton"].tap()
         XCTAssertEqual(app.navigationBars.element.identifier, "FurEver.SearchByOrganizationFormView")
 
+    }
+    
+    func testShouldNavigateToCorrectFormsWhenTabBarButtonsAreTapped() {
+        app/*@START_MENU_TOKEN@*/.buttons["locationButton"]/*[[".buttons[\"cat\"]",".buttons[\"locationButton\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app.tabBars.buttons["Search by Organization"].tap()
+        XCTAssertEqual(app.navigationBars.element.identifier, "FurEver.SearchByOrganizationFormView")
+
+        app.tabBars.buttons["Search by Location"].tap()
+        XCTAssertEqual(app.navigationBars.element.identifier, "FurEver.SearchByLocationFormView")
     }
 }

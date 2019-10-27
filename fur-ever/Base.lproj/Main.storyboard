@@ -398,6 +398,9 @@ FUR-EVER HOME</string>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Contact" translatesAutoresizingMaskIntoConstraints="NO" id="5Dq-Yj-C4v">
                                                 <rect key="frame" x="0.0" y="280" width="352" height="41"/>
                                                 <color key="backgroundColor" red="0.89283058189999998" green="0.96454022449999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="contact">
+                                                    <accessibilityTraits key="traits" staticText="YES"/>
+                                                </accessibility>
                                                 <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -558,10 +561,10 @@ FUR-EVER HOME</string>
             </objects>
             <point key="canvasLocation" x="1935" y="639"/>
         </scene>
-        <!--Info-->
+        <!--Info Page-->
         <scene sceneID="ve6-gW-cPv">
             <objects>
-                <viewController id="437-Pq-XKW" customClass="InfoPageViewController" customModule="FurEver" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InfoPageViewController" title="Info Page" id="437-Pq-XKW" customClass="InfoPageViewController" customModule="FurEver" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ixT-om-jCy">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -730,7 +733,9 @@ FUR-EVER HOME</string>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Mission Statement" translatesAutoresizingMaskIntoConstraints="NO" id="d0M-ac-IVX">
                                                 <rect key="frame" x="0.0" y="0.0" width="352" height="41"/>
                                                 <color key="backgroundColor" red="0.89283058189999998" green="0.96454022449999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <accessibility key="accessibilityConfiguration" identifier="contact"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="missionStatement">
+                                                    <accessibilityTraits key="traits" staticText="YES"/>
+                                                </accessibility>
                                                 <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -738,7 +743,9 @@ FUR-EVER HOME</string>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Contact" translatesAutoresizingMaskIntoConstraints="NO" id="E78-h0-Zvc">
                                                 <rect key="frame" x="0.0" y="56" width="352" height="41"/>
                                                 <color key="backgroundColor" red="0.89283058189999998" green="0.96454022449999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <accessibility key="accessibilityConfiguration" identifier="contact"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="contact">
+                                                    <accessibilityTraits key="traits" staticText="YES"/>
+                                                </accessibility>
                                                 <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -814,7 +821,7 @@ FUR-EVER HOME</string>
         <image name="petfinder-logo" width="1000" height="292"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="qh5-jY-TLQ"/>
+        <segue reference="hep-kZ-hCc"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

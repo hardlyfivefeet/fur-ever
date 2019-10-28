@@ -26,17 +26,13 @@ class AnimalSearchResultViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        makeApiCall()
+        api.api(host: "https://api.petfinder.com/v2/")
+        api.getAnimal(with: animalId, then: display, fail: failureCallback ?? report)
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         scrollView.flashScrollIndicators()
-    }
-
-    private func makeApiCall() {
-        api.api(host: "https://api.petfinder.com/v2/")
-        api.getAnimal(with: animalId, then: display, fail: failureCallback ?? report)
     }
 
     private func display(selectedAnimal: Animal) {

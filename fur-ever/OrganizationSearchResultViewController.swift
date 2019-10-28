@@ -21,17 +21,13 @@ class OrganizationSearchResultViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        makeApiCall()
+        api.api(host: "https://api.petfinder.com/v2/")
+        api.getOrganization(with: organizationId, then: display, fail: failureCallback ?? report)
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         scrollView.flashScrollIndicators()
-    }
-
-    private func makeApiCall() {
-        api.api(host: "https://api.petfinder.com/v2/")
-        api.getOrganization(with: organizationId, then: display, fail: failureCallback ?? report)
     }
 
     private func display(selectedOrganization: Organization) {

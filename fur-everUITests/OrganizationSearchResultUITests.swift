@@ -40,7 +40,7 @@ class OrganizationSearchResultUITests: XCTestCase {
         XCTAssertEqual(1, collectionView.children(matching: .cell).count)
     }
     
-    func testShouldScrollToBottomOfTextField() {
+    func testShouldScrollToBottomOfTextFieldInIndividualResultView() {
         let tableView = app.tables.element
         let cell = tableView.cells.element(boundBy: 0)
         cell.tap()

@@ -44,6 +44,10 @@ class OrganizationSearchResultTableViewController: UITableViewController {
         return 1
     }
 
+    override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        return indexPath
+    }
+
     private func display(searchResult: OrganizationSearchResult) {
             searchResults = searchResult.organizations
             tableView.reloadData()

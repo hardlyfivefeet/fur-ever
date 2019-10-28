@@ -10,6 +10,8 @@
 		C912674823639675007B1E40 /* OrganizationSearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C912674723639675007B1E40 /* OrganizationSearchResultViewController.swift */; };
 		C917BCEA23656D5700781E14 /* OrganizationSearchResultUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C917BCE923656D5700781E14 /* OrganizationSearchResultUITests.swift */; };
 		C9197A8C23662A6F00B53914 /* AnimalSearchResultCollectionViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9197A8B23662A6F00B53914 /* AnimalSearchResultCollectionViewControllerTests.swift */; };
+		C9197A97236640F500B53914 /* OrganizationSearchResultTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9197A96236640F500B53914 /* OrganizationSearchResultTableViewControllerTests.swift */; };
+		C9197A992366426E00B53914 /* TestApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9197A982366426E00B53914 /* TestApiService.swift */; };
 		C935307D235AC82F004F152D /* AnimalSearchResultCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C935307C235AC82F004F152D /* AnimalSearchResultCollectionViewCell.swift */; };
 		C94B962423558ABA004EDE93 /* SearchByLocationFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94B962323558ABA004EDE93 /* SearchByLocationFormViewController.swift */; };
 		C94B962F23558C5B004EDE93 /* SearchByOrganizationFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94B962E23558C5B004EDE93 /* SearchByOrganizationFormViewController.swift */; };
@@ -164,6 +166,8 @@
 		C912674723639675007B1E40 /* OrganizationSearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationSearchResultViewController.swift; sourceTree = "<group>"; };
 		C917BCE923656D5700781E14 /* OrganizationSearchResultUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationSearchResultUITests.swift; sourceTree = "<group>"; };
 		C9197A8B23662A6F00B53914 /* AnimalSearchResultCollectionViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalSearchResultCollectionViewControllerTests.swift; sourceTree = "<group>"; };
+		C9197A96236640F500B53914 /* OrganizationSearchResultTableViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationSearchResultTableViewControllerTests.swift; sourceTree = "<group>"; };
+		C9197A982366426E00B53914 /* TestApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestApiService.swift; sourceTree = "<group>"; };
 		C935307C235AC82F004F152D /* AnimalSearchResultCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalSearchResultCollectionViewCell.swift; sourceTree = "<group>"; };
 		C94B962323558ABA004EDE93 /* SearchByLocationFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchByLocationFormViewController.swift; sourceTree = "<group>"; };
 		C94B962E23558C5B004EDE93 /* SearchByOrganizationFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchByOrganizationFormViewController.swift; sourceTree = "<group>"; };
@@ -275,6 +279,8 @@
 			isa = PBXGroup;
 			children = (
 				C9197A8B23662A6F00B53914 /* AnimalSearchResultCollectionViewControllerTests.swift */,
+				C9197A982366426E00B53914 /* TestApiService.swift */,
+				C9197A96236640F500B53914 /* OrganizationSearchResultTableViewControllerTests.swift */,
 				F71390222162C87D002B158F /* Info.plist */,
 			);
 			path = "fur-everTests";
@@ -565,6 +571,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9197A8C23662A6F00B53914 /* AnimalSearchResultCollectionViewControllerTests.swift in Sources */,
+				C9197A992366426E00B53914 /* TestApiService.swift in Sources */,
+				C9197A97236640F500B53914 /* OrganizationSearchResultTableViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

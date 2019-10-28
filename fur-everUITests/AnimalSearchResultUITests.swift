@@ -40,7 +40,7 @@ class AnimalSearchResultUITests: XCTestCase {
         XCTAssert(app.images["animalImage"].exists)
     }
     
-    func testShouldScrollToBottomOfTextField() {
+    func testShouldScrollToBottomOfTextFieldInIndividualResultView() {
         let collectionView = app.collectionViews.element
         let cell = collectionView.cells.element(boundBy: 0)
         cell.tap()

@@ -11,18 +11,22 @@ class TestApiService: Api {
         XCTAssertEqual(params.location, "Los Angeles")
         XCTAssertEqual(params.organizationId, "0123")
     }
-    func getAnimal(with id: Int,
+    func getAnimal(with animalId: Int,
                        then: ((Animal) -> Void)?,
-                       fail: ((Error) -> Void)?) {}
+                       fail: ((Error) -> Void)?) {
+        XCTAssertEqual(animalId, 12345)
+    }
     func searchOrganizations(with params: OrganizationSearchParams,
             then: ((OrganizationSearchResult) -> Void)?,
             fail: ((Error) -> Void)?) {
         XCTAssertEqual(params.name, "Petspace")
         XCTAssertEqual(params.location, "Anaheim")
     }
-    func getOrganization(with id: String,
+    func getOrganization(with organizationId: String,
                        then: ((Organization) -> Void)?,
-                       fail: ((Error) -> Void)?) {}
+                       fail: ((Error) -> Void)?) {
+        XCTAssertEqual(organizationId, "test123")
+    }
 }
 
 class FailingApiService: Api {
@@ -38,7 +42,6 @@ class FailingApiService: Api {
     func getAnimal(with id: Int,
                        then: ((Animal) -> Void)?,
                        fail: ((Error) -> Void)?) {
-        // For this test, we call the fail function unconditionally because we want to test the error.
         if let callback = fail {
            callback(NSError(domain: "test", code: 0, userInfo: nil))
         }
@@ -46,7 +49,6 @@ class FailingApiService: Api {
     func searchOrganizations(with params: OrganizationSearchParams,
             then: ((OrganizationSearchResult) -> Void)?,
             fail: ((Error) -> Void)?) {
-        // For this test, we call the fail function unconditionally because we want to test the error.
         if let callback = fail {
            callback(NSError(domain: "test", code: 0, userInfo: nil))
         }
@@ -54,7 +56,6 @@ class FailingApiService: Api {
     func getOrganization(with id: String,
                        then: ((Organization) -> Void)?,
                        fail: ((Error) -> Void)?) {
-        // For this test, we call the fail function unconditionally because we want to test the error.
         if let callback = fail {
            callback(NSError(domain: "test", code: 0, userInfo: nil))
         }

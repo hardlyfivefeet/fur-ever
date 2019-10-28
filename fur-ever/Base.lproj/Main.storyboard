@@ -321,7 +321,7 @@ FUR-EVER HOME</string>
         <!--Animal Search Result View Controller-->
         <scene sceneID="AfD-2J-Szi">
             <objects>
-                <viewController id="sJu-gF-OH2" customClass="AnimalSearchResultViewController" customModule="FurEver" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="animalSearchResultViewController" id="sJu-gF-OH2" customClass="AnimalSearchResultViewController" customModule="FurEver" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="b5Q-Ry-PkQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -705,7 +705,7 @@ FUR-EVER HOME</string>
         <!--Organization Search Result View Controller-->
         <scene sceneID="dvA-B2-mrP">
             <objects>
-                <viewController id="oQa-l8-Iqh" customClass="OrganizationSearchResultViewController" customModule="FurEver" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="organizationSearchResultViewController" id="oQa-l8-Iqh" customClass="OrganizationSearchResultViewController" customModule="FurEver" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="W1y-kO-HbD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -832,7 +832,7 @@ FUR-EVER HOME</string>
         <image name="petfinder-logo" width="1000" height="292"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="qh5-jY-TLQ"/>
+        <segue reference="hep-kZ-hCc"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

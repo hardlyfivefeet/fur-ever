@@ -3,17 +3,17 @@ import Foundation
 protocol Api {
     func api(host: String)
     func searchAnimals(with params: AnimalSearchParams,
-            then: ((AnimalSearchResult) -> Void)?,
-            fail: ((Error) -> Void)?)
-    func getAnimal(with id: Int,
-                       then: ((Animal) -> Void)?,
-                       fail: ((Error) -> Void)?)
+                then: ((AnimalSearchResult) -> Void)?,
+                fail: ((Error) -> Void)?)
+    func getAnimal(with animalId: Int,
+                then: ((Animal) -> Void)?,
+                fail: ((Error) -> Void)?)
     func searchOrganizations(with params: OrganizationSearchParams,
-            then: ((OrganizationSearchResult) -> Void)?,
-            fail: ((Error) -> Void)?)
-    func getOrganization(with id: String,
-                       then: ((Organization) -> Void)?,
-                       fail: ((Error) -> Void)?)
+                then: ((OrganizationSearchResult) -> Void)?,
+                fail: ((Error) -> Void)?)
+    func getOrganization(with organizationId: String,
+                then: ((Organization) -> Void)?,
+                fail: ((Error) -> Void)?)
 }
 
 class ApiService: Api {
@@ -22,32 +22,32 @@ class ApiService: Api {
     }
 
     func searchAnimals(with params: AnimalSearchParams,
-                       then: ((AnimalSearchResult) -> Void)?,
-                       fail: ((Error) -> Void)?) {
+                then: ((AnimalSearchResult) -> Void)?,
+                fail: ((Error) -> Void)?) {
         if let callback = then {
             callback(AnimalSearchResult(animals: [animalBasicInfo1, animalBasicInfo2, animalBasicInfo3, animalBasicInfo1, animalBasicInfo3, animalBasicInfo1, animalBasicInfo2, animalBasicInfo1, animalBasicInfo3]))
         }
     }
 
-    func getAnimal(with id: Int,
-                       then: ((Animal) -> Void)?,
-                       fail: ((Error) -> Void)?) {
+    func getAnimal(with animalId: Int,
+                then: ((Animal) -> Void)?,
+                fail: ((Error) -> Void)?) {
         if let callback = then {
             callback(animal1)
         }
     }
 
     func searchOrganizations(with params: OrganizationSearchParams,
-                       then: ((OrganizationSearchResult) -> Void)?,
-                       fail: ((Error) -> Void)?) {
+                then: ((OrganizationSearchResult) -> Void)?,
+                fail: ((Error) -> Void)?) {
         if let callback = then {
                callback(OrganizationSearchResult(organizations: [organizationBasicInfo1, organizationBasicInfo2]))
         }
     }
 
-    func getOrganization(with id: String,
-                       then: ((Organization) -> Void)?,
-                       fail: ((Error) -> Void)?) {
+    func getOrganization(with organizationId: String,
+                then: ((Organization) -> Void)?,
+                fail: ((Error) -> Void)?) {
         if let callback = then {
             callback(organization1)
         }

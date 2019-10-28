@@ -447,7 +447,7 @@ FUR-EVER HOME</string>
                         <outlet property="name" destination="hg9-cG-Dgi" id="WDA-Mx-CHl"/>
                         <outlet property="scrollView" destination="7x2-ue-qjt" id="CVr-0t-xLI"/>
                         <outlet property="size" destination="gVf-mm-UfC" id="TrG-tI-iSZ"/>
-                        <outlet property="type" destination="vq7-wz-EWa" id="zOr-4k-KHT"/>
+                        <outlet property="type" destination="vq7-wz-EWa" id="L6b-m0-kYN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SDk-vX-PEj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -571,6 +571,7 @@ FUR-EVER HOME</string>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ClearLogo" translatesAutoresizingMaskIntoConstraints="NO" id="X5G-55-nMl">
                                 <rect key="frame" x="157" y="193" width="100" height="100"/>
+                                <accessibility key="accessibilityConfiguration" identifier="fureverLogo"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="9bG-ty-4kb"/>
                                     <constraint firstAttribute="width" secondItem="X5G-55-nMl" secondAttribute="height" multiplier="1:1" id="Oci-Xr-Qfq"/>
@@ -579,6 +580,10 @@ FUR-EVER HOME</string>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Dn4-e3-T9O">
                                 <rect key="frame" x="41.5" y="313" width="331" height="150"/>
                                 <color key="backgroundColor" red="0.89283058189999998" green="0.96454022449999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <accessibility key="accessibilityConfiguration" identifier="infoText">
+                                    <accessibilityTraits key="traits" staticText="YES"/>
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="pAZ-qK-POm"/>
                                 </constraints>
@@ -590,6 +595,10 @@ FUR-EVER HOME</string>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="To report any bugs or provide any suggestions on how to improve the app, please email ltan5@lion.lmu.edu" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="cah-26-sDO">
                                 <rect key="frame" x="41.5" y="533" width="331" height="130"/>
                                 <color key="backgroundColor" red="0.89283058189999998" green="0.96454022449999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <accessibility key="accessibilityConfiguration" identifier="contactText">
+                                    <accessibilityTraits key="traits" staticText="YES"/>
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="130" id="nw0-WJ-KaH"/>
                                 </constraints>
@@ -600,6 +609,7 @@ FUR-EVER HOME</string>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="508-br-MnK">
                                 <rect key="frame" x="132" y="473" width="150" height="50"/>
+                                <accessibility key="accessibilityConfiguration" identifier="petfinderLink"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="508-br-MnK" secondAttribute="height" multiplier="3:1" id="96h-WO-Ele"/>
                                     <constraint firstAttribute="height" constant="50" id="GC6-Dz-1Y5"/>

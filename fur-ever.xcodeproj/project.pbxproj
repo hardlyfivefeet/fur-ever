@@ -18,6 +18,7 @@
 		C94B962423558ABA004EDE93 /* SearchByLocationFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94B962323558ABA004EDE93 /* SearchByLocationFormViewController.swift */; };
 		C94B962F23558C5B004EDE93 /* SearchByOrganizationFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94B962E23558C5B004EDE93 /* SearchByOrganizationFormViewController.swift */; };
 		C94D2D8523656C6600BBBD0E /* AnimalSearchResultUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94D2D8423656C6600BBBD0E /* AnimalSearchResultUITests.swift */; };
+		C95D9A2F2366C98200751FED /* InfoPageUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95D9A2E2366C98200751FED /* InfoPageUITests.swift */; };
 		C999F85E235910FB00DA8353 /* SearchResultCollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C999F85D235910FB00DA8353 /* SearchResultCollectionHeaderView.swift */; };
 		C99B2F4D23651249000C937C /* HomePageUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99B2F4C23651249000C937C /* HomePageUITests.swift */; };
 		C9B6E05F2362D25A003452B7 /* InfoPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B6E05E2362D25A003452B7 /* InfoPageViewController.swift */; };
@@ -176,6 +177,7 @@
 		C94B962323558ABA004EDE93 /* SearchByLocationFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchByLocationFormViewController.swift; sourceTree = "<group>"; };
 		C94B962E23558C5B004EDE93 /* SearchByOrganizationFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchByOrganizationFormViewController.swift; sourceTree = "<group>"; };
 		C94D2D8423656C6600BBBD0E /* AnimalSearchResultUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalSearchResultUITests.swift; sourceTree = "<group>"; };
+		C95D9A2E2366C98200751FED /* InfoPageUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoPageUITests.swift; sourceTree = "<group>"; };
 		C999F85D235910FB00DA8353 /* SearchResultCollectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCollectionHeaderView.swift; sourceTree = "<group>"; };
 		C99B2F4C23651249000C937C /* HomePageUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageUITests.swift; sourceTree = "<group>"; };
 		C9B6E05E2362D25A003452B7 /* InfoPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoPageViewController.swift; sourceTree = "<group>"; };
@@ -296,6 +298,7 @@
 			isa = PBXGroup;
 			children = (
 				F713902B2162C87D002B158F /* SearchByOrganizationFormUITests.swift */,
+				C95D9A2E2366C98200751FED /* InfoPageUITests.swift */,
 				C94D2D8423656C6600BBBD0E /* AnimalSearchResultUITests.swift */,
 				C917BCE923656D5700781E14 /* OrganizationSearchResultUITests.swift */,
 				C99B2F4C23651249000C937C /* HomePageUITests.swift */,
@@ -588,6 +591,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C95D9A2F2366C98200751FED /* InfoPageUITests.swift in Sources */,
 				C99B2F4D23651249000C937C /* HomePageUITests.swift in Sources */,
 				C94D2D8523656C6600BBBD0E /* AnimalSearchResultUITests.swift in Sources */,
 				F713902C2162C87D002B158F /* SearchByOrganizationFormUITests.swift in Sources */,

@@ -11,7 +11,7 @@ class HomePageUITests: XCTestCase {
     }
 
     func testShouldDisplaySearchByLocationFormWhenLocationButtonIsPressed() {
-        app/*@START_MENU_TOKEN@*/.buttons["locationButton"]/*[[".buttons[\"cat\"]",".buttons[\"locationButton\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app.buttons["locationButton"].tap()
         XCTAssertEqual(app.navigationBars.element.identifier, "FurEver.SearchByLocationFormView")
 
     }
@@ -29,5 +29,8 @@ class HomePageUITests: XCTestCase {
 
         app.tabBars.buttons["Search by Location"].tap()
         XCTAssertEqual(app.navigationBars.element.identifier, "FurEver.SearchByLocationFormView")
+        
+        app.tabBars.buttons["Info"].tap()
+        XCTAssert(app.images["fureverLogo"].exists)
     }
 }

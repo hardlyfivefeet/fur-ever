@@ -29,6 +29,23 @@ class AnimalSearchResultUITests: XCTestCase {
         
         XCTAssert(!app.buttons["search"].isEnabled)
     }
+    
+    func testShouldEnableReturnKeyWhenSearchBarIsNotEmpty() {
+        testShouldDisableReturnKeyWhenSearchBarIsEmpty()
+        let searchBar = app.searchFields.element
+        searchBar.typeText("woohoo tests")
+        
+        XCTAssert(app.buttons["search"].isEnabled)
+    }
+    
+    func testTappingOnReturnKeyOnSearchBarShouldPopulateCollectionView() {
+        testShouldEnableReturnKeyWhenSearchBarIsNotEmpty()
+        app.buttons["search"].tap()
+
+        let collectionView = app.collectionViews.element
+        XCTAssertTrue(collectionView.exists)
+        XCTAssertEqual(1, collectionView.children(matching: .cell).count)
+    }
 
     func testShouldDisplayViewWhenSearchResultIsTapped() {
         let collectionView = app.collectionViews.element

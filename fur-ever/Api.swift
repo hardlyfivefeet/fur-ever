@@ -33,7 +33,7 @@ class ApiService: Api {
                 then: ((Animal) -> Void)?,
                 fail: ((Error) -> Void)?) {
         if let callback = then {
-            callback(animal1)
+            callback(Animal(basicInfo: animalBasicInfo1, type: "Dog", breed: Breed(primary: "Dachshund", secondary: "Chihuahua", mixed: true), age: "Baby", gender: "Male", size: "Small", description: placeholderText, attributes: Attributes(spayed_neutered: true, house_trained: true), contact: Contact(email: "fake2@gmail.com", phone: "012-345-6789", location: Location(state: "CA"))))
         }
     }
 
@@ -49,7 +49,7 @@ class ApiService: Api {
                 then: ((Organization) -> Void)?,
                 fail: ((Error) -> Void)?) {
         if let callback = then {
-            callback(organization1)
+            callback(Organization(basicInfo: organizationBasicInfo1, image: Image(url: "https://s3.amazonaws.com/petfinder-us-east-1-petimages-prod/organization-photos/27452/27452-1.jpg?bust=2017-07-23+19%3A42%3A27"), contact: Contact(email: "silky-rescue@gmail.com", phone: "012-345-6789", location: Location(city: "Culver City", state: "CA"), website: "http://silkyrescue.org"), missionStatement: placeholderText))
         }
     }
 }
@@ -60,12 +60,8 @@ let animalBasicInfo2 = AnimalBasicInfo(id: 0002, image: Image(url: "https://dl5z
 
 let animalBasicInfo3 = AnimalBasicInfo(id: 0003, image: Image(url: "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/46296039/2/?bust=1571268294&width=1080"), name: "Arlo")
 
-let animal1 = Animal(basicInfo: animalBasicInfo1, type: "Dog", breed: Breed(primary: "Dachshund", secondary: "Chihuahua"), age: "Baby", gender: "Male", size: "Small", description: placeholderText, attributes: Attributes(spayed_neutered: true, house_trained: true), contact: Contact(email: "fake2@gmail.com", phone: "012-345-6789", location: Location(state: "CA")))
-
 let organizationBasicInfo1 = OrganizationBasicInfo(id: "0001", name: "Silky Terrier Rescue Charitable Trust Charity")
 
 let organizationBasicInfo2 = OrganizationBasicInfo(id: "0002", name: "Marley's Pit Stop Rescue")
-
-let organization1 = Organization(basicInfo: organizationBasicInfo1, image: Image(url: "https://s3.amazonaws.com/petfinder-us-east-1-petimages-prod/organization-photos/27452/27452-1.jpg?bust=2017-07-23+19%3A42%3A27"), contact: Contact(email: "silky-rescue@gmail.com", phone: "012-345-6789", location: Location(city: "Culver City", state: "CA"), website: "http://silkyrescue.org"), missionStatement: placeholderText)
 
 let placeholderText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."

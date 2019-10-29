@@ -121,5 +121,18 @@ class AnimalSearchResultCollectionViewController: UICollectionViewController, UI
                 }
             }
         }
+        if segue.identifier == "filterSegue" {
+            if let animalResultFiltersViewController = segue.destination as? AnimalResultFiltersViewController {
+                animalResultFiltersViewController.searchAnimalType = searchParams.animal_type
+            }
+        }
+    }
+    
+    @IBAction func returnFromFiltersToAnimalResultCollectionViewController(unwindSegue: UIStoryboardSegue) {
+        // Don't do anything
+    }
+    
+    @IBAction func applyFiltersToAnimalResultCollectionViewController(unwindSegue: UIStoryboardSegue) {
+        // Pass filters applied in Filters page back to this controller, make API call with new params
     }
 }

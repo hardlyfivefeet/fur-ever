@@ -152,20 +152,20 @@ FUR-EVER HOME</string>
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type of Pet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vPd-P7-BgY">
-                                <rect key="frame" x="151.5" y="309" width="111.5" height="30.5"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="22"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type of Pet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vPd-P7-BgY">
+                                <rect key="frame" x="154.5" y="315" width="105.5" height="26.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rP6-3y-P4c">
-                                <rect key="frame" x="164" y="435.5" width="86" height="30.5"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="22"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rP6-3y-P4c">
+                                <rect key="frame" x="166" y="437.5" width="82.5" height="26.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Zip Code/City/State" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="f3S-0V-J9R">
-                                <rect key="frame" x="82" y="481" width="250" height="34"/>
+                                <rect key="frame" x="82" y="479" width="250" height="34"/>
                                 <accessibility key="accessibilityConfiguration" identifier="locationField"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" identifier="id24" id="pvo-a2-Ht0"/>
@@ -178,7 +178,7 @@ FUR-EVER HOME</string>
                                 </connections>
                             </textField>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="TUE-mY-Mt2">
-                                <rect key="frame" x="97" y="354.5" width="220" height="32"/>
+                                <rect key="frame" x="97" y="356.5" width="220" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="220" identifier="id23" id="QHQ-bZ-UUo"/>
                                 </constraints>
@@ -196,7 +196,7 @@ FUR-EVER HOME</string>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" identifier="id21" id="dB3-PV-PlT"/>
                                     <constraint firstAttribute="height" constant="41" identifier="id22" id="ixU-N0-eI1"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <state key="normal" title="Search"/>
                                 <connections>
                                     <segue destination="9m7-Rq-VOe" kind="show" id="qh5-jY-TLQ"/>
@@ -233,6 +233,340 @@ FUR-EVER HOME</string>
             </objects>
             <point key="canvasLocation" x="1935" y="-117"/>
         </scene>
+        <!--Animal Result Filters View Controller-->
+        <scene sceneID="Arr-Kt-2Jz">
+            <objects>
+                <viewController id="KAo-Kd-J4I" customClass="AnimalResultFiltersViewController" customModule="FurEver" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hLo-sH-Rxg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dt1-rg-emq">
+                                <rect key="frame" x="20" y="30" width="53" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="53" id="hit-Rm-ye1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <segue destination="4H4-na-MWn" kind="unwind" unwindAction="returnFromFiltersToAnimalResultCollectionViewControllerWithUnwindSegue:" id="acv-ns-dLd"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filters" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ct9-sO-H7H">
+                                <rect key="frame" x="157" y="33.5" width="100" height="26.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="8o8-ZR-e4W"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ow-to-4Mc">
+                                <rect key="frame" x="326" y="30" width="68" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="68" id="SAu-UN-Xos"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Clear All"/>
+                                <connections>
+                                    <action selector="clearFilters:" destination="KAo-Kd-J4I" eventType="touchUpInside" id="avT-UP-qr0"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="Bvz-mA-34U">
+                                <rect key="frame" x="41.5" y="90" width="331" height="332"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Animal Type" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hFm-kL-5eh">
+                                        <rect key="frame" x="0.0" y="0.0" width="331" height="21.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="svp-IL-Ouy">
+                                        <rect key="frame" x="0.0" y="34.5" width="331" height="32"/>
+                                        <segments>
+                                            <segment title="Dog"/>
+                                            <segment title="Cat"/>
+                                            <segment title="Other"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="animalTypeChanged:" destination="KAo-Kd-J4I" eventType="valueChanged" id="5P5-ED-Dsy"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xq0-qd-iDJ">
+                                        <rect key="frame" x="0.0" y="78.5" width="331" height="34"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Breed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9xL-l7-U2U">
+                                                <rect key="frame" x="0.0" y="0.0" width="132.5" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d88-Vc-hqS">
+                                                <rect key="frame" x="132.5" y="0.0" width="198.5" height="34"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="breedFilter"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <state key="normal" title="Select"/>
+                                                <connections>
+                                                    <segue destination="SxI-ry-nbN" kind="popoverPresentation" identifier="selectFilterValues" popoverAnchorView="3Zt-nu-32r" id="ptx-87-qkK">
+                                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                                    </segue>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="9xL-l7-U2U" firstAttribute="width" secondItem="Xq0-qd-iDJ" secondAttribute="width" multiplier="0.4" id="4KG-M0-U2p"/>
+                                            <constraint firstItem="d88-Vc-hqS" firstAttribute="centerY" secondItem="9xL-l7-U2U" secondAttribute="centerY" id="txD-Fm-ZkC"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BEj-e1-Zdo">
+                                        <rect key="frame" x="0.0" y="125.5" width="331" height="34"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2hp-OR-JdU">
+                                                <rect key="frame" x="0.0" y="0.0" width="132.5" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Zt-nu-32r">
+                                                <rect key="frame" x="132.5" y="0.0" width="198.5" height="34"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="ageFilter"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <state key="normal" title="Select"/>
+                                                <connections>
+                                                    <segue destination="SxI-ry-nbN" kind="popoverPresentation" identifier="selectFilterValues" popoverAnchorView="d88-Vc-hqS" id="SVM-Eh-ySE">
+                                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                                    </segue>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="3Zt-nu-32r" firstAttribute="centerY" secondItem="2hp-OR-JdU" secondAttribute="centerY" id="OQa-jA-eXl"/>
+                                            <constraint firstItem="2hp-OR-JdU" firstAttribute="width" secondItem="BEj-e1-Zdo" secondAttribute="width" multiplier="0.4" id="RnR-Sr-wnt"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Grp-Hq-ohO">
+                                        <rect key="frame" x="0.0" y="172.5" width="331" height="34"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Size" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xZB-af-q2P">
+                                                <rect key="frame" x="0.0" y="0.0" width="132.5" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rEA-Ue-7ml">
+                                                <rect key="frame" x="132.5" y="0.0" width="198.5" height="34"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="sizeFilter"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <state key="normal" title="Select"/>
+                                                <connections>
+                                                    <segue destination="SxI-ry-nbN" kind="popoverPresentation" identifier="selectFilterValues" popoverAnchorView="rEA-Ue-7ml" id="2E0-EM-GUB">
+                                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                                    </segue>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="xZB-af-q2P" firstAttribute="width" secondItem="Grp-Hq-ohO" secondAttribute="width" multiplier="0.4" id="88m-RA-a2H"/>
+                                            <constraint firstItem="rEA-Ue-7ml" firstAttribute="centerY" secondItem="xZB-af-q2P" secondAttribute="centerY" id="Z67-3e-BXV"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PvR-0g-bnJ">
+                                        <rect key="frame" x="0.0" y="219.5" width="331" height="34"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gender" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h72-ul-0za">
+                                                <rect key="frame" x="0.0" y="0.0" width="132.5" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kqo-s4-XkC">
+                                                <rect key="frame" x="132.5" y="0.0" width="198.5" height="34"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="genderFilter"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <state key="normal" title="Select"/>
+                                                <connections>
+                                                    <segue destination="SxI-ry-nbN" kind="popoverPresentation" identifier="selectFilterValues" popoverAnchorView="kqo-s4-XkC" id="KTQ-KW-NhA">
+                                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                                    </segue>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="h72-ul-0za" firstAttribute="width" secondItem="PvR-0g-bnJ" secondAttribute="width" multiplier="0.4" id="CBB-Zd-vew"/>
+                                            <constraint firstItem="kqo-s4-XkC" firstAttribute="centerY" secondItem="h72-ul-0za" secondAttribute="centerY" id="JRC-hE-Ki1"/>
+                                        </constraints>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ppy-QL-ofW">
+                                        <rect key="frame" x="0.0" y="266.5" width="331" height="21.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="oEK-p0-pH9">
+                                        <rect key="frame" x="0.0" y="301" width="331" height="32"/>
+                                        <segments>
+                                            <segment title="10 mi"/>
+                                            <segment title="25 mi"/>
+                                            <segment title="50 mi"/>
+                                            <segment title="100 mi"/>
+                                        </segments>
+                                    </segmentedControl>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="44R-UO-hgA">
+                                <rect key="frame" x="142" y="500" width="130" height="41"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <accessibility key="accessibilityConfiguration" identifier="searchButton"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="41" identifier="id22" id="8SS-gy-0Lg"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="130" identifier="id21" id="XlN-uc-z0r"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
+                                <state key="normal" title="Apply Filters">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="4H4-na-MWn" kind="unwind" unwindAction="applyFiltersToAnimalResultCollectionViewControllerWithUnwindSegue:" id="hEp-hO-ofC"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.89283058189999998" green="0.96454022449999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Bvz-mA-34U" firstAttribute="width" secondItem="WBe-rW-rOa" secondAttribute="width" multiplier="0.8" id="6x9-bJ-Nch"/>
+                            <constraint firstItem="Bvz-mA-34U" firstAttribute="top" secondItem="ct9-sO-H7H" secondAttribute="bottom" constant="30" id="ESW-bL-Xcv"/>
+                            <constraint firstItem="dt1-rg-emq" firstAttribute="top" secondItem="WBe-rW-rOa" secondAttribute="top" constant="30" id="HJd-i9-a7Z"/>
+                            <constraint firstItem="ct9-sO-H7H" firstAttribute="centerY" secondItem="3ow-to-4Mc" secondAttribute="centerY" id="Ww7-fE-CLW"/>
+                            <constraint firstItem="ct9-sO-H7H" firstAttribute="centerY" secondItem="dt1-rg-emq" secondAttribute="centerY" id="Yom-Jm-DVb"/>
+                            <constraint firstItem="ct9-sO-H7H" firstAttribute="centerX" secondItem="WBe-rW-rOa" secondAttribute="centerX" id="fkZ-HN-Uig"/>
+                            <constraint firstItem="ct9-sO-H7H" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="dt1-rg-emq" secondAttribute="trailing" priority="800" constant="100" id="hdq-9d-TxO"/>
+                            <constraint firstItem="WBe-rW-rOa" firstAttribute="trailing" secondItem="3ow-to-4Mc" secondAttribute="trailing" constant="20" id="iVo-XM-8MO"/>
+                            <constraint firstItem="3ow-to-4Mc" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ct9-sO-H7H" secondAttribute="trailing" priority="800" constant="100" id="oK2-Z7-7U3"/>
+                            <constraint firstItem="Bvz-mA-34U" firstAttribute="centerX" secondItem="WBe-rW-rOa" secondAttribute="centerX" id="pcK-1b-VMK"/>
+                            <constraint firstItem="dt1-rg-emq" firstAttribute="leading" secondItem="WBe-rW-rOa" secondAttribute="leading" constant="20" id="wmL-mv-EDJ"/>
+                            <constraint firstItem="44R-UO-hgA" firstAttribute="centerX" secondItem="WBe-rW-rOa" secondAttribute="centerX" id="wxi-KJ-gbv"/>
+                            <constraint firstItem="44R-UO-hgA" firstAttribute="top" secondItem="Bvz-mA-34U" secondAttribute="bottom" constant="78" id="yVe-RJ-idG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="WBe-rW-rOa"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="aNf-32-gBS"/>
+                    <connections>
+                        <outlet property="ageFilter" destination="3Zt-nu-32r" id="fNm-HX-G9G"/>
+                        <outlet property="animalType" destination="svp-IL-Ouy" id="dic-Nn-fAc"/>
+                        <outlet property="breedFilter" destination="d88-Vc-hqS" id="xGb-E1-AK8"/>
+                        <outlet property="distanceFilter" destination="oEK-p0-pH9" id="TaF-pY-aJC"/>
+                        <outlet property="genderFilter" destination="kqo-s4-XkC" id="5Dx-Tr-BgB"/>
+                        <outlet property="sizeFilter" destination="rEA-Ue-7ml" id="7Im-nl-DYV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hgf-bA-W3t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="4H4-na-MWn" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="3657.971014492754" y="-978.34821428571422"/>
+        </scene>
+        <!--Animal Result Filter Selection View Controller-->
+        <scene sceneID="L1I-p9-MJf">
+            <objects>
+                <viewController id="SxI-ry-nbN" customClass="AnimalResultFilterSelectionViewController" customModule="FurEver" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Rcr-vh-ecy">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7zJ-gG-hSc">
+                                <rect key="frame" x="326" y="27.5" width="57" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="57" id="WPB-Pk-tqk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveButtonClicked:" destination="SxI-ry-nbN" eventType="touchUpInside" id="0vP-u5-0eh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7EI-Vk-Sa0">
+                                <rect key="frame" x="31" y="27.5" width="53" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="53" id="1Np-fC-7ib"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <segue destination="ftL-iJ-Auy" kind="unwind" unwindAction="cancelFilterSelectionToAnimalResultFiltersViewControllerWithUnwindSegue:" id="Sdr-r0-qlE"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filters" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rca-YX-TfJ">
+                                <rect key="frame" x="157" y="20" width="100" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="00v-c9-mQ5"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="IcN-YI-SW3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="smt-wK-VoK">
+                                <rect key="frame" x="31" y="88" width="352" height="646.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="sectionIndexBackgroundColor" red="0.89283058189999998" green="0.96454022449999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="filterValuesTableCell" rowHeight="45" id="c56-wm-1ft" customClass="AnimalResultFilterSelectionTableViewCell" customModule="FurEver" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="352" height="45"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="c56-wm-1ft" id="NZk-WF-fad" customClass="AnimalResultFilterSelectionTableViewCell" customModule="FurEver" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="352" height="45"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i1T-rC-t1x">
+                                                    <rect key="frame" x="10" y="10.5" width="352" height="24"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="cellContent"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="i1T-rC-t1x" firstAttribute="width" secondItem="NZk-WF-fad" secondAttribute="width" id="fOV-bT-ueQ"/>
+                                                <constraint firstItem="i1T-rC-t1x" firstAttribute="leading" secondItem="NZk-WF-fad" secondAttribute="leading" constant="10" id="k5i-kC-NWU"/>
+                                                <constraint firstItem="i1T-rC-t1x" firstAttribute="centerY" secondItem="NZk-WF-fad" secondAttribute="centerY" id="t9t-s6-KuC"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="i1T-rC-t1x" secondAttribute="trailing" constant="-10" id="wBy-Hb-nb8"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.89283058189999998" green="0.96454022449999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="filterValuesTableCell"/>
+                                        <connections>
+                                            <outlet property="value" destination="i1T-rC-t1x" id="XVC-wv-Mke"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.89283058189999998" green="0.96454022449999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="smt-wK-VoK" firstAttribute="height" secondItem="VIv-8w-CMA" secondAttribute="height" multiplier="0.8" id="5s5-A1-czG"/>
+                            <constraint firstItem="7zJ-gG-hSc" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="rca-YX-TfJ" secondAttribute="trailing" priority="900" constant="8" symbolic="YES" id="69A-16-CKQ"/>
+                            <constraint firstItem="smt-wK-VoK" firstAttribute="top" secondItem="rca-YX-TfJ" secondAttribute="bottom" constant="20" id="6SM-mU-xQh"/>
+                            <constraint firstItem="rca-YX-TfJ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="7EI-Vk-Sa0" secondAttribute="trailing" priority="900" constant="8" symbolic="YES" id="9Vl-Lx-UXX"/>
+                            <constraint firstItem="smt-wK-VoK" firstAttribute="width" secondItem="VIv-8w-CMA" secondAttribute="width" multiplier="0.85" id="C1B-MD-6oa"/>
+                            <constraint firstItem="7zJ-gG-hSc" firstAttribute="trailing" secondItem="smt-wK-VoK" secondAttribute="trailing" id="Iag-Vy-pxg"/>
+                            <constraint firstItem="smt-wK-VoK" firstAttribute="centerX" secondItem="VIv-8w-CMA" secondAttribute="centerX" id="Mrb-MO-Mk1"/>
+                            <constraint firstItem="rca-YX-TfJ" firstAttribute="centerX" secondItem="VIv-8w-CMA" secondAttribute="centerX" id="TQv-OI-QJc"/>
+                            <constraint firstItem="rca-YX-TfJ" firstAttribute="centerY" secondItem="7zJ-gG-hSc" secondAttribute="centerY" id="YJ9-2k-8bq"/>
+                            <constraint firstItem="7EI-Vk-Sa0" firstAttribute="leading" secondItem="smt-wK-VoK" secondAttribute="leading" id="Z7h-hB-TMV"/>
+                            <constraint firstItem="7EI-Vk-Sa0" firstAttribute="centerY" secondItem="rca-YX-TfJ" secondAttribute="centerY" id="o50-GD-cBh"/>
+                            <constraint firstItem="rca-YX-TfJ" firstAttribute="top" secondItem="VIv-8w-CMA" secondAttribute="top" priority="750" constant="20" id="pBD-E2-AsX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="VIv-8w-CMA"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableTitle" destination="rca-YX-TfJ" id="jCa-Ro-No5"/>
+                        <outlet property="tableView" destination="smt-wK-VoK" id="Vls-ON-CXN"/>
+                        <segue destination="ftL-iJ-Auy" kind="unwind" identifier="unwindToAnimalResultFiltersViewController" unwindAction="saveFilterSelectionToAnimalResultFiltersViewControllerWithUnwindSegue:" id="qc6-6N-lMh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZY9-yO-NC6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="ftL-iJ-Auy" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="4452.1739130434789" y="-978.34821428571422"/>
+        </scene>
         <!--Animal Search Result Collection View Controller-->
         <scene sceneID="TnI-yc-1S9">
             <objects>
@@ -240,7 +574,7 @@ FUR-EVER HOME</string>
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="ugi-6m-fYS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.89283058189999998" green="0.96454022449999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.89192885160000002" green="0.96444040539999998" blue="0.99798113109999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="cby-fB-IUX">
                             <size key="itemSize" width="150" height="150"/>
                             <size key="headerReferenceSize" width="50" height="87"/>
@@ -255,10 +589,10 @@ FUR-EVER HOME</string>
                                     <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4QV-vf-cEb">
-                                            <rect key="frame" x="50" y="135" width="50" height="15"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4QV-vf-cEb">
+                                            <rect key="frame" x="51" y="135" width="48" height="15"/>
                                             <accessibility key="accessibilityConfiguration" identifier="animalName"/>
-                                            <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -312,11 +646,17 @@ FUR-EVER HOME</string>
                             <outlet property="delegate" destination="9m7-Rq-VOe" id="q7D-JS-WHc"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="jY0-xb-B5T"/>
+                    <navigationItem key="navigationItem" id="jY0-xb-B5T">
+                        <barButtonItem key="rightBarButtonItem" title="Filters" style="plain" id="qub-81-AS8">
+                            <connections>
+                                <segue destination="KAo-Kd-J4I" kind="showDetail" identifier="filterSegue" id="0G9-8l-u2T"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E3W-mU-286" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2811.594202898551" y="-117.1875"/>
+            <point key="canvasLocation" x="2813" y="-370"/>
         </scene>
         <!--Animal Search Result View Controller-->
         <scene sceneID="AfD-2J-Szi">
@@ -333,76 +673,76 @@ FUR-EVER HOME</string>
                                     <constraint firstAttribute="width" secondItem="Fqn-B3-paG" secondAttribute="height" multiplier="1:1" id="PrF-Ji-trE"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hg9-cG-Dgi">
-                                <rect key="frame" x="31" y="317.5" width="352" height="30.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hg9-cG-Dgi">
+                                <rect key="frame" x="31" y="317.5" width="352" height="26.5"/>
                                 <accessibility key="accessibilityConfiguration" identifier="animalName"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7x2-ue-qjt">
-                                <rect key="frame" x="31" y="363" width="352" height="445"/>
+                                <rect key="frame" x="31" y="359" width="352" height="449"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="VU7-YD-CYI">
-                                        <rect key="frame" x="0.0" y="0.0" width="352" height="321"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="352" height="293"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vq7-wz-EWa">
-                                                <rect key="frame" x="0.0" y="0.0" width="352" height="25"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vq7-wz-EWa">
+                                                <rect key="frame" x="0.0" y="0.0" width="352" height="21.5"/>
                                                 <accessibility key="accessibilityConfiguration" identifier="type"/>
-                                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Breed" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rvW-qQ-Ve5">
-                                                <rect key="frame" x="0.0" y="40" width="352" height="25"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Breed" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rvW-qQ-Ve5">
+                                                <rect key="frame" x="0.0" y="36.5" width="352" height="21.5"/>
                                                 <accessibility key="accessibilityConfiguration" identifier="breed"/>
-                                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rry-86-0Oz">
-                                                <rect key="frame" x="0.0" y="80" width="352" height="25"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rry-86-0Oz">
+                                                <rect key="frame" x="0.0" y="73" width="352" height="21.5"/>
                                                 <accessibility key="accessibilityConfiguration" identifier="age"/>
-                                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gender" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="psv-Se-nH5">
-                                                <rect key="frame" x="0.0" y="120" width="352" height="25"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gender" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="psv-Se-nH5">
+                                                <rect key="frame" x="0.0" y="109.5" width="352" height="21.5"/>
                                                 <accessibility key="accessibilityConfiguration" identifier="gender"/>
-                                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Size" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gVf-mm-UfC">
-                                                <rect key="frame" x="0.0" y="160" width="352" height="25"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Size" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gVf-mm-UfC">
+                                                <rect key="frame" x="0.0" y="146" width="352" height="21.5"/>
                                                 <accessibility key="accessibilityConfiguration" identifier="size"/>
-                                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RWR-vu-85p">
-                                                <rect key="frame" x="0.0" y="200" width="352" height="25"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RWR-vu-85p">
+                                                <rect key="frame" x="0.0" y="182.5" width="352" height="21.5"/>
                                                 <accessibility key="accessibilityConfiguration" identifier="description"/>
-                                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Attributes" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fKc-zU-s9E">
-                                                <rect key="frame" x="0.0" y="240" width="352" height="25"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Attributes" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fKc-zU-s9E">
+                                                <rect key="frame" x="0.0" y="219" width="352" height="21.5"/>
                                                 <accessibility key="accessibilityConfiguration" identifier="attributes"/>
-                                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Contact" translatesAutoresizingMaskIntoConstraints="NO" id="5Dq-Yj-C4v">
-                                                <rect key="frame" x="0.0" y="280" width="352" height="41"/>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Contact" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Dq-Yj-C4v">
+                                                <rect key="frame" x="0.0" y="255.5" width="352" height="37.5"/>
                                                 <color key="backgroundColor" red="0.89283058189999998" green="0.96454022449999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <accessibility key="accessibilityConfiguration" identifier="contact">
                                                     <accessibilityTraits key="traits" staticText="YES"/>
                                                 </accessibility>
                                                 <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
                                             </textView>
@@ -479,20 +819,20 @@ FUR-EVER HOME</string>
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name of Organization" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WqL-jO-KMw">
-                                <rect key="frame" x="94.5" y="305" width="225" height="31"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="22"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name of Organization" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WqL-jO-KMw">
+                                <rect key="frame" x="103.5" y="312" width="207" height="26.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location of Organization" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F13-37-g1i">
-                                <rect key="frame" x="82" y="435" width="250" height="31"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="22"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location of Organization" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F13-37-g1i">
+                                <rect key="frame" x="91" y="437.5" width="232.5" height="26.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Keyword, e.g. Rescue" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="JGY-PT-Gfu">
-                                <rect key="frame" x="82" y="351" width="250" height="34"/>
+                                <rect key="frame" x="82" y="353.5" width="250" height="34"/>
                                 <accessibility key="accessibilityConfiguration" identifier="nameField"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="jyU-Se-5Bf"/>
@@ -505,7 +845,7 @@ FUR-EVER HOME</string>
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Zip Code/City/State" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ypD-E5-wOo">
-                                <rect key="frame" x="82" y="481" width="250" height="34"/>
+                                <rect key="frame" x="82" y="479" width="250" height="34"/>
                                 <accessibility key="accessibilityConfiguration" identifier="locationField"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="HKy-Fx-eI6"/>
@@ -518,13 +858,13 @@ FUR-EVER HOME</string>
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U2U-BK-rZP">
-                                <rect key="frame" x="157" y="672" width="100" height="41"/>
+                                <rect key="frame" x="157" y="675" width="100" height="38"/>
                                 <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <accessibility key="accessibilityConfiguration" identifier="searchButton"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="lII-82-a03"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <color key="tintColor" red="0.89283058189999998" green="0.96454022449999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Search"/>
                                 <connections>
@@ -570,29 +910,29 @@ FUR-EVER HOME</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ClearLogo" translatesAutoresizingMaskIntoConstraints="NO" id="X5G-55-nMl">
-                                <rect key="frame" x="157" y="193" width="100" height="100"/>
+                                <rect key="frame" x="157" y="205" width="100" height="100"/>
                                 <accessibility key="accessibilityConfiguration" identifier="fureverLogo"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="9bG-ty-4kb"/>
                                     <constraint firstAttribute="width" secondItem="X5G-55-nMl" secondAttribute="height" multiplier="1:1" id="Oci-Xr-Qfq"/>
                                 </constraints>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Dn4-e3-T9O">
-                                <rect key="frame" x="41.5" y="313" width="331" height="150"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dn4-e3-T9O">
+                                <rect key="frame" x="41.5" y="325" width="331" height="138"/>
                                 <color key="backgroundColor" red="0.89283058189999998" green="0.96454022449999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <accessibility key="accessibilityConfiguration" identifier="infoText">
                                     <accessibilityTraits key="traits" staticText="YES"/>
                                     <bool key="isElement" value="YES"/>
                                 </accessibility>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="pAZ-qK-POm"/>
+                                    <constraint firstAttribute="height" constant="138" id="pAZ-qK-POm"/>
                                 </constraints>
                                 <string key="text">Fur-ever is created by Merissa Tan with the Petfinder API.  For more pet adoption info, please visit the Petfinder website below.</string>
                                 <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="To report any bugs or provide any suggestions on how to improve the app, please email ltan5@lion.lmu.edu" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="cah-26-sDO">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="To report any bugs or provide any suggestions on how to improve the app, please email ltan5@lion.lmu.edu" textAlignment="center" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cah-26-sDO">
                                 <rect key="frame" x="41.5" y="533" width="331" height="130"/>
                                 <color key="backgroundColor" red="0.89283058189999998" green="0.96454022449999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <accessibility key="accessibilityConfiguration" identifier="contactText">
@@ -603,7 +943,7 @@ FUR-EVER HOME</string>
                                     <constraint firstAttribute="height" constant="130" id="nw0-WJ-KaH"/>
                                 </constraints>
                                 <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" textContentType="email"/>
                                 <dataDetectorType key="dataDetectorTypes" link="YES"/>
                             </textView>
@@ -660,9 +1000,9 @@ FUR-EVER HOME</string>
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="75"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Organization Name" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="orj-3g-3yu">
-                                            <rect key="frame" x="10" y="24" width="414" height="27.5"/>
-                                            <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Organization Name" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="orj-3g-3yu">
+                                            <rect key="frame" x="10" y="25.5" width="414" height="24"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -671,7 +1011,7 @@ FUR-EVER HOME</string>
                                         <constraint firstItem="orj-3g-3yu" firstAttribute="width" secondItem="KA3-gQ-NJ2" secondAttribute="width" id="2gk-ZJ-Vj3"/>
                                         <constraint firstItem="orj-3g-3yu" firstAttribute="leading" secondItem="KA3-gQ-NJ2" secondAttribute="leading" constant="10" id="7q8-3t-lU0"/>
                                         <constraint firstItem="orj-3g-3yu" firstAttribute="centerY" secondItem="KA3-gQ-NJ2" secondAttribute="centerY" id="9qi-sy-jZR"/>
-                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="orj-3g-3yu" secondAttribute="trailing" constant="-10" id="eEp-ET-ABM"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="orj-3g-3yu" secondAttribute="trailing" constant="-10" id="IDO-9z-WmP"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.89283058189999998" green="0.96454022449999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -727,47 +1067,47 @@ FUR-EVER HOME</string>
                                     <constraint firstAttribute="width" secondItem="eUR-Kt-AHU" secondAttribute="height" multiplier="1:1" id="8KR-lb-ZGb"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bao-RU-Dzz">
-                                <rect key="frame" x="31" y="278" width="352" height="27.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bao-RU-Dzz">
+                                <rect key="frame" x="31" y="278" width="352" height="24"/>
                                 <accessibility key="accessibilityConfiguration" identifier="organizationName"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sRX-JY-vtr">
-                                <rect key="frame" x="31" y="365.5" width="352" height="442.5"/>
+                                <rect key="frame" x="31" y="362" width="352" height="446"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="0DZ-dN-TBR">
-                                        <rect key="frame" x="0.0" y="0.0" width="352" height="153"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="352" height="142.5"/>
                                         <subviews>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Distance" translatesAutoresizingMaskIntoConstraints="NO" id="d0M-ac-IVX">
-                                                <rect key="frame" x="0.0" y="0.0" width="352" height="41"/>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Distance" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d0M-ac-IVX">
+                                                <rect key="frame" x="0.0" y="0.0" width="352" height="37.5"/>
                                                 <color key="backgroundColor" red="0.89283058189999998" green="0.96454022449999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <accessibility key="accessibilityConfiguration" identifier="distance">
                                                     <accessibilityTraits key="traits" staticText="YES"/>
                                                 </accessibility>
                                                 <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Mission Statement" translatesAutoresizingMaskIntoConstraints="NO" id="xgb-uG-v15">
-                                                <rect key="frame" x="0.0" y="56" width="352" height="41"/>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Mission Statement" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xgb-uG-v15">
+                                                <rect key="frame" x="0.0" y="52.5" width="352" height="37.5"/>
                                                 <color key="backgroundColor" red="0.89283058189999998" green="0.96454022449999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <accessibility key="accessibilityConfiguration" identifier="missionStatement">
                                                     <accessibilityTraits key="traits" staticText="YES"/>
                                                 </accessibility>
                                                 <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Contact" translatesAutoresizingMaskIntoConstraints="NO" id="E78-h0-Zvc">
-                                                <rect key="frame" x="0.0" y="112" width="352" height="41"/>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Contact" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E78-h0-Zvc">
+                                                <rect key="frame" x="0.0" y="105" width="352" height="37.5"/>
                                                 <color key="backgroundColor" red="0.89283058189999998" green="0.96454022449999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <accessibility key="accessibilityConfiguration" identifier="contact">
                                                     <accessibilityTraits key="traits" staticText="YES"/>
                                                 </accessibility>
                                                 <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
                                             </textView>
@@ -785,14 +1125,14 @@ FUR-EVER HOME</string>
                                 <viewLayoutGuide key="frameLayoutGuide" id="vdq-O9-chS"/>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zke-fz-gw5">
-                                <rect key="frame" x="127" y="315.5" width="160" height="35"/>
+                                <rect key="frame" x="127" y="312" width="160" height="35"/>
                                 <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <accessibility key="accessibilityConfiguration" identifier="getPetsButton"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="160" id="NWO-dj-o4J"/>
                                     <constraint firstAttribute="height" constant="35" id="XFZ-4G-imW"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="tintColor" red="0.89283058189999998" green="0.96454022449999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Adoptable Pets"/>
                                 <connections>
@@ -843,6 +1183,7 @@ FUR-EVER HOME</string>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="hep-kZ-hCc"/>
+        <segue reference="KTQ-KW-NhA"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

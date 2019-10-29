@@ -3,7 +3,7 @@ import UIKit
 let TESTING_UI = "UI_TESTING"
 
 struct AnimalSearchParams {
-    var animal_type: String?
+    var animal_type: String
     var location: String?
     var organizationId: String?
 }

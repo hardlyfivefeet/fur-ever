@@ -133,6 +133,6 @@ class AnimalSearchResultCollectionViewController: UICollectionViewController, UI
     }
     
     @IBAction func applyFiltersToAnimalResultCollectionViewController(unwindSegue: UIStoryboardSegue) {
-        // Pass filters applied in Filters page back to this controller, make API call with new params
+        // Don't do anything
     }
 }

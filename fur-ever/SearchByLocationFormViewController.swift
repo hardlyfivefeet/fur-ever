@@ -15,14 +15,6 @@ class SearchByLocationFormViewController: UIViewController, UITextFieldDelegate 
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let animalSearchResultCollectionViewController = segue.destination as? AnimalSearchResultCollectionViewController,
-           let location = locationField.text {
-            let animal_type = petType.titleForSegment(at: petType.selectedSegmentIndex)
-            animalSearchResultCollectionViewController.searchParams = AnimalSearchParams(animal_type: animal_type!, location: location)
-        }
-    }
-
     @objc func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
             let locationFieldYLocation = locationField.frame.origin.y
@@ -51,5 +43,13 @@ class SearchByLocationFormViewController: UIViewController, UITextFieldDelegate 
 
     private func updateViews() {
         searchButton.isEnabled = (locationField.text ?? "").count > 0
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let animalSearchResultCollectionViewController = segue.destination as? AnimalSearchResultCollectionViewController,
+           let location = locationField.text {
+            let animal_type = petType.titleForSegment(at: petType.selectedSegmentIndex)
+            animalSearchResultCollectionViewController.searchParams = AnimalSearchParams(animal_type: animal_type!, location: location)
+        }
     }
 }

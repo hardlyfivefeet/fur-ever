@@ -6,7 +6,7 @@ private let REUSE_IDENTIFIER = "animalThumbnailCell"
 class AnimalSearchResultCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
 
     var api: Api = ProcessInfo.processInfo.arguments.contains(TESTING_UI) ?
-           MockApiService() : ApiService()
+           MockApiService() : ApiService() // for real API call, do RealApiService instead of ApiService
     var failureCallback: ((Error) -> Void)?
 
     var searchParams = AnimalSearchParams(animal_type: "", location: "")

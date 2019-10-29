@@ -11,18 +11,49 @@ class AnimalResultFiltersViewController: UIViewController {
     @IBOutlet weak var distanceFilter: UISegmentedControl!
     
     var searchAnimalType = ""
+    var distance = 100
     var breed: Filter!
     var age: Filter!
     var size: Filter!
     var gender: Filter!
     
+    // TODO: instead of resetting filters everytime, should show currently applied filters if they exist
     override func viewDidLoad() {
         super.viewDidLoad()
         initializeFilters()
+        initializeSegmentedControls(with: searchAnimalType, distance)
     }
     
     @IBAction func animalTypeChanged(_ sender: Any) {
         setAvailableBreedValues(for: animalType.titleForSegment(at: animalType.selectedSegmentIndex)!)
+    }
+    
+    private func initializeSegmentedControls(with searchAnimalType: String, _ distance: Int) {
+        switch searchAnimalType {
+        case "Dog":
+            animalType.selectedSegmentIndex = 0
+            break
+        case "Cat":
+            animalType.selectedSegmentIndex = 1
+            break
+        default:
+            animalType.selectedSegmentIndex = 2
+            break
+        }
+        switch distance {
+        case 10:
+            distanceFilter.selectedSegmentIndex = 0
+            break
+        case 25:
+            distanceFilter.selectedSegmentIndex = 1
+            break
+        case 50:
+            distanceFilter.selectedSegmentIndex = 2
+            break
+        default:
+            distanceFilter.selectedSegmentIndex = 3
+            break
+        }
     }
     
     private func setAvailableBreedValues(for searchAnimalType: String) {
@@ -41,6 +72,7 @@ class AnimalResultFiltersViewController: UIViewController {
     
     private func initializeFilters() {
         setAvailableBreedValues(for: searchAnimalType)
+        // if these don't already exist, initialize
         age = Filter(["Baby", "Young", "Adult", "Senior"])
         size = Filter(["Small", "Medium", "Large", "XLarge"])
         gender = Filter(["Male", "Female"])

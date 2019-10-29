@@ -15,7 +15,6 @@
 		C9197A9B236672D500B53914 /* AnimalSearchResultViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9197A9A236672D500B53914 /* AnimalSearchResultViewControllerTests.swift */; };
 		C9197A9D2366738700B53914 /* OrganizationSearchResultViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9197A9C2366738700B53914 /* OrganizationSearchResultViewControllerTests.swift */; };
 		C91F8DEA23678D88006D8217 /* AnimalResultFiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91F8DE923678D88006D8217 /* AnimalResultFiltersViewController.swift */; };
-		C91F8DF52367B523006D8217 /* FilterValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91F8DF42367B523006D8217 /* FilterValues.swift */; };
 		C935307D235AC82F004F152D /* AnimalSearchResultCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C935307C235AC82F004F152D /* AnimalSearchResultCollectionViewCell.swift */; };
 		C94B962423558ABA004EDE93 /* SearchByLocationFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94B962323558ABA004EDE93 /* SearchByLocationFormViewController.swift */; };
 		C94B962F23558C5B004EDE93 /* SearchByOrganizationFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94B962E23558C5B004EDE93 /* SearchByOrganizationFormViewController.swift */; };
@@ -178,7 +177,6 @@
 		C9197A9A236672D500B53914 /* AnimalSearchResultViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalSearchResultViewControllerTests.swift; sourceTree = "<group>"; };
 		C9197A9C2366738700B53914 /* OrganizationSearchResultViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationSearchResultViewControllerTests.swift; sourceTree = "<group>"; };
 		C91F8DE923678D88006D8217 /* AnimalResultFiltersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalResultFiltersViewController.swift; sourceTree = "<group>"; };
-		C91F8DF42367B523006D8217 /* FilterValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterValues.swift; sourceTree = "<group>"; };
 		C935307C235AC82F004F152D /* AnimalSearchResultCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalSearchResultCollectionViewCell.swift; sourceTree = "<group>"; };
 		C94B962323558ABA004EDE93 /* SearchByLocationFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchByLocationFormViewController.swift; sourceTree = "<group>"; };
 		C94B962E23558C5B004EDE93 /* SearchByOrganizationFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchByOrganizationFormViewController.swift; sourceTree = "<group>"; };
@@ -274,7 +272,6 @@
 				F728C27A216330E000B97379 /* Api.swift */,
 				F713900B2162C87C002B158F /* AppDelegate.swift */,
 				F71390122162C87D002B158F /* Assets.xcassets */,
-				C91F8DF42367B523006D8217 /* FilterValues.swift */,
 				C9FCBE47236291F900D5F5DD /* HomePageViewController.swift */,
 				F71390172162C87D002B158F /* Info.plist */,
 				C9B6E05E2362D25A003452B7 /* InfoPageViewController.swift */,
@@ -573,7 +570,6 @@
 				F758FDE22165FBC1008A0136 /* MockApiService.swift in Sources */,
 				F728C27B216330E000B97379 /* Api.swift in Sources */,
 				C9B6E05F2362D25A003452B7 /* InfoPageViewController.swift in Sources */,
-				C91F8DF52367B523006D8217 /* FilterValues.swift in Sources */,
 				C9DA8B532360EAAC00E63BCD /* OrganizationSearchResultTableViewCell.swift in Sources */,
 				C9E9EE42235AC96400066405 /* AnimalSearchResultCollectionViewController.swift in Sources */,
 				C9B6E06A2362D742003452B7 /* AnimalSearchResultViewController.swift in Sources */,

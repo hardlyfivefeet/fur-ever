@@ -46,7 +46,7 @@ class AnimalSearchResultViewController: UIViewController {
         gender.text = animal.gender
         size.text = animal.size
         info.text = animal.description
-        attributes.text = (animal.attributes.house_trained ? "House-trained\n" : "") + (animal.attributes.spayed_neutered ? "Spayed/Neutered" : "")
+        attributes.text = (animal.attributes.houseTrained ? "House-trained\n" : "") + (animal.attributes.spayedNeutered ? "Spayed/Neutered" : "")
 
         let email = animal.contact.email ?? ""
         let phone = animal.contact.phone ?? ""

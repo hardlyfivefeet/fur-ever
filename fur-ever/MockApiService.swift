@@ -19,7 +19,7 @@ class MockApiService: Api {
                 then: ((Animal) -> Void)?,
                 fail: ((Error) -> Void)?) {
         if let callback = then {
-            callback(Animal(basicInfo: AnimalBasicInfo(id: 0001, image: Image(url: "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/44425877/1/?bust=1554850023&width=1080"), name: "Diamond"), type: "Dog", breed: Breed(primary: "Dachshund", secondary: "Chihuahua"), age: "Baby", gender: "Female", size: "Small", description: placeholderText, attributes: Attributes(spayed_neutered: true, house_trained: true), contact: Contact(email: "fake2@gmail.com", phone: "123-456-7890", location: Location(city: "Pasadena", state: "CA")))
+            callback(Animal(basicInfo: AnimalBasicInfo(id: 0001, image: Image(url: "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/44425877/1/?bust=1554850023&width=1080"), name: "Diamond"), type: "Dog", breed: Breed(primary: "Dachshund", secondary: "Chihuahua"), age: "Baby", gender: "Female", size: "Small", description: placeholderText, attributes: Attributes(spayedNeutered: true, houseTrained: true), contact: Contact(email: "fake2@gmail.com", phone: "123-456-7890", location: Location(city: "Pasadena", state: "CA")))
             )
         }
     }

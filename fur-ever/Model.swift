@@ -2,10 +2,22 @@ import UIKit
 
 let TESTING_UI = "UI_TESTING"
 
-struct AnimalSearchParams {
-    var animal_type: String
+class AnimalSearchParams {
+    var animalType: String?
     var location: String?
     var organizationId: String?
+    var breeds: Filter?
+    var age = Filter(["Baby", "Young", "Adult", "Senior"])
+    var size = Filter(["Small", "Medium", "Large", "XLarge"])
+    var gender = Filter(["Male", "Female"])
+    var distance: Int = 100
+    init(_ animalType: String, _ location: String) {
+        self.animalType = animalType
+        self.location = location
+    }
+    init(organizationId: String) {
+        self.organizationId = organizationId
+    }
 }
 
 struct AnimalSearchResult: Codable, Equatable {
@@ -31,8 +43,8 @@ struct Animal: Codable, Equatable {
 }
 
 struct Attributes: Codable, Equatable {
-    let spayed_neutered: Bool
-    let house_trained: Bool
+    let spayedNeutered: Bool
+    let houseTrained: Bool
 }
 
 struct Location: Codable, Equatable {

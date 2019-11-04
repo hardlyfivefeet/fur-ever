@@ -4,7 +4,7 @@ import UIKit
 class HomePageViewController: UIViewController {
 
     override func viewDidLoad() {
-     super.viewDidLoad()
+        super.viewDidLoad()
     }
 
     @IBAction func locationButton(_ sender: Any) {

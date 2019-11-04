@@ -10,22 +10,15 @@ class AnimalResultFiltersViewController: UIViewController {
     @IBOutlet weak var animalType: UISegmentedControl!
     @IBOutlet weak var distanceFilter: UISegmentedControl!
     
-    var searchAnimalType = ""
-    var distance = 100
-    var breed: Filter!
-    var age: Filter!
-    var size: Filter!
-    var gender: Filter!
+    var searchParams: AnimalSearchParams!
     
-    // TODO: instead of resetting filters everytime, should show currently applied filters if they exist
     override func viewDidLoad() {
         super.viewDidLoad()
-        initializeFilters()
-        initializeSegmentedControls(with: searchAnimalType, distance)
-    }
-    
-    @IBAction func animalTypeChanged(_ sender: Any) {
-        setAvailableBreedValues(for: animalType.titleForSegment(at: animalType.selectedSegmentIndex)!)
+        if searchParams.breeds == nil {
+            setAvailableBreedValues(for: searchParams.animalType!)
+        }
+        initializeSegmentedControls(with: searchParams.animalType!, searchParams.distance)
+        updateFilterLabels()
     }
     
     private func initializeSegmentedControls(with searchAnimalType: String, _ distance: Int) {
@@ -56,30 +49,39 @@ class AnimalResultFiltersViewController: UIViewController {
         }
     }
     
-    private func setAvailableBreedValues(for searchAnimalType: String) {
-        switch searchAnimalType {
+    @IBAction func animalTypeChanged(_ sender: Any) {
+        searchParams.animalType = animalType.titleForSegment(at: animalType.selectedSegmentIndex)!
+        setAvailableBreedValues(for: searchParams.animalType!)
+        updateFilterLabels()
+    }
+
+    @IBAction func distanceChanged(_ sender: Any) {
+        let distanceString = distanceFilter.titleForSegment(at: distanceFilter.selectedSegmentIndex)!
+        let index = distanceString.index(distanceString.endIndex, offsetBy: -3)
+        let distanceSubstring = distanceString[..<index]
+
+        searchParams.distance = Int(String(distanceSubstring))!
+    }
+
+    private func setAvailableBreedValues(for animalType: String) {
+        switch searchParams.animalType {
         case "Dog":
-            breed = Filter(Breeds.dogBreeds)
+            searchParams.breeds = Filter(Breeds.dogBreeds)
             break
         case "Cat":
-            breed = Filter(Breeds.catBreeds)
+            searchParams.breeds = Filter(Breeds.catBreeds)
             break
         default:
-            breed = Filter(Breeds.otherBreeds)
+            searchParams.breeds = Filter(Breeds.otherBreeds)
             break
         }
     }
-    
-    private func initializeFilters() {
-        setAvailableBreedValues(for: searchAnimalType)
-        // if these don't already exist, initialize
-        age = Filter(["Baby", "Young", "Adult", "Senior"])
-        size = Filter(["Small", "Medium", "Large", "XLarge"])
-        gender = Filter(["Male", "Female"])
-    }
 
     @IBAction func clearFilters(_ sender: Any) {
-        initializeFilters()
+        searchParams.breeds!.appliedFilters = []
+        searchParams.age.appliedFilters = []
+        searchParams.size.appliedFilters = []
+        searchParams.gender.appliedFilters = []
         updateFilterLabels()
     }
     
@@ -94,39 +96,38 @@ class AnimalResultFiltersViewController: UIViewController {
     }
     
     private func updateFilterLabels() {
-        updateFilterButtonLabel(breedFilter, breed.appliedFilters.count)
-        updateFilterButtonLabel(ageFilter, age.appliedFilters.count)
-        updateFilterButtonLabel(sizeFilter, size.appliedFilters.count)
-        updateFilterButtonLabel(genderFilter, gender.appliedFilters.count)
+        updateFilterButtonLabel(breedFilter, searchParams.breeds!.appliedFilters.count)
+        updateFilterButtonLabel(ageFilter, searchParams.age.appliedFilters.count)
+        updateFilterButtonLabel(sizeFilter, searchParams.size.appliedFilters.count)
+        updateFilterButtonLabel(genderFilter, searchParams.gender.appliedFilters.count)
     }
     
     private func updateFilterButtonLabel(_ button: UIButton, _ filteredValueCount: Int) {
         button.setTitle(filteredValueCount > 0 ? String(filteredValueCount) + " selected" : "Select", for: UIControl.State.normal)
     }
     
+    @IBAction func applyFiltersButtonTapped(_ sender: Any) {
+        self.performSegue(withIdentifier: "applyFilters", sender: self)
+    }
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "applyFilters" {
-            if let animalSearchResultCollectionViewController = segue.destination as? AnimalSearchResultCollectionViewController {
-                // TODO: make new search params with applied filters, pass to searchresultcollectionviewcontroller
-            }
-        }
         if segue.identifier == "selectFilterValues" {
             if let animalResultFilterSelectionViewController = segue.destination as? AnimalResultFilterSelectionViewController {
                 switch sender as! UIButton {
                     case breedFilter:
-                        animalResultFilterSelectionViewController.filterOption = breed
+                        animalResultFilterSelectionViewController.filterOption = searchParams.breeds
                         animalResultFilterSelectionViewController.tableTitleText = "Breed"
                     break
                     case ageFilter:
-                        animalResultFilterSelectionViewController.filterOption = age
+                        animalResultFilterSelectionViewController.filterOption = searchParams.age
                         animalResultFilterSelectionViewController.tableTitleText = "Age"
                         break
                     case sizeFilter:
-                        animalResultFilterSelectionViewController.filterOption = size
+                        animalResultFilterSelectionViewController.filterOption = searchParams.size
                         animalResultFilterSelectionViewController.tableTitleText = "Size"
                         break
                     case genderFilter:
-                        animalResultFilterSelectionViewController.filterOption = gender
+                        animalResultFilterSelectionViewController.filterOption = searchParams.gender
                         animalResultFilterSelectionViewController.tableTitleText = "Gender"
                         break
                     default:

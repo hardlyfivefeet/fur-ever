@@ -34,7 +34,7 @@ class RealApiService: Api {
     func searchAnimals(with params: AnimalSearchParams,
                 then: ((AnimalSearchResult) -> Void)?,
                 fail: ((Error) -> Void)?) {
-        // TODO: Implement API call
+        // TODO: Implement API call, format AnimalSearchParams so each filter is a string, distance should be cast to string
     }
 
     func getAnimal(with animalId: Int,
@@ -53,6 +53,20 @@ class RealApiService: Api {
                 then: ((Organization) -> Void)?,
                 fail: ((Error) -> Void)?) {
         // TODO: Implement API call
+    }
+    
+    private func getAppliedFilterValues(with filter: Filter) -> String {
+        var result: String = ""
+        for appliedFilter in filter.appliedFilters {
+            result.append(filter.availableValues[appliedFilter])
+            result.append(",")
+        }
+        
+        // if string is not empty, remove the comma at the end
+        if (result.count > 0) {
+            result.remove(at: result.index(before: result.endIndex))
+        }
+        return result
     }
 
 //    func searchGifs(with params: SearchParams,

@@ -60,8 +60,9 @@ class OrganizationSearchResultViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "organizationToAnimalSearchResult" {
             if let animalSearchResultCollectionViewController = segue.destination as? AnimalSearchResultCollectionViewController {
-                animalSearchResultCollectionViewController.searchParams = AnimalSearchParams(animal_type: "", location: "", organizationId: organizationId)
+                animalSearchResultCollectionViewController.searchParams = AnimalSearchParams(organizationId: organizationId)
                 animalSearchResultCollectionViewController.shouldShowHeader = false
+                animalSearchResultCollectionViewController.shouldAllowFilters = false
              }
         }
     }

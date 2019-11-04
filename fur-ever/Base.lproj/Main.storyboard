@@ -410,6 +410,9 @@ FUR-EVER HOME</string>
                                             <segment title="50 mi"/>
                                             <segment title="100 mi"/>
                                         </segments>
+                                        <connections>
+                                            <action selector="distanceChanged:" destination="KAo-Kd-J4I" eventType="valueChanged" id="zE2-b6-wvO"/>
+                                        </connections>
                                     </segmentedControl>
                                 </subviews>
                             </stackView>
@@ -426,7 +429,7 @@ FUR-EVER HOME</string>
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="4H4-na-MWn" kind="unwind" unwindAction="applyFiltersToAnimalResultCollectionViewControllerWithUnwindSegue:" id="hEp-hO-ofC"/>
+                                    <action selector="applyFiltersButtonTapped:" destination="KAo-Kd-J4I" eventType="touchUpInside" id="GWp-Y6-moA"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -456,6 +459,7 @@ FUR-EVER HOME</string>
                         <outlet property="distanceFilter" destination="oEK-p0-pH9" id="TaF-pY-aJC"/>
                         <outlet property="genderFilter" destination="kqo-s4-XkC" id="5Dx-Tr-BgB"/>
                         <outlet property="sizeFilter" destination="rEA-Ue-7ml" id="7Im-nl-DYV"/>
+                        <segue destination="4H4-na-MWn" kind="unwind" identifier="applyFilters" unwindAction="applyFiltersToAnimalResultCollectionViewControllerWithUnwindSegue:" id="bd6-tT-ZEr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hgf-bA-W3t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -653,6 +657,9 @@ FUR-EVER HOME</string>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="filterButton" destination="qub-81-AS8" id="eFo-qR-RTg"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E3W-mU-286" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1183,7 +1190,7 @@ FUR-EVER HOME</string>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="hep-kZ-hCc"/>
-        <segue reference="KTQ-KW-NhA"/>
+        <segue reference="ptx-87-qkK"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

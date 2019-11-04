@@ -9,14 +9,18 @@ class AnimalSearchResultCollectionViewController: UICollectionViewController, UI
            MockApiService() : ApiService() // for real API call, do RealApiService instead of ApiService
     var failureCallback: ((Error) -> Void)?
 
-    var searchParams = AnimalSearchParams(animal_type: "", location: "")
+    var searchParams: AnimalSearchParams!
     var searchResults: [AnimalBasicInfo] = []
 
     var selectedRow = 0
     var shouldShowHeader = true
+    var shouldAllowFilters = true
+
+    @IBOutlet weak var filterButton: UIBarButtonItem!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        filterButton.isEnabled = shouldAllowFilters
         if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             layout.sectionHeadersPinToVisibleBounds = true
         }
@@ -123,7 +127,7 @@ class AnimalSearchResultCollectionViewController: UICollectionViewController, UI
         }
         if segue.identifier == "filterSegue" {
             if let animalResultFiltersViewController = segue.destination as? AnimalResultFiltersViewController {
-                animalResultFiltersViewController.searchAnimalType = searchParams.animal_type
+                animalResultFiltersViewController.searchParams = searchParams
             }
         }
     }

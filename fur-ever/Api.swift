@@ -34,7 +34,7 @@ class ApiService: Api {
                 then: ((Animal) -> Void)?,
                 fail: ((Error) -> Void)?) {
         if let callback = then {
-            callback(Animal(basicInfo: animalBasicInfo1, type: "Dog", breed: Breed(primary: "Dachshund", secondary: "Chihuahua", mixed: true), age: "Baby", gender: "Male", size: "Small", description: placeholderText, attributes: Attributes(spayed_neutered: true, house_trained: true), contact: Contact(email: "fake2@gmail.com", phone: "012-345-6789", location: Location(state: "CA"))))
+            callback(Animal(basicInfo: animalBasicInfo1, type: "Dog", breed: Breed(primary: "Dachshund", secondary: "Chihuahua", mixed: true), age: "Baby", gender: "Male", size: "Small", description: placeholderText, attributes: Attributes(spayedNeutered: true, houseTrained: true), contact: Contact(email: "fake2@gmail.com", phone: "012-345-6789", location: Location(state: "CA"))))
         }
     }
 

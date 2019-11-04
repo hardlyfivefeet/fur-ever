@@ -48,8 +48,8 @@ class SearchByLocationFormViewController: UIViewController, UITextFieldDelegate 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let animalSearchResultCollectionViewController = segue.destination as? AnimalSearchResultCollectionViewController,
            let location = locationField.text {
-            let animal_type = petType.titleForSegment(at: petType.selectedSegmentIndex)
-            animalSearchResultCollectionViewController.searchParams = AnimalSearchParams(animal_type: animal_type!, location: location)
+            let animalType = petType.titleForSegment(at: petType.selectedSegmentIndex)
+            animalSearchResultCollectionViewController.searchParams = AnimalSearchParams(animalType!, location)
         }
     }
 }

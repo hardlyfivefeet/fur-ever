@@ -54,14 +54,14 @@ class RealApiService: Api {
                 fail: ((Error) -> Void)?) {
         // TODO: Implement API call
     }
-    
+
     private func getAppliedFilterValues(with filter: Filter) -> String {
         var result: String = ""
         for appliedFilter in filter.appliedFilters {
             result.append(filter.availableValues[appliedFilter])
             result.append(",")
         }
-        
+
         // if string is not empty, remove the comma at the end
         if (result.count > 0) {
             result.remove(at: result.index(before: result.endIndex))

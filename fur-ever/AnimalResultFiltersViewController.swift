@@ -2,16 +2,16 @@ import Foundation
 import UIKit
 
 class AnimalResultFiltersViewController: UIViewController {
-    
+
     @IBOutlet weak var breedFilter: UIButton!
     @IBOutlet weak var ageFilter: UIButton!
     @IBOutlet weak var sizeFilter: UIButton!
     @IBOutlet weak var genderFilter: UIButton!
     @IBOutlet weak var animalType: UISegmentedControl!
     @IBOutlet weak var distanceFilter: UISegmentedControl!
-    
+
     var searchParams: AnimalSearchParams!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         if searchParams.breeds == nil {
@@ -20,7 +20,7 @@ class AnimalResultFiltersViewController: UIViewController {
         initializeSegmentedControls(with: searchParams.animalType!, searchParams.distance)
         updateFilterLabels()
     }
-    
+
     private func initializeSegmentedControls(with searchAnimalType: String, _ distance: Int) {
         switch searchAnimalType {
         case "Dog":
@@ -48,7 +48,7 @@ class AnimalResultFiltersViewController: UIViewController {
             break
         }
     }
-    
+
     @IBAction func animalTypeChanged(_ sender: Any) {
         searchParams.animalType = animalType.titleForSegment(at: animalType.selectedSegmentIndex)!
         setAvailableBreedValues(for: searchParams.animalType!)
@@ -84,28 +84,28 @@ class AnimalResultFiltersViewController: UIViewController {
         searchParams.gender.appliedFilters = []
         updateFilterLabels()
     }
-    
+
     @IBAction func cancelFilterSelectionToAnimalResultFiltersViewController(unwindSegue: UIStoryboardSegue) {
         // Don't do anything, we're just going backwards in the flow
     }
-       
+
     @IBAction func saveFilterSelectionToAnimalResultFiltersViewController(unwindSegue: UIStoryboardSegue) {
         if unwindSegue.source is AnimalResultFilterSelectionViewController {
             updateFilterLabels()
         }
     }
-    
+
     private func updateFilterLabels() {
         updateFilterButtonLabel(breedFilter, searchParams.breeds!.appliedFilters.count)
         updateFilterButtonLabel(ageFilter, searchParams.age.appliedFilters.count)
         updateFilterButtonLabel(sizeFilter, searchParams.size.appliedFilters.count)
         updateFilterButtonLabel(genderFilter, searchParams.gender.appliedFilters.count)
     }
-    
+
     private func updateFilterButtonLabel(_ button: UIButton, _ filteredValueCount: Int) {
         button.setTitle(filteredValueCount > 0 ? String(filteredValueCount) + " selected" : "Select", for: UIControl.State.normal)
     }
-    
+
     @IBAction func applyFiltersButtonTapped(_ sender: Any) {
         self.performSegue(withIdentifier: "applyFilters", sender: self)
     }

@@ -2,14 +2,14 @@ import Foundation
 import UIKit
 
 class AnimalResultFilterSelectionViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
+
     private let REUSE_IDENTIFIER = "filterValuesTableCell"
-    
+
     @IBOutlet weak var tableTitle: UILabel!
     @IBOutlet weak var tableView: UITableView!
     var filterOption: Filter!
     var tableTitleText: String!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -25,7 +25,7 @@ class AnimalResultFilterSelectionViewController: UIViewController, UITableViewDe
 
         // set row text for each available filter option
         cell.value.text = filterOption.availableValues[indexPath.row]
-        
+
         // if filter value is currently applied, the row should be selected
         if (filterOption.appliedFilters.contains(indexPath.row)) {
             self.tableView.selectRow(at: indexPath, animated: true, scrollPosition: UITableView.ScrollPosition.none)
@@ -33,14 +33,14 @@ class AnimalResultFilterSelectionViewController: UIViewController, UITableViewDe
         }
         return cell
     }
-    
+
     // set height of each row
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let numberOfRows: CGFloat = 12
         let rowHeight = self.view.frame.height / numberOfRows
         return CGFloat(rowHeight)
     }
-    
+
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         if let cell = tableView.cellForRow(at: indexPath) {
             cell.accessoryType = .none
@@ -67,12 +67,12 @@ class AnimalResultFilterSelectionViewController: UIViewController, UITableViewDe
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         return indexPath
     }
-    
+
     private func getSelectedRows() {
         let selectedIndexPaths = tableView.indexPathsForSelectedRows
         filterOption.appliedFilters = selectedIndexPaths!.map {$0.row}
     }
-    
+
     @IBAction func saveButtonClicked(_ sender: Any) {
         getSelectedRows()
         self.performSegue(withIdentifier: "unwindToAnimalResultFiltersViewController", sender: self)

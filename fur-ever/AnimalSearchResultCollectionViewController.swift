@@ -131,11 +131,11 @@ class AnimalSearchResultCollectionViewController: UICollectionViewController, UI
             }
         }
     }
-    
+
     @IBAction func returnFromFiltersToAnimalResultCollectionViewController(unwindSegue: UIStoryboardSegue) {
         // Don't do anything
     }
-    
+
     @IBAction func applyFiltersToAnimalResultCollectionViewController(unwindSegue: UIStoryboardSegue) {
         // Don't do anything
     }

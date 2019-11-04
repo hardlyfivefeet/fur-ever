@@ -44,7 +44,7 @@ class SearchByLocationFormViewController: UIViewController, UITextFieldDelegate 
     private func updateViews() {
         searchButton.isEnabled = (locationField.text ?? "").count > 0
     }
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let animalSearchResultCollectionViewController = segue.destination as? AnimalSearchResultCollectionViewController,
            let location = locationField.text {

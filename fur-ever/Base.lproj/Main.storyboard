@@ -249,7 +249,7 @@ FUR-EVER HOME</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Cancel"/>
                                 <connections>
-                                    <segue destination="4H4-na-MWn" kind="unwind" unwindAction="returnFromFiltersToAnimalResultCollectionViewControllerWithUnwindSegue:" id="acv-ns-dLd"/>
+                                    <segue destination="4H4-na-MWn" kind="unwind" identifier="cancelButtonTappedAtAnimalResultFilters" unwindAction="returnFromFiltersToAnimalResultCollectionViewControllerWithUnwindSegue:" id="EyI-SL-yzk"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filters" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ct9-sO-H7H">
@@ -429,7 +429,7 @@ FUR-EVER HOME</string>
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="applyFiltersButtonTapped:" destination="KAo-Kd-J4I" eventType="touchUpInside" id="GWp-Y6-moA"/>
+                                    <segue destination="4H4-na-MWn" kind="unwind" unwindAction="applyFiltersToAnimalResultCollectionViewControllerWithUnwindSegue:" id="ZJI-Fp-t9O"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -459,7 +459,6 @@ FUR-EVER HOME</string>
                         <outlet property="distanceFilter" destination="oEK-p0-pH9" id="TaF-pY-aJC"/>
                         <outlet property="genderFilter" destination="kqo-s4-XkC" id="5Dx-Tr-BgB"/>
                         <outlet property="sizeFilter" destination="rEA-Ue-7ml" id="7Im-nl-DYV"/>
-                        <segue destination="4H4-na-MWn" kind="unwind" identifier="applyFilters" unwindAction="applyFiltersToAnimalResultCollectionViewControllerWithUnwindSegue:" id="bd6-tT-ZEr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hgf-bA-W3t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -483,7 +482,7 @@ FUR-EVER HOME</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Save"/>
                                 <connections>
-                                    <action selector="saveButtonClicked:" destination="SxI-ry-nbN" eventType="touchUpInside" id="0vP-u5-0eh"/>
+                                    <action selector="saveButtonTapped:" destination="SxI-ry-nbN" eventType="touchUpInside" id="8BC-sR-0Lm"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7EI-Vk-Sa0">
@@ -563,7 +562,7 @@ FUR-EVER HOME</string>
                     <connections>
                         <outlet property="tableTitle" destination="rca-YX-TfJ" id="jCa-Ro-No5"/>
                         <outlet property="tableView" destination="smt-wK-VoK" id="Vls-ON-CXN"/>
-                        <segue destination="ftL-iJ-Auy" kind="unwind" identifier="unwindToAnimalResultFiltersViewController" unwindAction="saveFilterSelectionToAnimalResultFiltersViewControllerWithUnwindSegue:" id="qc6-6N-lMh"/>
+                        <segue destination="ftL-iJ-Auy" kind="unwind" identifier="saveAnimalResultFilterSelection" unwindAction="saveFilterSelectionToAnimalResultFiltersViewControllerWithUnwindSegue:" id="qc6-6N-lMh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZY9-yO-NC6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1190,7 +1189,7 @@ FUR-EVER HOME</string>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="hep-kZ-hCc"/>
-        <segue reference="ptx-87-qkK"/>
+        <segue reference="KTQ-KW-NhA"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

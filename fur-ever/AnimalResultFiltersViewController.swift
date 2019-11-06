@@ -11,6 +11,7 @@ class AnimalResultFiltersViewController: UIViewController {
     @IBOutlet weak var distanceFilter: UISegmentedControl!
 
     var searchParams: AnimalSearchParams!
+    var searchParamsCopy: AnimalSearchParams!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +20,7 @@ class AnimalResultFiltersViewController: UIViewController {
         }
         initializeSegmentedControls(with: searchParams.animalType!, searchParams.distance)
         updateFilterLabels()
+        searchParamsCopy = AnimalSearchParams(copy: searchParams)
     }
 
     private func initializeSegmentedControls(with searchAnimalType: String, _ distance: Int) {
@@ -85,10 +87,16 @@ class AnimalResultFiltersViewController: UIViewController {
         updateFilterLabels()
     }
 
+//    // TODO: Make same action as unwind segue
+//    @IBAction func cancelButtonTapped (_ sender: Any) {
+//        self.performSegue(withIdentifier: "cancelButtonTappedAtAnimalResultFilters", sender: self)
+//    }
+
+    // Unwind segue when user clicks on cancel button from filter selection table
     @IBAction func cancelFilterSelectionToAnimalResultFiltersViewController(unwindSegue: UIStoryboardSegue) {
-        // Don't do anything, we're just going backwards in the flow
     }
 
+    // Unwind segue when user clicks on save button from filter selection table
     @IBAction func saveFilterSelectionToAnimalResultFiltersViewController(unwindSegue: UIStoryboardSegue) {
         if unwindSegue.source is AnimalResultFilterSelectionViewController {
             updateFilterLabels()
@@ -106,11 +114,12 @@ class AnimalResultFiltersViewController: UIViewController {
         button.setTitle(filteredValueCount > 0 ? String(filteredValueCount) + " selected" : "Select", for: UIControl.State.normal)
     }
 
-    @IBAction func applyFiltersButtonTapped(_ sender: Any) {
-        self.performSegue(withIdentifier: "applyFilters", sender: self)
-    }
-
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "cancelButtonTappedAtAnimalResultFilters" {
+            if let animalSearchResultCollectionViewController = segue.destination as? AnimalSearchResultCollectionViewController {
+                animalSearchResultCollectionViewController.searchParams = searchParamsCopy
+            }
+        }
         if segue.identifier == "selectFilterValues" {
             if let animalResultFilterSelectionViewController = segue.destination as? AnimalResultFilterSelectionViewController {
                 switch sender as! UIButton {

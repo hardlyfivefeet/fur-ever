@@ -2,7 +2,11 @@ import UIKit
 
 let TESTING_UI = "UI_TESTING"
 
-class AnimalSearchParams {
+protocol Copyable: class {
+    init(copy: Self)
+}
+
+class AnimalSearchParams: Copyable {
     var animalType: String?
     var location: String?
     var organizationId: String?
@@ -11,12 +15,24 @@ class AnimalSearchParams {
     var size = Filter(["Small", "Medium", "Large", "XLarge"])
     var gender = Filter(["Male", "Female"])
     var distance: Int = 100
+
     init(_ animalType: String, _ location: String) {
         self.animalType = animalType
         self.location = location
     }
+
     init(organizationId: String) {
         self.organizationId = organizationId
+    }
+
+    required init(copy: AnimalSearchParams) {
+        self.animalType = copy.animalType
+        self.location = copy.location
+        self.breeds = Filter(copy: copy.breeds!)
+        self.age = Filter(copy: copy.age)
+        self.size = Filter(copy: copy.size)
+        self.gender = Filter(copy: copy.gender)
+        self.distance = copy.distance
     }
 }
 
@@ -93,11 +109,15 @@ struct Organization: Codable, Equatable {
     var distance: Double?
 }
 
-class Filter {
+class Filter: Copyable {
     var appliedFilters: [Int] = []
     var availableValues: [String]
     init(_ availableValues: [String]) {
         self.availableValues = availableValues
+    }
+    required init(copy: Filter) {
+        self.appliedFilters = copy.appliedFilters
+        self.availableValues = copy.availableValues
     }
 }
 

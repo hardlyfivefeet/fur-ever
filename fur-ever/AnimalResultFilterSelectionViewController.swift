@@ -73,8 +73,8 @@ class AnimalResultFilterSelectionViewController: UIViewController, UITableViewDe
         filterOption.appliedFilters = selectedIndexPaths!.map {$0.row}
     }
 
-    @IBAction func saveButtonClicked(_ sender: Any) {
+    @IBAction func saveButtonTapped(_ sender: Any) {
         getSelectedRows()
-        self.performSegue(withIdentifier: "unwindToAnimalResultFiltersViewController", sender: self)
+        self.performSegue(withIdentifier: "saveAnimalResultFilterSelection", sender: self)
     }
 }

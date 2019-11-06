@@ -6,7 +6,7 @@ private let REUSE_IDENTIFIER = "organizationTableCell"
 class OrganizationSearchResultTableViewController: UITableViewController {
 
     var api: Api = ProcessInfo.processInfo.arguments.contains(TESTING_UI) ?
-           MockApiService() : ApiService()
+           MockApiService() : PlaceholderApiService()
     var failureCallback: ((Error) -> Void)?
 
     var searchParams = OrganizationSearchParams(name: "", location: "")

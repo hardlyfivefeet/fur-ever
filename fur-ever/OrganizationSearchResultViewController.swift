@@ -5,7 +5,7 @@ import SiestaUI
 class OrganizationSearchResultViewController: UIViewController {
 
     var api: Api = ProcessInfo.processInfo.arguments.contains(TESTING_UI) ?
-           MockApiService() : ApiService()
+           MockApiService() : PlaceholderApiService()
     var failureCallback: ((Error) -> Void)?
 
     var organization: Organization!

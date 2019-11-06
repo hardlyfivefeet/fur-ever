@@ -5,7 +5,7 @@ import UIKit
 class AnimalSearchResultViewController: UIViewController {
 
     var api: Api = ProcessInfo.processInfo.arguments.contains(TESTING_UI) ?
-           MockApiService() : ApiService()
+           MockApiService() : PlaceholderApiService()
     var failureCallback: ((Error) -> Void)?
 
     var animal: Animal!

@@ -1,5 +1,6 @@
 import Foundation
 
+// Mock API service for testing purposes
 class MockApiService: Api {
     func api(host: String) {
         // No-op in our initial mock version.

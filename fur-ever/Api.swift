@@ -16,8 +16,8 @@ protocol Api {
                 fail: ((Error) -> Void)?)
 }
 
-// Fake API calls that return hardcoded data
-class ApiService: Api {
+// Placeholder API that returns hardcoded data
+class PlaceholderApiService: Api {
     func api(host: String) {
         // No-op in our initial mock version.
     }

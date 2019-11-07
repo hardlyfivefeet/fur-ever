@@ -45,7 +45,7 @@ class AnimalSearchResultCollectionViewControllerTests: XCTestCase {
         }
 
         animalSearchResultCollectionViewController.api = TestApiService()
-        animalSearchResultCollectionViewController.searchParams = AnimalSearchParams(animal_type: "Dog", location: "Los Angeles", organizationId: "0123")
+        animalSearchResultCollectionViewController.searchParams = AnimalSearchParams("Dog", "Los Angeles")
         animalSearchResultCollectionViewController.viewDidLoad()
     }
     
@@ -61,7 +61,7 @@ class AnimalSearchResultCollectionViewControllerTests: XCTestCase {
         animalSearchResultCollectionViewController.failureCallback = { _ in failureCallbackWasCalled = true }
 
         animalSearchResultCollectionViewController.api = FailingApiService()
-        animalSearchResultCollectionViewController.searchParams = AnimalSearchParams(animal_type: "Dog", location: "Los Angeles", organizationId: "0123")
+        animalSearchResultCollectionViewController.searchParams = AnimalSearchParams("Dog", "Los Angeles")
         animalSearchResultCollectionViewController.viewDidLoad()
 
         XCTAssert(failureCallbackWasCalled)

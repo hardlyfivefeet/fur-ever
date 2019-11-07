@@ -1,15 +1,14 @@
 import XCTest
 @testable import FurEver
 
+// For tests, we don't call the callback because we just want to make sure the right parameters were sent.
 class TestApiService: Api {
     func api(host: String) {}
     func searchAnimals(with params: AnimalSearchParams,
             then: ((AnimalSearchResult) -> Void)?,
             fail: ((Error) -> Void)?) {
-        // For this test, we don't call the callback because we just want to make sure the right parameters were sent.
-        XCTAssertEqual(params.animal_type, "Dog")
+        XCTAssertEqual(params.animalType, "Dog")
         XCTAssertEqual(params.location, "Los Angeles")
-        XCTAssertEqual(params.organizationId, "0123")
     }
     func getAnimal(with animalId: Int,
                        then: ((Animal) -> Void)?,
@@ -21,11 +20,6 @@ class TestApiService: Api {
             fail: ((Error) -> Void)?) {
         XCTAssertEqual(params.name, "Petspace")
         XCTAssertEqual(params.location, "Anaheim")
-    }
-    func getOrganization(with organizationId: String,
-                       then: ((Organization) -> Void)?,
-                       fail: ((Error) -> Void)?) {
-        XCTAssertEqual(organizationId, "test123")
     }
 }
 
@@ -49,13 +43,6 @@ class FailingApiService: Api {
     func searchOrganizations(with params: OrganizationSearchParams,
             then: ((OrganizationSearchResult) -> Void)?,
             fail: ((Error) -> Void)?) {
-        if let callback = fail {
-           callback(NSError(domain: "test", code: 0, userInfo: nil))
-        }
-    }
-    func getOrganization(with id: String,
-                       then: ((Organization) -> Void)?,
-                       fail: ((Error) -> Void)?) {
         if let callback = fail {
            callback(NSError(domain: "test", code: 0, userInfo: nil))
         }

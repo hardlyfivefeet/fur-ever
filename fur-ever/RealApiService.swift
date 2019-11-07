@@ -11,15 +11,6 @@ class RealApiService: Api {
     init() {
         // Bare-bones logging of which network calls Siesta makes:
         SiestaLog.Category.enabled = [.network]
-
-        // For more info about how Siesta decides whether to make a network call,
-        // and which state updates it broadcasts to the app:
-        //SiestaLog.Category.enabled = SiestaLog.Category.common
-        // For the gory details of what Siesta’s up to:
-        //SiestaLog.Category.enabled = SiestaLog.Category.all
-        // To dump all requests and responses:
-        // (Warning: may cause Xcode console overheating)
-        //SiestaLog.Category.enabled = SiestaLog.Category.all
     }
 
     func api(host: String) {
@@ -45,12 +36,6 @@ class RealApiService: Api {
 
     func searchOrganizations(with params: OrganizationSearchParams,
                 then: ((OrganizationSearchResult) -> Void)?,
-                fail: ((Error) -> Void)?) {
-        // TODO: Implement API call
-    }
-
-    func getOrganization(with organizationId: String,
-                then: ((Organization) -> Void)?,
                 fail: ((Error) -> Void)?) {
         // TODO: Implement API call
     }

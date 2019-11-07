@@ -13,6 +13,7 @@ class AnimalSearchResultViewController: UIViewController {
 
     @IBOutlet weak var image: RemoteImageView!
     @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var distance: UILabel!
     @IBOutlet weak var type: UILabel!
     @IBOutlet weak var breed: UILabel!
     @IBOutlet weak var age: UILabel!
@@ -37,22 +38,25 @@ class AnimalSearchResultViewController: UIViewController {
 
     private func display(selectedAnimal: Animal) {
         animal = selectedAnimal
-        image.imageURL = animal.basicInfo.image.url
-        name.text = animal.basicInfo.name
+        if animal.photos[0].full != nil {
+            image.imageURL = animal.photos[0].full
+        }
+        name.text = animal.name
+        distance.text = "Distance: " + (animal.distance == nil ? "Not available" : "\(animal.distance!)")
         type.text = animal.type
-        let secondaryBreed = animal.breed.secondary ?? ""
-        breed.text = (animal.breed.primary ?? "Unknown") + (secondaryBreed.isEmpty ? "" : ", " + secondaryBreed) + (animal.breed.mixed ?? false ? " Mix" : "")
-        age.text = animal.age
-        gender.text = animal.gender
-        size.text = animal.size
-        info.text = animal.description
-        attributes.text = (animal.attributes.houseTrained ? "House-trained\n" : "") + (animal.attributes.spayedNeutered ? "Spayed/Neutered" : "")
+        let secondaryBreed = animal.breeds.secondary ?? ""
+        breed.text = (animal.breeds.primary ?? "Unknown") + (secondaryBreed.isEmpty ? "" : ", " + secondaryBreed) + (animal.breeds.mixed ?? false ? " Mix" : "")
+        age.text = animal.age ?? "Age not available"
+        gender.text = animal.gender ?? "Gender not available"
+        size.text = animal.size ?? "Size not available"
+        info.text = animal.description ?? "No description available"
+        attributes.text = (animal.attributes.house_trained ?? false ? "House-trained\n" : "") + (animal.attributes.spayed_neutered ?? false ? "Spayed/Neutered" : "")
 
         let email = animal.contact.email ?? ""
         let phone = animal.contact.phone ?? ""
-        let street = animal.contact.location.street ?? ""
-        let city = animal.contact.location.city ?? ""
-        let state = animal.contact.location.state ?? ""
+        let street = animal.contact.address.address1 ?? ""
+        let city = animal.contact.address.city ?? ""
+        let state = animal.contact.address.state ?? ""
 
         var address = (street.isEmpty ? "" : street + ", ")
         address = address + (city.isEmpty ? "" : city + " ")
@@ -61,7 +65,7 @@ class AnimalSearchResultViewController: UIViewController {
         var contactInfo = (email.isEmpty ? "" : "Email: " + email + "\n")
         contactInfo = contactInfo + (phone.isEmpty ? "" : "Phone: " + phone + "\n")
         contactInfo = contactInfo + (address.isEmpty ? "" : "Address: " + address)
-        contact.text = contactInfo
+        contact.text = contactInfo.isEmpty ? "No contact information available" : contactInfo
     }
 
     private func report(error: Error) {

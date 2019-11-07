@@ -56,7 +56,7 @@ class AnimalSearchResultCollectionViewController: UICollectionViewController, UI
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: REUSE_IDENTIFIER, for: indexPath)
            as! AnimalSearchResultCollectionViewCell
 
-        cell.thumbnailPhoto.imageURL = searchResults[indexPath.row].image.url
+            cell.thumbnailPhoto.imageURL = searchResults[indexPath.row].photos[0].full
         cell.thumbnailName.text = searchResults[indexPath.row].name
         return cell
     }

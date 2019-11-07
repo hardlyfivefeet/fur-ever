@@ -599,7 +599,7 @@ FUR-EVER HOME</string>
                                             <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oKd-L7-ta9" customClass="RemoteImageView" customModule="SiestaUI">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NoImageAvailable" translatesAutoresizingMaskIntoConstraints="NO" id="oKd-L7-ta9" customClass="RemoteImageView" customModule="SiestaUI">
                                             <rect key="frame" x="15" y="10" width="120" height="120"/>
                                             <accessibility key="accessibilityConfiguration" identifier="animalPhoto"/>
                                             <constraints>
@@ -672,7 +672,7 @@ FUR-EVER HOME</string>
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Fqn-B3-paG" customClass="RemoteImageView" customModule="SiestaUI">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NoImageAvailable" translatesAutoresizingMaskIntoConstraints="NO" id="Fqn-B3-paG" customClass="RemoteImageView" customModule="SiestaUI">
                                 <rect key="frame" x="116.5" y="118" width="181" height="181.5"/>
                                 <accessibility key="accessibilityConfiguration" identifier="animalImage"/>
                                 <constraints>
@@ -690,59 +690,66 @@ FUR-EVER HOME</string>
                                 <rect key="frame" x="31" y="359" width="352" height="449"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="VU7-YD-CYI">
-                                        <rect key="frame" x="0.0" y="0.0" width="352" height="293"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="352" height="329.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vq7-wz-EWa">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VV0-44-wlt">
                                                 <rect key="frame" x="0.0" y="0.0" width="352" height="21.5"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="distance"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vq7-wz-EWa">
+                                                <rect key="frame" x="0.0" y="36.5" width="352" height="21.5"/>
                                                 <accessibility key="accessibilityConfiguration" identifier="type"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Breed" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rvW-qQ-Ve5">
-                                                <rect key="frame" x="0.0" y="36.5" width="352" height="21.5"/>
+                                                <rect key="frame" x="0.0" y="73" width="352" height="21.5"/>
                                                 <accessibility key="accessibilityConfiguration" identifier="breed"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rry-86-0Oz">
-                                                <rect key="frame" x="0.0" y="73" width="352" height="21.5"/>
+                                                <rect key="frame" x="0.0" y="109.5" width="352" height="21.5"/>
                                                 <accessibility key="accessibilityConfiguration" identifier="age"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gender" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="psv-Se-nH5">
-                                                <rect key="frame" x="0.0" y="109.5" width="352" height="21.5"/>
+                                                <rect key="frame" x="0.0" y="146" width="352" height="21.5"/>
                                                 <accessibility key="accessibilityConfiguration" identifier="gender"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Size" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gVf-mm-UfC">
-                                                <rect key="frame" x="0.0" y="146" width="352" height="21.5"/>
+                                                <rect key="frame" x="0.0" y="182.5" width="352" height="21.5"/>
                                                 <accessibility key="accessibilityConfiguration" identifier="size"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RWR-vu-85p">
-                                                <rect key="frame" x="0.0" y="182.5" width="352" height="21.5"/>
+                                                <rect key="frame" x="0.0" y="219" width="352" height="21.5"/>
                                                 <accessibility key="accessibilityConfiguration" identifier="description"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Attributes" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fKc-zU-s9E">
-                                                <rect key="frame" x="0.0" y="219" width="352" height="21.5"/>
+                                                <rect key="frame" x="0.0" y="255.5" width="352" height="21.5"/>
                                                 <accessibility key="accessibilityConfiguration" identifier="attributes"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Contact" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Dq-Yj-C4v">
-                                                <rect key="frame" x="0.0" y="255.5" width="352" height="37.5"/>
+                                                <rect key="frame" x="0.0" y="292" width="352" height="37.5"/>
                                                 <color key="backgroundColor" red="0.89283058189999998" green="0.96454022449999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <accessibility key="accessibilityConfiguration" identifier="contact">
                                                     <accessibilityTraits key="traits" staticText="YES"/>
@@ -787,6 +794,7 @@ FUR-EVER HOME</string>
                         <outlet property="attributes" destination="fKc-zU-s9E" id="vO4-3l-f9v"/>
                         <outlet property="breed" destination="rvW-qQ-Ve5" id="Fpb-0c-Ifr"/>
                         <outlet property="contact" destination="5Dq-Yj-C4v" id="Kcq-Vq-Mbe"/>
+                        <outlet property="distance" destination="VV0-44-wlt" id="s31-vm-fTF"/>
                         <outlet property="gender" destination="psv-Se-nH5" id="Ssv-FI-Kwi"/>
                         <outlet property="image" destination="Fqn-B3-paG" id="uKH-Bb-RQ7"/>
                         <outlet property="info" destination="RWR-vu-85p" id="Ell-YA-iQf"/>
@@ -1066,7 +1074,7 @@ FUR-EVER HOME</string>
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eUR-Kt-AHU" customClass="RemoteImageView" customModule="SiestaUI">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NoImageAvailable" translatesAutoresizingMaskIntoConstraints="NO" id="eUR-Kt-AHU" customClass="RemoteImageView" customModule="SiestaUI">
                                 <rect key="frame" x="134.5" y="118" width="145" height="145"/>
                                 <accessibility key="accessibilityConfiguration" identifier="organizationImage"/>
                                 <constraints>
@@ -1180,6 +1188,7 @@ FUR-EVER HOME</string>
     </scenes>
     <resources>
         <image name="ClearLogo" width="600" height="600"/>
+        <image name="NoImageAvailable" width="1024" height="1024"/>
         <image name="cat" width="450" height="450"/>
         <image name="dog" width="450" height="450"/>
         <image name="house.fill" catalog="system" width="64" height="52"/>
@@ -1188,7 +1197,7 @@ FUR-EVER HOME</string>
         <image name="petfinder-logo" width="1000" height="292"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="hep-kZ-hCc"/>
+        <segue reference="qh5-jY-TLQ"/>
         <segue reference="KTQ-KW-NhA"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

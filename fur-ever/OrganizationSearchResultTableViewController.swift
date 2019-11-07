@@ -10,7 +10,7 @@ class OrganizationSearchResultTableViewController: UITableViewController {
     var failureCallback: ((Error) -> Void)?
 
     var searchParams = OrganizationSearchParams(name: "", location: "")
-    var searchResults: [OrganizationBasicInfo] = []
+    var searchResults: [Organization] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,7 +66,7 @@ class OrganizationSearchResultTableViewController: UITableViewController {
         if segue.identifier == "organizationSearchResultCollectionToSingleResult" {
             if let organizationSearchResultViewController = segue.destination as? OrganizationSearchResultViewController {
                 if let indexPath = tableView.indexPathForSelectedRow {
-                    organizationSearchResultViewController.organizationId = searchResults[indexPath.row].id
+                    organizationSearchResultViewController.organization = searchResults[indexPath.row]
                 }
             }
         }

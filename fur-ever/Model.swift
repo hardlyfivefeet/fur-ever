@@ -42,39 +42,44 @@ struct AnimalSearchResult: Codable, Equatable {
 
 struct AnimalBasicInfo: Codable, Equatable {
     let id: Int
-    let image: Image
+    let photos: [Photo]
     let name: String
 }
 
+struct AnimalInfo: Codable, Equatable {
+    let animal: Animal
+}
+
 struct Animal: Codable, Equatable {
-    let basicInfo: AnimalBasicInfo
-    let type: String
-    let breed: Breed
-    let age: String
-    let gender: String
-    let size: String
-    let description: String
+    let id: Int
+    let name: String
+    let photos: [Photo]
+    var type: String?
+    var age: String?
+    var gender: String?
+    var size: String?
+    var description: String?
+    var distance: Double?
+    let breeds: Breed
     let attributes: Attributes
     let contact: Contact
 }
 
 struct Attributes: Codable, Equatable {
-    let spayedNeutered: Bool
-    let houseTrained: Bool
+    var spayed_neutered: Bool?
+    var house_trained: Bool?
 }
 
-struct Location: Codable, Equatable {
-    var street: String?
+struct Address: Codable, Equatable {
+    var address1: String?
     var city: String?
     var state: String?
-    var distance: String?
 }
 
 struct Contact: Codable, Equatable {
     var email: String?
     var phone: String?
-    var location: Location
-    var website: String?
+    var address: Address
 }
 
 struct Breed: Codable, Equatable {
@@ -83,8 +88,8 @@ struct Breed: Codable, Equatable {
     var mixed: Bool?
 }
 
-struct Image: Codable, Equatable {
-    let url: String
+struct Photo: Codable, Equatable {
+    var full: String?
 }
 
 struct OrganizationSearchParams {
@@ -93,19 +98,18 @@ struct OrganizationSearchParams {
 }
 
 struct OrganizationSearchResult: Codable, Equatable {
-    let organizations: [OrganizationBasicInfo]
-}
-
-struct OrganizationBasicInfo: Codable, Equatable {
-    let id: String
-    let name: String
+    let organizations: [Organization]
 }
 
 struct Organization: Codable, Equatable {
-    let basicInfo: OrganizationBasicInfo
-    let image: Image
-    let contact: Contact
-    let missionStatement: String
+    let id: String
+    let name: String
+    var email: String?
+    var phone: String?
+    var website: String?
+    let address: Address
+    let photos: [Photo]
+    var mission_statement: String?
     var distance: Double?
 }
 

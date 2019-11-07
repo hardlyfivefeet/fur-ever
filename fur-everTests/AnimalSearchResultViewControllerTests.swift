@@ -39,7 +39,7 @@ class AnimalSearchResultViewControllerTests: XCTestCase {
 
         XCTAssert(failureCallbackWasCalled)
     }
-    
+
     func testShouldDisplayCorrectAnimalWhenAnimalSearchResultViewControllerLoads() {
         guard let animalSearchResultViewController = UIStoryboard(name: "Main", bundle: nil)
                        .instantiateViewController(withIdentifier: "animalSearchResultViewController")
@@ -54,7 +54,7 @@ class AnimalSearchResultViewControllerTests: XCTestCase {
             XCTFail()
             return
         }
-        
+
         XCTAssertEqual(animalSearchResultViewController.name.text, "Hopper")
         XCTAssertEqual(animalSearchResultViewController.image.imageURL, "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/46278443/1/?bust=1571149006&width=1080")
         XCTAssertEqual(animalSearchResultViewController.type.text, "Dog")

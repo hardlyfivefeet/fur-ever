@@ -11,7 +11,7 @@ class TestApiService: Api {
         XCTAssertEqual(params.location, "Los Angeles")
     }
     func getAnimal(with animalId: Int,
-                       then: ((Animal) -> Void)?,
+                       then: ((AnimalResultInfo) -> Void)?,
                        fail: ((Error) -> Void)?) {
         XCTAssertEqual(animalId, 12345)
     }
@@ -23,18 +23,18 @@ class TestApiService: Api {
     }
 }
 
+// For these tests, we call the fail function unconditionally because we want to test the error.
 class FailingApiService: Api {
     func api(host: String) {}
     func searchAnimals(with params: AnimalSearchParams,
             then: ((AnimalSearchResult) -> Void)?,
             fail: ((Error) -> Void)?) {
-        // For this test, we call the fail function unconditionally because we want to test the error.
         if let callback = fail {
            callback(NSError(domain: "test", code: 0, userInfo: nil))
         }
     }
     func getAnimal(with id: Int,
-                       then: ((Animal) -> Void)?,
+                       then: ((AnimalResultInfo) -> Void)?,
                        fail: ((Error) -> Void)?) {
         if let callback = fail {
            callback(NSError(domain: "test", code: 0, userInfo: nil))

@@ -8,7 +8,7 @@ class AnimalSearchResultViewController: UIViewController {
            MockApiService() : PlaceholderApiService()
     var failureCallback: ((Error) -> Void)?
 
-    var animal: Animal!
+    var animalResult: AnimalResultInfo!
     var animalId: Int!
 
     @IBOutlet weak var image: RemoteImageView!
@@ -36,8 +36,8 @@ class AnimalSearchResultViewController: UIViewController {
         scrollView.flashScrollIndicators()
     }
 
-    private func display(selectedAnimal: Animal) {
-        animal = selectedAnimal
+    private func display(animalResult: AnimalResultInfo) {
+        let animal: Animal = animalResult.animal
         if animal.photos[0].full != nil {
             image.imageURL = animal.photos[0].full
         }

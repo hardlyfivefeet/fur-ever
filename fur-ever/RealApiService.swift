@@ -29,7 +29,7 @@ class RealApiService: Api {
     }
 
     func getAnimal(with animalId: Int,
-                then: ((Animal) -> Void)?,
+                then: ((AnimalResultInfo) -> Void)?,
                 fail: ((Error) -> Void)?) {
         // TODO: Implement API call
     }

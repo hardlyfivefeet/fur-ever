@@ -9,7 +9,7 @@ class AnimalSearchResultCollectionViewController: UICollectionViewController, UI
            MockApiService() : PlaceholderApiService() // for real API call, do RealApiService instead of ApiService
     var failureCallback: ((Error) -> Void)?
 
-    var searchParams: AnimalSearchParams!
+    var searchParams = AnimalSearchParams("", "")
     var searchResults: [AnimalBasicInfo] = []
 
     var selectedRow = 0

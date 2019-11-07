@@ -23,7 +23,7 @@ class AnimalSearchResultCollectionViewControllerTests: XCTestCase {
         XCTAssertEqual(1, animalSearchResultCollectionViewController.numberOfSections(in: collectionView))
         XCTAssertEqual(9, animalSearchResultCollectionViewController.collectionView(collectionView, numberOfItemsInSection: 0))
     }
-    
+
     func testShouldAlwaysAllowItemSelection() {
         guard let animalSearchResultCollectionViewController = UIStoryboard(name: "Main", bundle: nil)
                 .instantiateViewController(withIdentifier: "animalSearchResultCollectionViewController")
@@ -35,7 +35,7 @@ class AnimalSearchResultCollectionViewControllerTests: XCTestCase {
         XCTAssert(animalSearchResultCollectionViewController.collectionView(
             animalSearchResultCollectionViewController.collectionView, shouldSelectItemAt: IndexPath(row: 5, section: 0)))
     }
-    
+
     func testShouldTriggerPetfinderSearchWhenAnimalSearchResultCollectionViewControllerLoads() {
         guard let animalSearchResultCollectionViewController = UIStoryboard(name: "Main", bundle: nil)
                 .instantiateViewController(withIdentifier: "animalSearchResultCollectionViewController")
@@ -48,7 +48,7 @@ class AnimalSearchResultCollectionViewControllerTests: XCTestCase {
         animalSearchResultCollectionViewController.searchParams = AnimalSearchParams("Dog", "Los Angeles")
         animalSearchResultCollectionViewController.viewDidLoad()
     }
-    
+
     func testShouldDisplayAlertWhenAPICallFails() {
         guard let animalSearchResultCollectionViewController = UIStoryboard(name: "Main", bundle: nil)
                 .instantiateViewController(withIdentifier: "animalSearchResultCollectionViewController")

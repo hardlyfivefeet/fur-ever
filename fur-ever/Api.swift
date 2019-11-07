@@ -6,7 +6,7 @@ protocol Api {
                 then: ((AnimalSearchResult) -> Void)?,
                 fail: ((Error) -> Void)?)
     func getAnimal(with animalId: Int,
-                then: ((Animal) -> Void)?,
+                then: ((AnimalResultInfo) -> Void)?,
                 fail: ((Error) -> Void)?)
     func searchOrganizations(with params: OrganizationSearchParams,
                 then: ((OrganizationSearchResult) -> Void)?,
@@ -28,10 +28,10 @@ class PlaceholderApiService: Api {
     }
 
     func getAnimal(with animalId: Int,
-                then: ((Animal) -> Void)?,
+                then: ((AnimalResultInfo) -> Void)?,
                 fail: ((Error) -> Void)?) {
         if let callback = then {
-            callback(Animal(id: 0001, name: "Hopper", photos: [Photo(full: "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/46278443/1/?bust=1571149006&width=1080")], type: "Dog", age: "Baby", gender: "Male", size: "Small", description: placeholderText, breeds: Breed(primary: "Dachshund", secondary: "Chihuahua", mixed: true), attributes: Attributes(spayed_neutered: true, house_trained: true), contact: Contact(email: "fake2@gmail.com", phone: "012-345-6789", address: Address(state: "CA"))))
+            callback(AnimalResultInfo(animal: Animal(id: 0001, name: "Hopper", photos: [Photo(full: "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/46278443/1/?bust=1571149006&width=1080")], type: "Dog", age: "Baby", gender: "Male", size: "Small", description: placeholderText, breeds: Breed(primary: "Dachshund", secondary: "Chihuahua", mixed: true), attributes: Attributes(spayed_neutered: true, house_trained: true), contact: Contact(email: "fake2@gmail.com", phone: "012-345-6789", address: Address(state: "CA")))))
         }
     }
 

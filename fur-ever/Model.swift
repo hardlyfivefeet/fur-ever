@@ -46,7 +46,7 @@ struct AnimalBasicInfo: Codable, Equatable {
     let name: String
 }
 
-struct AnimalInfo: Codable, Equatable {
+struct AnimalResultInfo: Codable, Equatable {
     let animal: Animal
 }
 

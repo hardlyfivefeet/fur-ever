@@ -41,6 +41,7 @@ class AnimalResultFilterSelectionViewController: UIViewController, UITableViewDe
         return CGFloat(rowHeight)
     }
 
+    // remove checkmark on deselected rows
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         if let cell = tableView.cellForRow(at: indexPath) {
             cell.accessoryType = .none

@@ -6,7 +6,8 @@ private let REUSE_IDENTIFIER = "animalThumbnailCell"
 class AnimalSearchResultCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
 
     var api: Api = ProcessInfo.processInfo.arguments.contains(TESTING_UI) ?
-           MockApiService() : PlaceholderApiService() // for real API call, do RealApiService instead of ApiService
+           MockApiService() : RealApiService()
+    // for real API call, do RealApiService instead of PlaceholderApiService
     var failureCallback: ((Error) -> Void)?
 
     var searchParams = AnimalSearchParams("", "")
@@ -55,8 +56,9 @@ class AnimalSearchResultCollectionViewController: UICollectionViewController, UI
            UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: REUSE_IDENTIFIER, for: indexPath)
            as! AnimalSearchResultCollectionViewCell
-
+            if (searchResults[indexPath.row].photos.count != 0) {
             cell.thumbnailPhoto.imageURL = searchResults[indexPath.row].photos[0].full
+        }
         cell.thumbnailName.text = searchResults[indexPath.row].name
         return cell
     }
@@ -104,7 +106,9 @@ class AnimalSearchResultCollectionViewController: UICollectionViewController, UI
     }
 
     private func display(searchResult: AnimalSearchResult) {
+        print(searchResult.animals)
         searchResults = searchResult.animals
+        print(searchResults)
         collectionView.reloadData()
     }
 

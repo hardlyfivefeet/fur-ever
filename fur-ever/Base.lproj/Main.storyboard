@@ -164,7 +164,7 @@ FUR-EVER HOME</string>
                                 <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Zip Code/City/State" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="f3S-0V-J9R">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Zip Code/City, State" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="f3S-0V-J9R">
                                 <rect key="frame" x="82" y="479" width="250" height="34"/>
                                 <accessibility key="accessibilityConfiguration" identifier="locationField"/>
                                 <constraints>
@@ -607,14 +607,19 @@ FUR-EVER HOME</string>
                                                 <constraint firstAttribute="height" relation="lessThanOrEqual" constant="150" identifier="id2" id="rxy-3q-spg"/>
                                             </constraints>
                                         </imageView>
+                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="bij-rq-TQe">
+                                            <rect key="frame" x="65" y="60" width="20" height="20"/>
+                                        </activityIndicatorView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="oKd-L7-ta9" firstAttribute="top" secondItem="D0Y-nq-JPS" secondAttribute="top" constant="10" identifier="id3" id="3cE-3X-iNl"/>
                                         <constraint firstItem="oKd-L7-ta9" firstAttribute="height" secondItem="D0Y-nq-JPS" secondAttribute="height" multiplier="0.8" priority="950" identifier="id4" id="DmF-Ry-ED0"/>
                                         <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="4QV-vf-cEb" secondAttribute="bottom" priority="900" identifier="id6" id="DyA-Ak-Bmv"/>
                                         <constraint firstItem="4QV-vf-cEb" firstAttribute="centerX" secondItem="oKd-L7-ta9" secondAttribute="centerX" identifier="id7" id="QmA-zG-SRx"/>
+                                        <constraint firstItem="bij-rq-TQe" firstAttribute="centerY" secondItem="oKd-L7-ta9" secondAttribute="centerY" id="k5P-c0-1iH"/>
                                         <constraint firstItem="oKd-L7-ta9" firstAttribute="centerX" secondItem="D0Y-nq-JPS" secondAttribute="centerX" identifier="id5" id="tyq-ov-Kne"/>
                                         <constraint firstItem="4QV-vf-cEb" firstAttribute="top" secondItem="oKd-L7-ta9" secondAttribute="bottom" constant="5" identifier="id8" id="vvx-sK-n3m"/>
+                                        <constraint firstItem="bij-rq-TQe" firstAttribute="centerX" secondItem="oKd-L7-ta9" secondAttribute="centerX" id="xwa-pK-1yq"/>
                                     </constraints>
                                 </collectionViewCellContentView>
                                 <size key="customSize" width="150" height="150"/>
@@ -629,7 +634,7 @@ FUR-EVER HOME</string>
                             <rect key="frame" x="0.0" y="0.0" width="414" height="87"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
-                                <searchBar contentMode="redraw" placeholder="Zip Code/City/State" translatesAutoresizingMaskIntoConstraints="NO" id="wm0-qv-YVA">
+                                <searchBar contentMode="redraw" placeholder="Zip Code/City, State" translatesAutoresizingMaskIntoConstraints="NO" id="wm0-qv-YVA">
                                     <rect key="frame" x="20.5" y="15" width="373" height="56"/>
                                     <textInputTraits key="textInputTraits" returnKeyType="search" enablesReturnKeyAutomatically="YES"/>
                                 </searchBar>
@@ -1197,7 +1202,7 @@ FUR-EVER HOME</string>
         <image name="petfinder-logo" width="1000" height="292"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="hep-kZ-hCc"/>
+        <segue reference="qh5-jY-TLQ"/>
         <segue reference="KTQ-KW-NhA"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

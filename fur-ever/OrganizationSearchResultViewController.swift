@@ -5,11 +5,11 @@ import SiestaUI
 class OrganizationSearchResultViewController: UIViewController {
 
     var organization: Organization!
+    var urlToWebsite: String?
 
     @IBOutlet weak var image: RemoteImageView!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var distance: UITextView!
-    @IBOutlet weak var missionStatement: UITextView!
     @IBOutlet weak var contact: UITextView!
     @IBOutlet weak var scrollView: UIScrollView!
 
@@ -28,8 +28,7 @@ class OrganizationSearchResultViewController: UIViewController {
             image.imageURL = organization.photos[0].full
         }
         name.text = organization.name
-        missionStatement.text = organization.mission_statement ?? "No mission statement available"
-        distance.text = "Distance: " + (organization.distance == nil ? "Not available" : "\(organization.distance!)")
+        distance.text = "Distance: " + (organization.distance == nil ? "Not available" : "\(organization.distance!) miles")
 
         let email = organization.email ?? ""
         let phone = organization.phone ?? ""
@@ -49,6 +48,14 @@ class OrganizationSearchResultViewController: UIViewController {
         contactInfo = contactInfo + (website.isEmpty ? "" : "Website: " + website + "\n")
         contactInfo = contactInfo + (address.isEmpty ? "" : "Address: " + address)
         contact.text = contactInfo.isEmpty ? "No contact information available" : contactInfo
+
+        urlToWebsite = organization.url!
+    }
+
+    @IBAction func readMoreButtonTapped(_ sender: Any) {
+        if let url = URL(string: urlToWebsite!) {
+            UIApplication.shared.open(url)
+        }
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

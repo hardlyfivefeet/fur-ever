@@ -24,7 +24,7 @@ class RealApiService: Api {
 //        }
 
         service.configure("**") {
-        $0.headers["Authorization"] = "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjIxYWI1MjAzYTc4NjhlNzQxYjllMjYxOWY0MmNmNmQ4MDY4N2E4OTA5M2U3NTU3YWM5M2ZkZWFmNmRiYzZmYmNjMWViMTczNThiY2YwNDgxIn0.eyJhdWQiOiJwb29hQmViTEc5MWFyMzFXZ01nbU42VVhsNExYc3ZGYkNSSXd4YzNWUUs5QThlMjdTciIsImp0aSI6IjIxYWI1MjAzYTc4NjhlNzQxYjllMjYxOWY0MmNmNmQ4MDY4N2E4OTA5M2U3NTU3YWM5M2ZkZWFmNmRiYzZmYmNjMWViMTczNThiY2YwNDgxIiwiaWF0IjoxNTczMzQ0NjE2LCJuYmYiOjE1NzMzNDQ2MTYsImV4cCI6MTU3MzM0ODIxNiwic3ViIjoiIiwic2NvcGVzIjpbXX0.wdx_QlliXp3izuS7JTKrdDXNoZl3HGPx71CHznX0KHbm22CRiganL66yMaMxsdo3Invt_3rr2ze70TshH6joErOyke91KHhSBXii18R2cOBc1yhwhhpPCsBWsjvPW-cPpbQ3KU8mHStTfEfo28QWkQ2JE7qaKUWoG6eQlUu165qc_5P3VCfty_8zc8D8ctS4ntPpG7LTO-bNroNzRKONed4inCz_IcI1wzUT99EzSBscSefQ3b2zq5k4LtZDQQSoHQA4t4NujiV4d85Zc2B1uIrtseYJ_Oka4WLsZD3iVVacdgXcLsCrIFQDtf9NJ6bMyy_15mote-jD09KCFm7K_g"
+        $0.headers["Authorization"] = "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjY5MzNkOWVjMDg1NjFiM2I4ZDQ4ZjA1YmNjYzZjNTQ5NmRhOTc3MTJhMzI0NDdlOTczYzQxNjMyNGY1Yjc5MzEyNzZkOWI3NWNjN2Q2ZmEyIn0.eyJhdWQiOiJwb29hQmViTEc5MWFyMzFXZ01nbU42VVhsNExYc3ZGYkNSSXd4YzNWUUs5QThlMjdTciIsImp0aSI6IjY5MzNkOWVjMDg1NjFiM2I4ZDQ4ZjA1YmNjYzZjNTQ5NmRhOTc3MTJhMzI0NDdlOTczYzQxNjMyNGY1Yjc5MzEyNzZkOWI3NWNjN2Q2ZmEyIiwiaWF0IjoxNTczMzc2NTY4LCJuYmYiOjE1NzMzNzY1NjgsImV4cCI6MTU3MzM4MDE2OCwic3ViIjoiIiwic2NvcGVzIjpbXX0.mggrvgphJkjm2spdHt4YSj2qXQ_3gYDAGj-ldx6YDHypovDtDgeHdZVjWkx8N4uIAmWmJvzNSzCr4XGfhy1S0xleqBnK_yAF9vEKrlIMQZ15WNULDhXqLwg8Wd-tKo3wmCBiargvC-h8bCs6-aLzROa33cUlVQBpklmCoc-pMpjG7XwKk44-bojFEVwiwGGm0fxR9c7XC1STdLmCeBggmbNmX7d9shpmJWnu_YXF_YSW-2zIJcgqkOL9l68-Mvdd6IyAmsWcxvhTRjJGM6_CFla1JsiDU4FrqjQdHHVVZj_cQlBUpEQFgvUyi_iGyMRDVWChfBLJ8uOzlniUtBq2lA"
         }
 
         let jsonDecoder = JSONDecoder()
@@ -35,6 +35,9 @@ class RealApiService: Api {
         }
         service.configureTransformer("/animals/*") {
             try jsonDecoder.decode(AnimalResultInfo.self, from: $0.content)
+        }
+        service.configureTransformer("/organizations") {
+            try jsonDecoder.decode(OrganizationSearchResult.self, from: $0.content)
         }
     }
 
@@ -75,6 +78,7 @@ class RealApiService: Api {
                 fail: ((Error) -> Void)?) {
         let path = "/animals/" + String(animalId)
         service.resource(path)
+            .withParam("limit", "100")
         .request(.get).onSuccess { result in
             if let animalResultInfo: AnimalResultInfo = result.typedContent(),
                let callback = then {
@@ -90,7 +94,20 @@ class RealApiService: Api {
     func searchOrganizations(with params: OrganizationSearchParams,
                 then: ((OrganizationSearchResult) -> Void)?,
                 fail: ((Error) -> Void)?) {
-        // TODO: Implement API call
+        service.resource("/organizations")
+            .withParam("name", params.name)
+            .withParam("location", params.location)
+            .withParam("limit", "100")
+        .request(.get).onSuccess { result in
+            if let organizationSearchResult: OrganizationSearchResult = result.typedContent(),
+               let callback = then {
+                callback(organizationSearchResult)
+            }
+        }.onFailure { error in
+            if let callback = fail {
+                callback(error)
+            }
+        }
     }
 
     private func getAppliedFilterValues(with filter: Filter?) -> String {
@@ -102,7 +119,6 @@ class RealApiService: Api {
             result.append(filter!.availableValues[appliedFilter])
             result.append(",")
         }
-
         // if string is not empty, remove the comma at the end
         if (result.count > 0) {
             result.remove(at: result.index(before: result.endIndex))

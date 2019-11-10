@@ -59,7 +59,6 @@ struct Animal: Codable, Equatable {
     var age: String?
     var gender: String?
     var size: String?
-    var description: String?
     var url: String?
     let breeds: Breed
     let attributes: Attributes
@@ -94,8 +93,8 @@ struct Photo: Codable, Equatable {
 }
 
 struct OrganizationSearchParams {
-    let name: String
-    let location: String
+    var name: String?
+    var location: String?
 }
 
 struct OrganizationSearchResult: Codable, Equatable {
@@ -110,8 +109,8 @@ struct Organization: Codable, Equatable {
     var website: String?
     let address: Address
     let photos: [Photo]
-    var mission_statement: String?
     var distance: Double?
+    var url: String?
 }
 
 class Filter: Copyable {

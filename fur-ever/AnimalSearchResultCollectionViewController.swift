@@ -106,9 +106,7 @@ class AnimalSearchResultCollectionViewController: UICollectionViewController, UI
     }
 
     private func display(searchResult: AnimalSearchResult) {
-        print(searchResult.animals)
         searchResults = searchResult.animals
-        print(searchResults)
         collectionView.reloadData()
     }
 
@@ -126,6 +124,7 @@ class AnimalSearchResultCollectionViewController: UICollectionViewController, UI
             if let animalSearchResultViewController = segue.destination as? AnimalSearchResultViewController {
                 if let indexPath = collectionView.indexPathsForSelectedItems?.first {
                     animalSearchResultViewController.animalId = searchResults[indexPath.row].id
+                    animalSearchResultViewController.searchDistance = searchResults[indexPath.row].distance
                 }
             }
         }
@@ -141,6 +140,6 @@ class AnimalSearchResultCollectionViewController: UICollectionViewController, UI
     }
 
     @IBAction func applyFiltersToAnimalResultCollectionViewController(unwindSegue: UIStoryboardSegue) {
-        // Don't do anything
+        viewDidLoad()
     }
 }

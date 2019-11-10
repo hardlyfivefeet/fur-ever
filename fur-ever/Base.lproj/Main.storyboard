@@ -695,7 +695,7 @@ FUR-EVER HOME</string>
                                 <rect key="frame" x="31" y="359" width="352" height="449"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="VU7-YD-CYI">
-                                        <rect key="frame" x="0.0" y="0.0" width="352" height="329.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="352" height="342"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VV0-44-wlt">
                                                 <rect key="frame" x="0.0" y="0.0" width="352" height="21.5"/>
@@ -739,22 +739,15 @@ FUR-EVER HOME</string>
                                                 <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RWR-vu-85p">
-                                                <rect key="frame" x="0.0" y="219" width="352" height="21.5"/>
-                                                <accessibility key="accessibilityConfiguration" identifier="description"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Attributes" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fKc-zU-s9E">
-                                                <rect key="frame" x="0.0" y="255.5" width="352" height="21.5"/>
+                                                <rect key="frame" x="0.0" y="219" width="352" height="21.5"/>
                                                 <accessibility key="accessibilityConfiguration" identifier="attributes"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Contact" translatesAutoresizingMaskIntoConstraints="NO" id="5Dq-Yj-C4v">
-                                                <rect key="frame" x="0.0" y="292" width="352" height="37.5"/>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Contact" translatesAutoresizingMaskIntoConstraints="NO" id="5Dq-Yj-C4v" customClass="CustomTextView" customModule="FurEver" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="255.5" width="352" height="37.5"/>
                                                 <color key="backgroundColor" red="0.89283058189999998" green="0.96454022449999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <accessibility key="accessibilityConfiguration" identifier="contact">
                                                     <accessibilityTraits key="traits" staticText="YES"/>
@@ -764,6 +757,14 @@ FUR-EVER HOME</string>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
                                             </textView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xjm-Ax-5Vr">
+                                                <rect key="frame" x="0.0" y="308" width="352" height="34"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                <state key="normal" title="Read More"/>
+                                                <connections>
+                                                    <action selector="readMoreButtonTapped:" destination="sJu-gF-OH2" eventType="touchUpInside" id="C4y-4P-xl2"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                     </stackView>
                                 </subviews>
@@ -802,7 +803,6 @@ FUR-EVER HOME</string>
                         <outlet property="distance" destination="VV0-44-wlt" id="s31-vm-fTF"/>
                         <outlet property="gender" destination="psv-Se-nH5" id="Ssv-FI-Kwi"/>
                         <outlet property="image" destination="Fqn-B3-paG" id="uKH-Bb-RQ7"/>
-                        <outlet property="info" destination="RWR-vu-85p" id="Ell-YA-iQf"/>
                         <outlet property="name" destination="hg9-cG-Dgi" id="WDA-Mx-CHl"/>
                         <outlet property="scrollView" destination="7x2-ue-qjt" id="CVr-0t-xLI"/>
                         <outlet property="size" destination="gVf-mm-UfC" id="TrG-tI-iSZ"/>
@@ -1202,7 +1202,7 @@ FUR-EVER HOME</string>
         <image name="petfinder-logo" width="1000" height="292"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="qh5-jY-TLQ"/>
+        <segue reference="hep-kZ-hCc"/>
         <segue reference="KTQ-KW-NhA"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

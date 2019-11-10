@@ -24,7 +24,7 @@ class OrganizationSearchResultViewController: UIViewController {
     }
 
     private func displayInfo() {
-        if organization.photos[0].full != nil {
+        if organization.photos.count != 0 {
             image.imageURL = organization.photos[0].full
         }
         name.text = organization.name

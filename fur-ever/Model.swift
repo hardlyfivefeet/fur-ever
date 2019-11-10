@@ -44,6 +44,7 @@ struct AnimalBasicInfo: Codable, Equatable {
     let id: Int
     let photos: [Photo]
     let name: String
+    var distance: Double?
 }
 
 struct AnimalResultInfo: Codable, Equatable {
@@ -59,7 +60,7 @@ struct Animal: Codable, Equatable {
     var gender: String?
     var size: String?
     var description: String?
-    var distance: Double?
+    var url: String?
     let breeds: Breed
     let attributes: Attributes
     let contact: Contact

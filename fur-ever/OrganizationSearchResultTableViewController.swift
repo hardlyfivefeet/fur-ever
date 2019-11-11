@@ -5,8 +5,7 @@ private let REUSE_IDENTIFIER = "organizationTableCell"
 
 class OrganizationSearchResultTableViewController: UITableViewController {
 
-    var api: Api = ProcessInfo.processInfo.arguments.contains(TESTING_UI) ?
-           MockApiService() : RealApiService()
+    var api: Api!
     var failureCallback: ((Error) -> Void)?
 
     var searchParams = OrganizationSearchParams(name: "", location: "")
@@ -14,7 +13,11 @@ class OrganizationSearchResultTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        api.api(host: "https://api.petfinder.com/v2/")
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        api = appDelegate.api
+        if api.tokenHasExpired() {
+            api.getToken(with: TokenRequestParams(), fail: failureCallback ?? report)
+        }
         api.searchOrganizations(with: searchParams, then: display, fail: failureCallback ?? report)
     }
 

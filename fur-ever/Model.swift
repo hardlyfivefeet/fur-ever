@@ -2,6 +2,18 @@ import UIKit
 
 let TESTING_UI = "UI_TESTING"
 
+struct Token: Codable {
+    let token_type: String
+    let expires_in: Int
+    let access_token: String
+}
+
+struct TokenRequestParams {
+    let grant_type = "client_credentials"
+    let client_id = "pooaBebLG91ar31WgMgmN6UXl4LXsvFbCRIwxc3VQK9A8e27Sr"
+    let client_secret = "pHwGbvEDZDVybz58WAMwKKcbFrPtqEF72V7SeRO4"
+}
+
 protocol Copyable: class {
     init(copy: Self)
 }

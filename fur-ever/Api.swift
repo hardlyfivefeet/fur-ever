@@ -11,12 +11,25 @@ protocol Api {
     func searchOrganizations(with params: OrganizationSearchParams,
                 then: ((OrganizationSearchResult) -> Void)?,
                 fail: ((Error) -> Void)?)
+    func getToken(with params: TokenRequestParams,
+                  fail: ((Error) -> Void)?)
+    func tokenHasExpired() -> Bool
 }
 
 // Placeholder API that returns hardcoded data
 class PlaceholderApiService: Api {
     func api(host: String) {
         // No-op in our initial mock version.
+    }
+
+    func getToken(with params: TokenRequestParams,
+    fail: ((Error) -> Void)?) {
+        // No-op in our initial mock version.
+    }
+
+    func tokenHasExpired() -> Bool {
+        // No-op in our initial mock version.
+        return false
     }
 
     func searchAnimals(with params: AnimalSearchParams,

@@ -6,6 +6,16 @@ class MockApiService: Api {
         // No-op in our initial mock version.
     }
 
+    func getToken(with params: TokenRequestParams,
+    fail: ((Error) -> Void)?) {
+        // No-op in our initial mock version.
+    }
+
+    func tokenHasExpired() -> Bool {
+        // No-op in our initial mock version.
+        return false
+    }
+
     func searchAnimals(with params: AnimalSearchParams,
                 then: ((AnimalSearchResult) -> Void)?,
                 fail: ((Error) -> Void)?) {

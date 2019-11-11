@@ -4,8 +4,7 @@ import UIKit
 
 class AnimalSearchResultViewController: UIViewController {
 
-    var api: Api = ProcessInfo.processInfo.arguments.contains(TESTING_UI) ?
-           MockApiService() : RealApiService()
+    var api: Api!
     var failureCallback: ((Error) -> Void)?
 
     var animalResult: AnimalResultInfo!
@@ -27,7 +26,11 @@ class AnimalSearchResultViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        api.api(host: "https://api.petfinder.com/v2/")
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        api = appDelegate.api
+        if api.tokenHasExpired() {
+            api.getToken(with: TokenRequestParams(), fail: failureCallback ?? report)
+        }
         api.getAnimal(with: animalId, then: display, fail: failureCallback ?? report)
     }
 

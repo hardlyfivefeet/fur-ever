@@ -1,5 +1,4 @@
 import Siesta
-import OAuth2
 
 class RealApiService: Api {
 
@@ -7,29 +6,28 @@ class RealApiService: Api {
         baseURL: "https://www.petfinder.com",
         standardTransformers: [.text, .image])
 
-    private var authToken: String?
+    private var authToken: Token?
 
     init() {
         // Bare-bones logging of which network calls Siesta makes:
-        SiestaLog.Category.enabled = [.network]
-//        SiestaLog.Category.enabled = SiestaLog.Category.all
+        // SiestaLog.Category.enabled = [.network]
+        // SiestaLog.Category.enabled = SiestaLog.Category.all
     }
 
     func api(host: String) {
         service = Service(baseURL: host, standardTransformers: [.text, .image])
-//        service.configure("**") {
-//            if let authToken = self.authToken {
-//                $0.headers["Authorization"] = "Bearer \(authToken)"
-//            }
-//        }
-
         service.configure("**") {
-        $0.headers["Authorization"] = "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjY5MzNkOWVjMDg1NjFiM2I4ZDQ4ZjA1YmNjYzZjNTQ5NmRhOTc3MTJhMzI0NDdlOTczYzQxNjMyNGY1Yjc5MzEyNzZkOWI3NWNjN2Q2ZmEyIn0.eyJhdWQiOiJwb29hQmViTEc5MWFyMzFXZ01nbU42VVhsNExYc3ZGYkNSSXd4YzNWUUs5QThlMjdTciIsImp0aSI6IjY5MzNkOWVjMDg1NjFiM2I4ZDQ4ZjA1YmNjYzZjNTQ5NmRhOTc3MTJhMzI0NDdlOTczYzQxNjMyNGY1Yjc5MzEyNzZkOWI3NWNjN2Q2ZmEyIiwiaWF0IjoxNTczMzc2NTY4LCJuYmYiOjE1NzMzNzY1NjgsImV4cCI6MTU3MzM4MDE2OCwic3ViIjoiIiwic2NvcGVzIjpbXX0.mggrvgphJkjm2spdHt4YSj2qXQ_3gYDAGj-ldx6YDHypovDtDgeHdZVjWkx8N4uIAmWmJvzNSzCr4XGfhy1S0xleqBnK_yAF9vEKrlIMQZ15WNULDhXqLwg8Wd-tKo3wmCBiargvC-h8bCs6-aLzROa33cUlVQBpklmCoc-pMpjG7XwKk44-bojFEVwiwGGm0fxR9c7XC1STdLmCeBggmbNmX7d9shpmJWnu_YXF_YSW-2zIJcgqkOL9l68-Mvdd6IyAmsWcxvhTRjJGM6_CFla1JsiDU4FrqjQdHHVVZj_cQlBUpEQFgvUyi_iGyMRDVWChfBLJ8uOzlniUtBq2lA"
+            if let authToken = self.authToken {
+                $0.headers["Authorization"] = "Bearer \(authToken.access_token)"
+            }
         }
 
         let jsonDecoder = JSONDecoder()
 
         // Map specific API endpoints to different models
+        service.configureTransformer("/oauth2/token") {
+            try jsonDecoder.decode(Token.self, from: $0.content)
+        }
         service.configureTransformer("/animals") {
             try jsonDecoder.decode(AnimalSearchResult.self, from: $0.content)
         }
@@ -39,6 +37,25 @@ class RealApiService: Api {
         service.configureTransformer("/organizations") {
             try jsonDecoder.decode(OrganizationSearchResult.self, from: $0.content)
         }
+    }
+
+    func getToken(with params: TokenRequestParams,
+    fail: ((Error) -> Void)?) {
+        service.resource("/oauth2/token")
+            .request(.post, urlEncoded: ["grant_type": params.grant_type, "client_id": params.client_id, "client_secret": params.client_secret])
+            .onSuccess { entity in
+            if let tokenReceived: Token = entity.typedContent() {
+                self.authToken = tokenReceived
+            }
+        }.onFailure { error in
+            if let callback = fail {
+                callback(error)
+            }
+        }
+    }
+
+    func tokenHasExpired() -> Bool {
+        return (self.authToken?.expires_in ?? 0 <= 0)
     }
 
     func searchAnimals(with params: AnimalSearchParams,

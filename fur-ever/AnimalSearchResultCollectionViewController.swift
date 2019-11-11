@@ -110,6 +110,11 @@ class AnimalSearchResultCollectionViewController: UICollectionViewController, UI
     private func display(searchResult: AnimalSearchResult) {
         searchResults = searchResult.animals
         collectionView.reloadData()
+        if (searchResults.count == 0) {
+            collectionView.showNoResultsMessage()
+        } else {
+            collectionView.restore()
+        }
     }
 
     private func report(error: Error) {
@@ -143,5 +148,23 @@ class AnimalSearchResultCollectionViewController: UICollectionViewController, UI
 
     @IBAction func applyFiltersToAnimalResultCollectionViewController(unwindSegue: UIStoryboardSegue) {
         viewDidLoad()
+    }
+}
+
+// Credit: https://stackoverflow.com/questions/43772984/how-to-show-a-message-when-collection-view-is-empty
+extension UICollectionView {
+    func showNoResultsMessage() {
+        let messageLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.bounds.size.width, height: self.bounds.size.height))
+        messageLabel.text = "No results found.\nTry adjusting your filters\nto see more results."
+        messageLabel.textColor = .systemIndigo
+        messageLabel.numberOfLines = 0
+        messageLabel.textAlignment = .center
+        messageLabel.font = UIFont(name: "System", size: 18)
+        messageLabel.sizeToFit()
+        self.backgroundView = messageLabel
+    }
+
+    func restore() {
+        self.backgroundView = nil
     }
 }

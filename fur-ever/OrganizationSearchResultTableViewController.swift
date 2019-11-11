@@ -14,6 +14,7 @@ class OrganizationSearchResultTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
+        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: self.tabBarController!.tabBar.frame.height, right: 0)
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         api = appDelegate.api
         if api.tokenHasExpired() {

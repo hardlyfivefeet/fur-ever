@@ -19,6 +19,7 @@ class AnimalSearchResultCollectionViewController: UICollectionViewController, UI
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: self.tabBarController!.tabBar.frame.height, right: 0)
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         api = appDelegate.api
         filterButton.isEnabled = shouldAllowFilters

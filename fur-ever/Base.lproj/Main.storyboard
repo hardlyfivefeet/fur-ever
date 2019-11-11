@@ -574,7 +574,7 @@ FUR-EVER HOME</string>
         <!--Animal Search Result Collection View Controller-->
         <scene sceneID="TnI-yc-1S9">
             <objects>
-                <collectionViewController storyboardIdentifier="animalSearchResultCollectionViewController" id="9m7-Rq-VOe" customClass="AnimalSearchResultCollectionViewController" customModule="FurEver" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="animalSearchResultCollectionViewController" extendedLayoutIncludesOpaqueBars="YES" automaticallyAdjustsScrollViewInsets="NO" id="9m7-Rq-VOe" customClass="AnimalSearchResultCollectionViewController" customModule="FurEver" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="ugi-6m-fYS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

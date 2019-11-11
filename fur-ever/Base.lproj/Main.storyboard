@@ -593,13 +593,16 @@ FUR-EVER HOME</string>
                                     <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4QV-vf-cEb">
-                                            <rect key="frame" x="51" y="135" width="48" height="15"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="4QV-vf-cEb">
+                                            <rect key="frame" x="15" y="135" width="120" height="15"/>
                                             <accessibility key="accessibilityConfiguration" identifier="animalName"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="bij-rq-TQe">
+                                            <rect key="frame" x="65" y="60" width="20" height="20"/>
+                                        </activityIndicatorView>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NoImageAvailable" translatesAutoresizingMaskIntoConstraints="NO" id="oKd-L7-ta9" customClass="RemoteImageView" customModule="SiestaUI">
                                             <rect key="frame" x="15" y="10" width="120" height="120"/>
                                             <accessibility key="accessibilityConfiguration" identifier="animalPhoto"/>
@@ -608,12 +611,10 @@ FUR-EVER HOME</string>
                                                 <constraint firstAttribute="height" relation="lessThanOrEqual" constant="150" identifier="id2" id="rxy-3q-spg"/>
                                             </constraints>
                                         </imageView>
-                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="bij-rq-TQe">
-                                            <rect key="frame" x="65" y="60" width="20" height="20"/>
-                                        </activityIndicatorView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="oKd-L7-ta9" firstAttribute="top" secondItem="D0Y-nq-JPS" secondAttribute="top" constant="10" identifier="id3" id="3cE-3X-iNl"/>
+                                        <constraint firstItem="4QV-vf-cEb" firstAttribute="width" secondItem="oKd-L7-ta9" secondAttribute="width" id="82P-yn-xpC"/>
                                         <constraint firstItem="oKd-L7-ta9" firstAttribute="height" secondItem="D0Y-nq-JPS" secondAttribute="height" multiplier="0.8" priority="950" identifier="id4" id="DmF-Ry-ED0"/>
                                         <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="4QV-vf-cEb" secondAttribute="bottom" priority="900" identifier="id6" id="DyA-Ak-Bmv"/>
                                         <constraint firstItem="4QV-vf-cEb" firstAttribute="centerX" secondItem="oKd-L7-ta9" secondAttribute="centerX" identifier="id7" id="QmA-zG-SRx"/>
@@ -687,7 +688,7 @@ FUR-EVER HOME</string>
                                     <constraint firstAttribute="width" secondItem="Fqn-B3-paG" secondAttribute="height" multiplier="1:1" id="PrF-Ji-trE"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hg9-cG-Dgi">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="clip" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="hg9-cG-Dgi">
                                 <rect key="frame" x="31" y="317.5" width="352" height="26.5"/>
                                 <accessibility key="accessibilityConfiguration" identifier="animalName"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
@@ -1131,7 +1132,7 @@ FUR-EVER HOME</string>
                                     <constraint firstAttribute="width" secondItem="eUR-Kt-AHU" secondAttribute="height" multiplier="1:1" id="8KR-lb-ZGb"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bao-RU-Dzz">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="clip" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="bao-RU-Dzz">
                                 <rect key="frame" x="31" y="278" width="352" height="24"/>
                                 <accessibility key="accessibilityConfiguration" identifier="organizationName"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>

@@ -626,6 +626,7 @@ FUR-EVER HOME</string>
                                 </collectionViewCellContentView>
                                 <size key="customSize" width="150" height="150"/>
                                 <connections>
+                                    <outlet property="loadingView" destination="bij-rq-TQe" id="u1h-E7-qIT"/>
                                     <outlet property="thumbnailName" destination="4QV-vf-cEb" id="au6-cW-h1F"/>
                                     <outlet property="thumbnailPhoto" destination="oKd-L7-ta9" id="RFY-r2-gR4"/>
                                     <segue destination="sJu-gF-OH2" kind="show" identifier="animalSearchResultCollectionToSingleResult" id="DP2-MX-aip"/>

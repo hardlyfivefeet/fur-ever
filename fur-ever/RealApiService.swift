@@ -9,9 +9,8 @@ class RealApiService: Api {
     private var authToken: Token?
 
     init() {
-        // Bare-bones logging of which network calls Siesta makes:
-        // SiestaLog.Category.enabled = [.network]
-        // SiestaLog.Category.enabled = SiestaLog.Category.all
+//         SiestaLog.Category.enabled = [.network]
+//         SiestaLog.Category.enabled = SiestaLog.Category.all
     }
 
     func api(host: String) {
@@ -78,6 +77,7 @@ class RealApiService: Api {
             .withParam("age", appliedAgeFilters)
             .withParam("organization", organizationId)
             .withParam("distance", distance)
+            .withParam("sort", "distance")
         .request(.get).onSuccess { result in
             if let animalSearchResult: AnimalSearchResult = result.typedContent(),
                let callback = then {
@@ -111,11 +111,16 @@ class RealApiService: Api {
     func searchOrganizations(with params: OrganizationSearchParams,
                 then: ((OrganizationSearchResult) -> Void)?,
                 fail: ((Error) -> Void)?) {
-        service.resource("/organizations")
-            .withParam("name", params.name)
-            .withParam("location", params.location)
-            .withParam("limit", "100")
-        .request(.get).onSuccess { result in
+        var resource = service.resource("/organizations")
+        if !params.name!.isEmpty {
+            resource = resource.withParam("name", params.name)
+        }
+        if !params.location!.isEmpty {
+            resource = resource.withParam("location", params.location)
+            resource = resource.withParam("sort", "distance")
+        }
+        resource = resource.withParam("limit", "100")
+        resource.request(.get).onSuccess { result in
             if let organizationSearchResult: OrganizationSearchResult = result.typedContent(),
                let callback = then {
                 callback(organizationSearchResult)

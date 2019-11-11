@@ -25,6 +25,7 @@
 		C9B6E05F2362D25A003452B7 /* InfoPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B6E05E2362D25A003452B7 /* InfoPageViewController.swift */; };
 		C9B6E06A2362D742003452B7 /* AnimalSearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B6E0692362D742003452B7 /* AnimalSearchResultViewController.swift */; };
 		C9C7F373236504A10020716D /* SearchByLocationFormUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C7F372236504A10020716D /* SearchByLocationFormUITests.swift */; };
+		C9D79E7A237948CB0055432B /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D79E79237948CB0055432B /* WebViewController.swift */; };
 		C9DA8B462360E83100E63BCD /* OrganizationSearchResultTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DA8B452360E83000E63BCD /* OrganizationSearchResultTableViewController.swift */; };
 		C9DA8B532360EAAC00E63BCD /* OrganizationSearchResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DA8B522360EAAC00E63BCD /* OrganizationSearchResultTableViewCell.swift */; };
 		C9DB264D23680EFE00E5B133 /* AnimalResultFilterSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DB264C23680EFE00E5B133 /* AnimalResultFilterSelectionViewController.swift */; };
@@ -187,6 +188,7 @@
 		C9B6E05E2362D25A003452B7 /* InfoPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoPageViewController.swift; sourceTree = "<group>"; };
 		C9B6E0692362D742003452B7 /* AnimalSearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalSearchResultViewController.swift; sourceTree = "<group>"; };
 		C9C7F372236504A10020716D /* SearchByLocationFormUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchByLocationFormUITests.swift; sourceTree = "<group>"; };
+		C9D79E79237948CB0055432B /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		C9DA8B452360E83000E63BCD /* OrganizationSearchResultTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationSearchResultTableViewController.swift; sourceTree = "<group>"; };
 		C9DA8B522360EAAC00E63BCD /* OrganizationSearchResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationSearchResultTableViewCell.swift; sourceTree = "<group>"; };
 		C9DB264C23680EFE00E5B133 /* AnimalResultFilterSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalResultFilterSelectionViewController.swift; sourceTree = "<group>"; };
@@ -266,6 +268,7 @@
 				C9DB264C23680EFE00E5B133 /* AnimalResultFilterSelectionViewController.swift */,
 				C9DB264E2368155100E5B133 /* AnimalResultFilterSelectionTableViewCell.swift */,
 				C91F8DE923678D88006D8217 /* AnimalResultFiltersViewController.swift */,
+				C9D79E79237948CB0055432B /* WebViewController.swift */,
 				C935307C235AC82F004F152D /* AnimalSearchResultCollectionViewCell.swift */,
 				C9E9EE41235AC96300066405 /* AnimalSearchResultCollectionViewController.swift */,
 				C9B6E0692362D742003452B7 /* AnimalSearchResultViewController.swift */,
@@ -568,6 +571,7 @@
 				C935307D235AC82F004F152D /* AnimalSearchResultCollectionViewCell.swift in Sources */,
 				C9DB264F2368155100E5B133 /* AnimalResultFilterSelectionTableViewCell.swift in Sources */,
 				F758FDE22165FBC1008A0136 /* MockApiService.swift in Sources */,
+				C9D79E7A237948CB0055432B /* WebViewController.swift in Sources */,
 				F728C27B216330E000B97379 /* Api.swift in Sources */,
 				C9B6E05F2362D25A003452B7 /* InfoPageViewController.swift in Sources */,
 				C9DA8B532360EAAC00E63BCD /* OrganizationSearchResultTableViewCell.swift in Sources */,

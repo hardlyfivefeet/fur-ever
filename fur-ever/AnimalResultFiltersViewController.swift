@@ -31,8 +31,11 @@ class AnimalResultFiltersViewController: UIViewController {
         case "Cat":
             animalType.selectedSegmentIndex = 1
             break
-        default:
+        case "Bird":
             animalType.selectedSegmentIndex = 2
+            break
+        default:
+            animalType.selectedSegmentIndex = 3
             break
         }
         switch distance {
@@ -73,8 +76,11 @@ class AnimalResultFiltersViewController: UIViewController {
         case "Cat":
             searchParams.breeds = Filter(Breeds.catBreeds)
             break
+        case "Bird":
+            searchParams.breeds = Filter(Breeds.birdBreeds)
+            break
         default:
-            searchParams.breeds = Filter(Breeds.otherBreeds)
+            searchParams.breeds = Filter(Breeds.rabbitBreeds)
             break
         }
     }
@@ -86,11 +92,6 @@ class AnimalResultFiltersViewController: UIViewController {
         searchParams.gender.appliedFilters = []
         updateFilterLabels()
     }
-
-//    // TODO: Make same action as unwind segue
-//    @IBAction func cancelButtonTapped (_ sender: Any) {
-//        self.performSegue(withIdentifier: "cancelButtonTappedAtAnimalResultFilters", sender: self)
-//    }
 
     // Unwind segue when user clicks on cancel button from filter selection table
     @IBAction func cancelFilterSelectionToAnimalResultFiltersViewController(unwindSegue: UIStoryboardSegue) {

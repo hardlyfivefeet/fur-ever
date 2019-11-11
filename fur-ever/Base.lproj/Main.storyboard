@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qJk-IZ-9OC">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -172,20 +171,21 @@ FUR-EVER HOME</string>
                                 </constraints>
                                 <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                 <connections>
                                     <action selector="textFieldChanged:" destination="KbK-px-wgY" eventType="editingChanged" id="0MR-dU-vAC"/>
                                 </connections>
                             </textField>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="TUE-mY-Mt2">
-                                <rect key="frame" x="97" y="356.5" width="220" height="32"/>
+                                <rect key="frame" x="57" y="356.5" width="300" height="32"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="220" identifier="id23" id="QHQ-bZ-UUo"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" identifier="id23" id="QHQ-bZ-UUo"/>
                                 </constraints>
                                 <segments>
                                     <segment title="Dog"/>
                                     <segment title="Cat"/>
-                                    <segment title="Other"/>
+                                    <segment title="Bird"/>
+                                    <segment title="Rabbit"/>
                                 </segments>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9JQ-UA-21S">
@@ -286,7 +286,8 @@ FUR-EVER HOME</string>
                                         <segments>
                                             <segment title="Dog"/>
                                             <segment title="Cat"/>
-                                            <segment title="Other"/>
+                                            <segment title="Bird"/>
+                                            <segment title="Rabbit"/>
                                         </segments>
                                         <connections>
                                             <action selector="animalTypeChanged:" destination="KAo-Kd-J4I" eventType="valueChanged" id="5P5-ED-Dsy"/>
@@ -580,13 +581,13 @@ FUR-EVER HOME</string>
                         <color key="backgroundColor" red="0.89192885160000002" green="0.96444040539999998" blue="0.99798113109999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="cby-fB-IUX">
                             <size key="itemSize" width="150" height="150"/>
-                            <size key="headerReferenceSize" width="50" height="87"/>
+                            <size key="headerReferenceSize" width="50" height="64"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="animalThumbnailCell" id="V0S-VJ-cva" customClass="AnimalSearchResultCollectionViewCell" customModule="FurEver" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="87" width="150" height="150"/>
+                                <rect key="frame" x="0.0" y="64" width="150" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="D0Y-nq-JPS">
                                     <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
@@ -631,17 +632,19 @@ FUR-EVER HOME</string>
                             </collectionViewCell>
                         </cells>
                         <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="SearchResultCollectionHeaderView" id="Yhg-rL-cqq" customClass="SearchResultCollectionHeaderView" customModule="FurEver" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="87"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="64"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
-                                <searchBar contentMode="redraw" placeholder="Zip Code/City, State" translatesAutoresizingMaskIntoConstraints="NO" id="wm0-qv-YVA">
-                                    <rect key="frame" x="20.5" y="15" width="373" height="56"/>
+                                <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Zip Code/City, State" translatesAutoresizingMaskIntoConstraints="NO" id="wm0-qv-YVA">
+                                    <rect key="frame" x="20.5" y="4" width="373" height="56"/>
+                                    <color key="backgroundColor" red="0.89192885160000002" green="0.96444040539999998" blue="0.99798113109999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="barTintColor" red="0.89192885160000002" green="0.96444040539999998" blue="0.99798113109999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <textInputTraits key="textInputTraits" returnKeyType="search" enablesReturnKeyAutomatically="YES"/>
                                 </searchBar>
                             </subviews>
                             <color key="backgroundColor" red="0.89283058189999998" green="0.96454022449999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
-                                <constraint firstItem="wm0-qv-YVA" firstAttribute="top" secondItem="Yhg-rL-cqq" secondAttribute="top" constant="15" id="Pfw-tO-Lhe"/>
+                                <constraint firstItem="wm0-qv-YVA" firstAttribute="centerY" secondItem="Yhg-rL-cqq" secondAttribute="centerY" id="XvM-cY-tPc"/>
                                 <constraint firstItem="wm0-qv-YVA" firstAttribute="width" secondItem="Yhg-rL-cqq" secondAttribute="width" multiplier="0.9" id="gtL-oh-OoJ"/>
                                 <constraint firstItem="wm0-qv-YVA" firstAttribute="centerX" secondItem="Yhg-rL-cqq" secondAttribute="centerX" id="rB2-8p-NsL"/>
                             </constraints>
@@ -667,7 +670,7 @@ FUR-EVER HOME</string>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E3W-mU-286" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2813" y="-370"/>
+            <point key="canvasLocation" x="2811.594202898551" y="-370.3125"/>
         </scene>
         <!--Animal Search Result View Controller-->
         <scene sceneID="AfD-2J-Szi">
@@ -762,7 +765,7 @@ FUR-EVER HOME</string>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                 <state key="normal" title="Read More"/>
                                                 <connections>
-                                                    <action selector="readMoreButtonTapped:" destination="sJu-gF-OH2" eventType="touchUpInside" id="C4y-4P-xl2"/>
+                                                    <segue destination="sFi-5D-Ynk" kind="show" identifier="" id="MGS-g5-wzH"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -813,6 +816,48 @@ FUR-EVER HOME</string>
             </objects>
             <point key="canvasLocation" x="3657.971014492754" y="-117.1875"/>
         </scene>
+        <!--Web View Controller-->
+        <scene sceneID="9Tg-mq-IPz">
+            <objects>
+                <viewController id="sFi-5D-Ynk" customClass="WebViewController" customModule="FurEver" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="l0U-zP-4sh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BPK-xu-Udi">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="fNg-YD-fWT">
+                                <rect key="frame" x="188.5" y="432" width="37" height="37"/>
+                                <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="BPK-xu-Udi" firstAttribute="centerY" secondItem="Lk6-nW-Kid" secondAttribute="centerY" id="0pS-C2-dgI"/>
+                            <constraint firstItem="fNg-YD-fWT" firstAttribute="centerX" secondItem="BPK-xu-Udi" secondAttribute="centerX" id="9ue-8d-G9O"/>
+                            <constraint firstItem="BPK-xu-Udi" firstAttribute="width" secondItem="Lk6-nW-Kid" secondAttribute="width" id="Ee5-so-GdB"/>
+                            <constraint firstItem="BPK-xu-Udi" firstAttribute="centerX" secondItem="Lk6-nW-Kid" secondAttribute="centerX" id="f6X-GW-oY8"/>
+                            <constraint firstItem="fNg-YD-fWT" firstAttribute="centerY" secondItem="BPK-xu-Udi" secondAttribute="centerY" id="itT-aX-hGL"/>
+                            <constraint firstItem="BPK-xu-Udi" firstAttribute="height" secondItem="Lk6-nW-Kid" secondAttribute="height" id="k7Q-ck-OVl"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Lk6-nW-Kid"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Upx-6t-jib"/>
+                    <connections>
+                        <outlet property="loadingView" destination="fNg-YD-fWT" id="9S5-nb-Vux"/>
+                        <outlet property="webView" destination="BPK-xu-Udi" id="OY6-zZ-bxd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GQG-m4-jq4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4676.811594202899" y="287.94642857142856"/>
+        </scene>
         <!--Search by Organization-->
         <scene sceneID="tZD-Z0-ThE">
             <objects>
@@ -858,12 +903,12 @@ FUR-EVER HOME</string>
                                 </constraints>
                                 <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                 <connections>
                                     <action selector="textFieldChanged:" destination="HaY-1C-Mb2" eventType="editingChanged" id="sLb-q8-7Ty"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Zip Code/City/State" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ypD-E5-wOo">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Zip Code/City, State" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ypD-E5-wOo">
                                 <rect key="frame" x="82" y="479" width="250" height="34"/>
                                 <accessibility key="accessibilityConfiguration" identifier="locationField"/>
                                 <constraints>
@@ -871,7 +916,7 @@ FUR-EVER HOME</string>
                                 </constraints>
                                 <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                 <connections>
                                     <action selector="textFieldChanged:" destination="HaY-1C-Mb2" eventType="editingChanged" id="WLD-Ed-uKm"/>
                                 </connections>
@@ -1125,8 +1170,7 @@ FUR-EVER HOME</string>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                 <state key="normal" title="Read More"/>
                                                 <connections>
-                                                    <action selector="readMoreButtonTapped:" destination="oQa-l8-Iqh" eventType="touchUpInside" id="cRe-wy-MDi"/>
-                                                    <action selector="readMoreButtonTapped:" destination="sJu-gF-OH2" eventType="touchUpInside" id="lAv-0X-5Yc"/>
+                                                    <segue destination="sFi-5D-Ynk" kind="show" identifier="navigateToOrganizationWebsite" id="Cn7-2v-t7a"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -1200,6 +1244,7 @@ FUR-EVER HOME</string>
         <image name="petfinder-logo" width="1000" height="292"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="Cn7-2v-t7a"/>
         <segue reference="hep-kZ-hCc"/>
         <segue reference="KTQ-KW-NhA"/>
     </inferredMetricsTieBreakers>

@@ -52,12 +52,6 @@ class OrganizationSearchResultViewController: UIViewController {
         urlToWebsite = organization.url!
     }
 
-    @IBAction func readMoreButtonTapped(_ sender: Any) {
-        if let url = URL(string: urlToWebsite!) {
-            UIApplication.shared.open(url)
-        }
-    }
-
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "organizationToAnimalSearchResult" {
             if let animalSearchResultCollectionViewController = segue.destination as? AnimalSearchResultCollectionViewController {
@@ -65,6 +59,11 @@ class OrganizationSearchResultViewController: UIViewController {
                 animalSearchResultCollectionViewController.shouldShowHeader = false
                 animalSearchResultCollectionViewController.shouldAllowFilters = false
              }
+        }
+        if segue.identifier == "navigateToOrganizationWebsite" {
+            if let webViewController = segue.destination as? WebViewController {
+                webViewController.url = urlToWebsite
+            }
         }
     }
 }

@@ -78,6 +78,7 @@ class OrganizationSearchResultTableViewController: UITableViewController {
     }
 
     private func report(error: Error) {
+        loadingView.stopAnimating()
        let alert = UIAlertController(title: "Network Issue",
            message: "Sorry, we seem to have encountered a network problem: \(error.localizedDescription)",
            preferredStyle: .alert)

@@ -129,13 +129,18 @@ class AnimalSearchResultCollectionViewController: UICollectionViewController, UI
         loadingView.stopAnimating()
         collectionView.reloadData()
         if (searchResults.count == 0) {
-            collectionView.showNoResultsMessage()
+            if (searchParams.organizationId == nil) {
+                collectionView.showNoResultsMessage("No results found.\nTry adjusting your filters\nto see more results.")
+            } else {
+                collectionView.showNoResultsMessage("Sorry, there are no adoptable pets\nat this organization.")
+            }
         } else {
             collectionView.restore()
         }
     }
 
     private func report(error: Error) {
+        loadingView.stopAnimating()
         let alert = UIAlertController(title: "Network Issue",
            message: "Sorry, we seem to have encountered a network problem: \(error.localizedDescription)",
            preferredStyle: .alert)
@@ -172,9 +177,9 @@ class AnimalSearchResultCollectionViewController: UICollectionViewController, UI
 // Credit: https://stackoverflow.com/questions/43772984/how-to-show-a-message-when-collection-view-is-empty
 // Show error message if no results fit the search criteria
 extension UICollectionView {
-    func showNoResultsMessage() {
+    func showNoResultsMessage(_ errorText: String) {
         let messageLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.bounds.size.width, height: self.bounds.size.height))
-        messageLabel.text = "No results found.\nTry adjusting your filters\nto see more results."
+        messageLabel.text = errorText
         messageLabel.textColor = .systemIndigo
         messageLabel.numberOfLines = 0
         messageLabel.textAlignment = .center

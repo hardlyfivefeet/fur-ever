@@ -10,7 +10,7 @@ class RealApiService: Api {
 
     init() {
 //         SiestaLog.Category.enabled = [.network]
-//         SiestaLog.Category.enabled = SiestaLog.Category.all
+         SiestaLog.Category.enabled = SiestaLog.Category.all
     }
 
     func api(host: String) {
@@ -67,18 +67,21 @@ class RealApiService: Api {
         let distance = String(params.distance)
         let organizationId = params.organizationId ?? ""
 
-        service.resource("/animals")
+        var resource = service.resource("/animals")
+        if !params.location!.isEmpty {
+            resource = resource.withParam("location", params.location)
+            resource = resource.withParam("distance", distance)
+            resource = resource.withParam("sort", "distance")
+        }
+        resource = resource.withParam("status", "adoptable")
             .withParam("type", params.animalType)
-            .withParam("location", params.location)
             .withParam("limit", "100")
             .withParam("breed", appliedBreedFilters)
             .withParam("size", appliedSizeFilters)
             .withParam("gender", appliedGenderFilters)
             .withParam("age", appliedAgeFilters)
             .withParam("organization", organizationId)
-            .withParam("distance", distance)
-            .withParam("sort", "distance")
-        .request(.get).onSuccess { result in
+        resource.request(.get).onSuccess { result in
             if let animalSearchResult: AnimalSearchResult = result.typedContent(),
                let callback = then {
                 callback(animalSearchResult)

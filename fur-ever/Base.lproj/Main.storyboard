@@ -703,7 +703,7 @@ FUR-EVER HOME</string>
                                 <rect key="frame" x="31" y="359" width="352" height="449"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="VU7-YD-CYI">
-                                        <rect key="frame" x="0.0" y="0.0" width="352" height="342"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="352" height="378.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VV0-44-wlt">
                                                 <rect key="frame" x="0.0" y="0.0" width="352" height="21.5"/>
@@ -712,30 +712,30 @@ FUR-EVER HOME</string>
                                                 <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vq7-wz-EWa">
-                                                <rect key="frame" x="0.0" y="36.5" width="352" height="21.5"/>
-                                                <accessibility key="accessibilityConfiguration" identifier="type"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Breed" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rvW-qQ-Ve5">
-                                                <rect key="frame" x="0.0" y="73" width="352" height="21.5"/>
+                                                <rect key="frame" x="0.0" y="36.5" width="352" height="21.5"/>
                                                 <accessibility key="accessibilityConfiguration" identifier="breed"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rry-86-0Oz">
-                                                <rect key="frame" x="0.0" y="109.5" width="352" height="21.5"/>
+                                                <rect key="frame" x="0.0" y="73" width="352" height="21.5"/>
                                                 <accessibility key="accessibilityConfiguration" identifier="age"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gender" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="psv-Se-nH5">
-                                                <rect key="frame" x="0.0" y="146" width="352" height="21.5"/>
+                                                <rect key="frame" x="0.0" y="109.5" width="352" height="21.5"/>
                                                 <accessibility key="accessibilityConfiguration" identifier="gender"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coat" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="atl-21-VdT">
+                                                <rect key="frame" x="0.0" y="146" width="352" height="21.5"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="coat"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -747,15 +747,22 @@ FUR-EVER HOME</string>
                                                 <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Attributes" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fKc-zU-s9E">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Attributes" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fKc-zU-s9E">
                                                 <rect key="frame" x="0.0" y="219" width="352" height="21.5"/>
                                                 <accessibility key="accessibilityConfiguration" identifier="attributes"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Environment" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vgD-Q0-Th0">
+                                                <rect key="frame" x="0.0" y="255.5" width="352" height="21.5"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="environment"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Contact" translatesAutoresizingMaskIntoConstraints="NO" id="5Dq-Yj-C4v" customClass="CustomTextView" customModule="FurEver" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="255.5" width="352" height="37.5"/>
+                                                <rect key="frame" x="0.0" y="292" width="352" height="37.5"/>
                                                 <color key="backgroundColor" red="0.89283058189999998" green="0.96454022449999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <accessibility key="accessibilityConfiguration" identifier="contact">
                                                     <accessibilityTraits key="traits" staticText="YES"/>
@@ -766,7 +773,7 @@ FUR-EVER HOME</string>
                                                 <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
                                             </textView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xjm-Ax-5Vr">
-                                                <rect key="frame" x="0.0" y="308" width="352" height="34"/>
+                                                <rect key="frame" x="0.0" y="344.5" width="352" height="34"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                 <state key="normal" title="Read More"/>
                                                 <connections>
@@ -809,14 +816,15 @@ FUR-EVER HOME</string>
                         <outlet property="age" destination="rry-86-0Oz" id="Bfo-vg-kJG"/>
                         <outlet property="attributes" destination="fKc-zU-s9E" id="vO4-3l-f9v"/>
                         <outlet property="breed" destination="rvW-qQ-Ve5" id="Fpb-0c-Ifr"/>
+                        <outlet property="coat" destination="atl-21-VdT" id="sGt-RE-hMf"/>
                         <outlet property="contact" destination="5Dq-Yj-C4v" id="Kcq-Vq-Mbe"/>
                         <outlet property="distance" destination="VV0-44-wlt" id="s31-vm-fTF"/>
+                        <outlet property="environment" destination="vgD-Q0-Th0" id="F4c-0S-VzR"/>
                         <outlet property="gender" destination="psv-Se-nH5" id="Ssv-FI-Kwi"/>
                         <outlet property="image" destination="Fqn-B3-paG" id="uKH-Bb-RQ7"/>
                         <outlet property="name" destination="hg9-cG-Dgi" id="WDA-Mx-CHl"/>
                         <outlet property="scrollView" destination="7x2-ue-qjt" id="CVr-0t-xLI"/>
                         <outlet property="size" destination="gVf-mm-UfC" id="TrG-tI-iSZ"/>
-                        <outlet property="type" destination="vq7-wz-EWa" id="L6b-m0-kYN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SDk-vX-PEj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1256,7 +1264,7 @@ FUR-EVER HOME</string>
         <image name="petfinder-logo" width="1000" height="292"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Cn7-2v-t7a"/>
+        <segue reference="MGS-g5-wzH"/>
         <segue reference="hep-kZ-hCc"/>
         <segue reference="KTQ-KW-NhA"/>
     </inferredMetricsTieBreakers>

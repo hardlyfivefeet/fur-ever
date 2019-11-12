@@ -15,12 +15,13 @@ class AnimalSearchResultViewController: UIViewController {
     @IBOutlet weak var image: RemoteImageView!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var distance: UILabel!
-    @IBOutlet weak var type: UILabel!
     @IBOutlet weak var breed: UILabel!
     @IBOutlet weak var age: UILabel!
     @IBOutlet weak var gender: UILabel!
+    @IBOutlet weak var coat: UILabel!
     @IBOutlet weak var size: UILabel!
     @IBOutlet weak var attributes: UILabel!
+    @IBOutlet weak var environment: UILabel!
     @IBOutlet weak var contact: UITextView!
     @IBOutlet weak var scrollView: UIScrollView!
 
@@ -47,14 +48,16 @@ class AnimalSearchResultViewController: UIViewController {
             image.image = UIImage(named: "NoImageAvailable")
         }
         name.text = animal.name
-        distance.text = "Distance: " + (searchDistance == nil ? "Not available" : "\(searchDistance!) miles")
-        type.text = animal.type
+        let notAvailable = "Not Available"
+        distance.text = "Distance: " + (searchDistance == nil ? notAvailable : "\(searchDistance!) miles")
         let secondaryBreed = animal.breeds.secondary ?? ""
-        breed.text = (animal.breeds.primary ?? "Unknown") + (secondaryBreed.isEmpty ? "" : ", " + secondaryBreed) + (animal.breeds.mixed ?? false ? " Mix" : "")
-        age.text = animal.age ?? "Age not available"
-        gender.text = animal.gender ?? "Gender not available"
-        size.text = animal.size ?? "Size not available"
+        breed.text = "Breed: " + (animal.breeds.primary ?? "Unknown") + (secondaryBreed.isEmpty ? "" : ", " + secondaryBreed) + (animal.breeds.mixed ?? false ? " Mix" : "")
+        age.text = "Age: " + (animal.age ?? notAvailable)
+        gender.text = "Gender: " + (animal.gender ?? notAvailable)
+        coat.text = "Coat: " + (animal.coat ?? notAvailable)
+        size.text = "Size: " + (animal.size ?? notAvailable)
         attributes.text = (animal.attributes.house_trained ?? false ? "House-trained\n" : "Not house-trained\n") + (animal.attributes.spayed_neutered ?? false ? "Spayed/Neutered" : "Not spayed/neutered")
+        environment.text = (animal.environment.children ?? false ? "Good with children\n" : "Not good with children\n") + (animal.environment.dogs ?? false ? "Good with other dogs\n" : "Not good with other dogs\n") + (animal.environment.cats ?? false ? "Good with other cats" : "Not good with other cats")
 
         let email = animal.contact.email ?? ""
         let phone = animal.contact.phone ?? ""

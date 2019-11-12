@@ -35,6 +35,7 @@ class AnimalSearchParams: Copyable {
 
     init(organizationId: String) {
         self.organizationId = organizationId
+        self.location = ""
     }
 
     required init(copy: AnimalSearchParams) {
@@ -67,19 +68,29 @@ struct Animal: Codable, Equatable {
     let id: Int
     let name: String
     let photos: [Photo]
-    var type: String?
     var age: String?
     var gender: String?
     var size: String?
+    var coat: String?
     var url: String?
     let breeds: Breed
     let attributes: Attributes
+    let environment: Environment
     let contact: Contact
+}
+
+struct Environment: Codable, Equatable {
+    var children: Bool?
+    var dogs: Bool?
+    var cats: Bool?
 }
 
 struct Attributes: Codable, Equatable {
     var spayed_neutered: Bool?
     var house_trained: Bool?
+    var declawed: Bool?
+    var special_needs: Bool?
+    var shots_current: Bool?
 }
 
 struct Address: Codable, Equatable {

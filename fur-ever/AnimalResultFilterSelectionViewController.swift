@@ -9,6 +9,7 @@ class AnimalResultFilterSelectionViewController: UIViewController, UITableViewDe
     @IBOutlet weak var tableView: UITableView!
     var filterOption: Filter!
     var tableTitleText: String!
+    var selectedCells: [Int]!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,6 +18,7 @@ class AnimalResultFilterSelectionViewController: UIViewController, UITableViewDe
         tableTitle.text = tableTitleText
         tableView.tableFooterView = UIView(frame: .zero)
         tableView?.backgroundColor = UIColor(red: 227.0/255.0, green: 246.0/255.0, blue: 254.0/255.0, alpha: 1.0)
+        selectedCells = filterOption.appliedFilters
     }
 
     // set the name for each row in the table
@@ -27,9 +29,11 @@ class AnimalResultFilterSelectionViewController: UIViewController, UITableViewDe
         cell.value.text = filterOption.availableValues[indexPath.row]
 
         // if filter value is currently applied, the row should be selected
-        if (filterOption.appliedFilters.contains(indexPath.row)) {
-            self.tableView.selectRow(at: indexPath, animated: true, scrollPosition: UITableView.ScrollPosition.none)
+        if (selectedCells.contains(indexPath.row)) {
+            self.tableView.selectRow(at: indexPath, animated: false, scrollPosition: UITableView.ScrollPosition.none)
             cell.accessoryType = .checkmark
+        } else {
+            cell.accessoryType = .none
         }
         return cell
     }
@@ -43,6 +47,7 @@ class AnimalResultFilterSelectionViewController: UIViewController, UITableViewDe
 
     // remove checkmark on deselected rows
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        selectedCells = selectedCells.filter {$0 != indexPath.row}
         if let cell = tableView.cellForRow(at: indexPath) {
             cell.accessoryType = .none
         }
@@ -50,6 +55,7 @@ class AnimalResultFilterSelectionViewController: UIViewController, UITableViewDe
 
     // put a checkmark on selected rows
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedCells.append(indexPath.row)
         if let cell = tableView.cellForRow(at: indexPath) {
             cell.accessoryType = .checkmark
         }
@@ -69,13 +75,8 @@ class AnimalResultFilterSelectionViewController: UIViewController, UITableViewDe
         return indexPath
     }
 
-    private func getSelectedRows() {
-        let selectedIndexPaths = tableView.indexPathsForSelectedRows
-        filterOption.appliedFilters = selectedIndexPaths!.map {$0.row}
-    }
-
     @IBAction func saveButtonTapped(_ sender: Any) {
-        getSelectedRows()
+        filterOption.appliedFilters = selectedCells
         self.performSegue(withIdentifier: "saveAnimalResultFilterSelection", sender: self)
     }
 }

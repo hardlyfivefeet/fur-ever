@@ -682,7 +682,10 @@ FUR-EVER HOME</string>
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NoImageAvailable" translatesAutoresizingMaskIntoConstraints="NO" id="Fqn-B3-paG" customClass="RemoteImageView" customModule="SiestaUI">
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="fwB-n0-p6r">
+                                <rect key="frame" x="188.5" y="190" width="37" height="37"/>
+                            </activityIndicatorView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Fqn-B3-paG" customClass="RemoteImageView" customModule="SiestaUI">
                                 <rect key="frame" x="116.5" y="118" width="181" height="181.5"/>
                                 <accessibility key="accessibilityConfiguration" identifier="animalImage"/>
                                 <constraints>
@@ -786,12 +789,14 @@ FUR-EVER HOME</string>
                         </subviews>
                         <color key="backgroundColor" red="0.89283058189999998" green="0.96454022449999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="fwB-n0-p6r" firstAttribute="centerX" secondItem="Fqn-B3-paG" secondAttribute="centerX" id="3nB-uW-G31"/>
                             <constraint firstItem="hg9-cG-Dgi" firstAttribute="width" secondItem="VU7-YD-CYI" secondAttribute="width" id="API-3b-YkS"/>
                             <constraint firstItem="zSC-zm-XPz" firstAttribute="bottom" secondItem="7x2-ue-qjt" secondAttribute="bottom" priority="500" constant="5" id="D9P-Kw-o5A"/>
                             <constraint firstItem="hg9-cG-Dgi" firstAttribute="top" secondItem="Fqn-B3-paG" secondAttribute="bottom" constant="18" id="Dql-J3-mK2"/>
                             <constraint firstItem="hg9-cG-Dgi" firstAttribute="centerX" secondItem="zSC-zm-XPz" secondAttribute="centerX" id="EsA-uH-ZWc"/>
                             <constraint firstItem="7x2-ue-qjt" firstAttribute="centerX" secondItem="zSC-zm-XPz" secondAttribute="centerX" id="OAs-Bm-84f"/>
                             <constraint firstItem="Fqn-B3-paG" firstAttribute="top" secondItem="zSC-zm-XPz" secondAttribute="top" constant="30" id="PsD-Ja-K8e"/>
+                            <constraint firstItem="fwB-n0-p6r" firstAttribute="centerY" secondItem="Fqn-B3-paG" secondAttribute="centerY" id="f4s-3V-Sfv"/>
                             <constraint firstItem="Fqn-B3-paG" firstAttribute="centerX" secondItem="zSC-zm-XPz" secondAttribute="centerX" id="lAc-7e-hTQ"/>
                             <constraint firstItem="7x2-ue-qjt" firstAttribute="top" secondItem="hg9-cG-Dgi" secondAttribute="bottom" constant="15" id="nTm-7e-AKq"/>
                             <constraint firstItem="Fqn-B3-paG" firstAttribute="height" secondItem="zSC-zm-XPz" secondAttribute="height" multiplier="0.25" id="xgl-1t-ZWz"/>
@@ -1126,7 +1131,10 @@ FUR-EVER HOME</string>
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NoImageAvailable" translatesAutoresizingMaskIntoConstraints="NO" id="eUR-Kt-AHU" customClass="RemoteImageView" customModule="SiestaUI">
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="efK-WP-ugu">
+                                <rect key="frame" x="188.5" y="172" width="37" height="37"/>
+                            </activityIndicatorView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eUR-Kt-AHU" customClass="RemoteImageView" customModule="SiestaUI">
                                 <rect key="frame" x="134.5" y="118" width="145" height="145"/>
                                 <accessibility key="accessibilityConfiguration" identifier="organizationImage"/>
                                 <constraints>
@@ -1209,8 +1217,10 @@ FUR-EVER HOME</string>
                             <constraint firstItem="sRX-JY-vtr" firstAttribute="top" secondItem="Zke-fz-gw5" secondAttribute="bottom" constant="15" id="0HZ-HF-wVs"/>
                             <constraint firstItem="eUR-Kt-AHU" firstAttribute="centerX" secondItem="YMK-id-Kn5" secondAttribute="centerX" id="9BE-bo-E1R"/>
                             <constraint firstItem="YMK-id-Kn5" firstAttribute="bottom" secondItem="sRX-JY-vtr" secondAttribute="bottom" priority="500" constant="5" id="KEZ-dT-Yfk"/>
+                            <constraint firstItem="efK-WP-ugu" firstAttribute="centerY" secondItem="eUR-Kt-AHU" secondAttribute="centerY" id="KsX-QD-Ecb"/>
                             <constraint firstItem="bao-RU-Dzz" firstAttribute="centerX" secondItem="YMK-id-Kn5" secondAttribute="centerX" id="UqA-Yy-fiG"/>
                             <constraint firstItem="eUR-Kt-AHU" firstAttribute="top" secondItem="YMK-id-Kn5" secondAttribute="top" constant="30" id="W57-Vh-ZH8"/>
+                            <constraint firstItem="efK-WP-ugu" firstAttribute="centerX" secondItem="eUR-Kt-AHU" secondAttribute="centerX" id="a0b-si-NKu"/>
                             <constraint firstItem="bao-RU-Dzz" firstAttribute="width" secondItem="0DZ-dN-TBR" secondAttribute="width" id="dMG-kf-Bxe"/>
                             <constraint firstItem="sRX-JY-vtr" firstAttribute="width" secondItem="YMK-id-Kn5" secondAttribute="width" multiplier="0.85" id="i5v-Yx-Rub"/>
                             <constraint firstItem="Zke-fz-gw5" firstAttribute="top" secondItem="bao-RU-Dzz" secondAttribute="bottom" constant="10" id="iuq-0u-oUQ"/>

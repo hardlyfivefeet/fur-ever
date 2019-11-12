@@ -26,6 +26,8 @@ class OrganizationSearchResultViewController: UIViewController {
     private func displayInfo() {
         if organization.photos.count != 0 {
             image.imageURL = organization.photos[0].full
+        } else {
+            image.image = UIImage(named: "NoImageAvailable")
         }
         name.text = organization.name
         distance.text = "Distance: " + (organization.distance == nil ? "Not available" : "\(organization.distance!) miles")

@@ -14,19 +14,32 @@ class AnimalSearchResultCollectionViewController: UICollectionViewController, UI
     var selectedRow = 0
     var shouldShowHeader = true
     var shouldAllowFilters = true
+    var loadingView: UIActivityIndicatorView!
 
     @IBOutlet weak var filterButton: UIBarButtonItem!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: self.tabBarController!.tabBar.frame.height, right: 0)
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        api = appDelegate.api
         filterButton.isEnabled = shouldAllowFilters
+
+        collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: self.tabBarController!.tabBar.frame.height, right: 0)
+        loadingView = UIActivityIndicatorView(style: .large)
+        collectionView.backgroundView = loadingView
         if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             layout.sectionHeadersPinToVisibleBounds = true
         }
+
+        // set up API
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        api = appDelegate.api
         makeApiCall()
+    }
+
+    // show loading indicator before cells start showing
+    override func viewWillAppear(_ animated: Bool) {
+        if collectionView.numberOfItems(inSection: 0) == 0 {
+            loadingView.startAnimating()
+        }
     }
 
     private func makeApiCall() {
@@ -54,7 +67,7 @@ class AnimalSearchResultCollectionViewController: UICollectionViewController, UI
         return 1
     }
 
-    // Set the image and name for each cell
+    // set the image and name for each cell
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) ->
            UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: REUSE_IDENTIFIER, for: indexPath)
@@ -73,7 +86,7 @@ class AnimalSearchResultCollectionViewController: UICollectionViewController, UI
         return true
     }
 
-    // Pass the name of the location from the controller to the search bar in the header of the results page
+    // pass the name of the location from the controller to the search bar in the header of the results page
     override func collectionView(_ collectionView: UICollectionView,
                                  viewForSupplementaryElementOfKind kind: String,
                                      at indexPath: IndexPath) -> UICollectionReusableView {
@@ -95,6 +108,7 @@ class AnimalSearchResultCollectionViewController: UICollectionViewController, UI
         }
     }
 
+    // set up search bar header based on whether it needs to be shown
     func collectionView(_ collectionView: UICollectionView,
                           layout collectionViewLayout: UICollectionViewLayout,
                           referenceSizeForHeaderInSection section: Int) -> CGSize {
@@ -112,6 +126,7 @@ class AnimalSearchResultCollectionViewController: UICollectionViewController, UI
 
     private func display(searchResult: AnimalSearchResult) {
         searchResults = searchResult.animals
+        loadingView.stopAnimating()
         collectionView.reloadData()
         if (searchResults.count == 0) {
             collectionView.showNoResultsMessage()
@@ -155,6 +170,7 @@ class AnimalSearchResultCollectionViewController: UICollectionViewController, UI
 }
 
 // Credit: https://stackoverflow.com/questions/43772984/how-to-show-a-message-when-collection-view-is-empty
+// Show error message if no results fit the search criteria
 extension UICollectionView {
     func showNoResultsMessage() {
         let messageLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.bounds.size.width, height: self.bounds.size.height))

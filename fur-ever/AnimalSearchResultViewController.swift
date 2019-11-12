@@ -43,6 +43,8 @@ class AnimalSearchResultViewController: UIViewController {
         let animal: Animal = animalResult.animal
         if animal.photos.count != 0 {
             image.imageURL = animal.photos[0].full
+        } else {
+            image.image = UIImage(named: "NoImageAvailable")
         }
         name.text = animal.name
         distance.text = "Distance: " + (searchDistance == nil ? "Not available" : "\(searchDistance!) miles")

@@ -10,7 +10,7 @@ class RealApiService: Api {
 
     init() {
 //         SiestaLog.Category.enabled = [.network]
-         SiestaLog.Category.enabled = SiestaLog.Category.all
+//         SiestaLog.Category.enabled = SiestaLog.Category.all
     }
 
     func api(host: String) {

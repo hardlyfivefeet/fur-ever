@@ -2,11 +2,6 @@ import XCTest
 @testable import FurEver
 
 class OrganizationSearchResultTableViewControllerTests: XCTestCase {
-    override func setUp() {
-    }
-
-    override func tearDown() {
-    }
 
     func testShouldReturnTheCorrectNumberOfSectionsAndItems() {
         guard let organizationSearchResultTableViewController = UIStoryboard(name: "Main", bundle: nil)

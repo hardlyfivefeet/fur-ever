@@ -63,6 +63,6 @@ let animalBasicInfo2 = AnimalBasicInfo(id: 0002, photos: [Photo(medium: "https:/
 
 let animalBasicInfo3 = AnimalBasicInfo(id: 0003, photos: [Photo(medium: "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/46296039/2/?bust=1571268294&width=1080")], name: "Arlo")
 
-let organization1 = Organization(id: "CA0001", name: "Silky Terrier Rescue Charitable Trust Charity", email: "silky-rescue@gmail.com", phone: "012-345-6789", website: "http://silkyrescue.org", address: Address(city: "Culver City", state: "CA"), photos: [Photo(medium: "https://s3.amazonaws.com/petfinder-us-east-1-petimages-prod/organization-photos/27452/27452-1.jpg?bust=2017-07-23+19%3A42%3A27")])
+let organization1 = Organization(id: "CA0001", name: "Silky Terrier Rescue Charitable Trust Charity", email: "silky-rescue@gmail.com", phone: "012-345-6789", website: "http://silkyrescue.org", address: Address(city: "Culver City", state: "CA"), photos: [Photo(medium: "https://s3.amazonaws.com/petfinder-us-east-1-petimages-prod/organization-photos/27452/27452-1.jpg?bust=2017-07-23+19%3A42%3A27")], url: "https://www.petfinder.com/member/us/ca/los-angeles/silky-terrier-rescue-charitable-trust-ca172/?referrer_id=633652ae-f281-4379-9011-32a03ca842e6")
 
 let organization2 = Organization(id: "CA0002", name: "Marley's Pit Stop Rescue", address: Address(city: nil), photos: [Photo(medium: nil)])

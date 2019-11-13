@@ -42,7 +42,7 @@ class SearchByOrganizationFormUITests: XCTestCase {
         let searchButton = app.buttons["searchButton"]
         XCTAssert(searchButton.isEnabled)
     }
-    
+
     func testSearchButtonShouldBeDisabledWhenSearchFieldsAreBlank() {
         testSearchButtonShouldBeEnabledWhenLocationFieldIsNotBlank()
         testSearchButtonShouldBeEnabledWhenNameFieldIsNotBlank()
@@ -63,11 +63,11 @@ class SearchByOrganizationFormUITests: XCTestCase {
     }
 
     func testShouldPopulateTheTableViewWhenSearchResultsArrive() {
-        
+
         let nameField = app.textFields["nameField"]
         nameField.tap()
         nameField.typeText("testy test")
-                
+
         let locationField = app.textFields["locationField"]
         locationField.tap()
         locationField.typeText("testy test")

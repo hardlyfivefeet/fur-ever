@@ -1,7 +1,7 @@
 import XCTest
 
 class SearchByLocationFormUITests: XCTestCase {
-    
+
     let app = XCUIApplication()
 
     override func setUp() {
@@ -31,7 +31,7 @@ class SearchByLocationFormUITests: XCTestCase {
         app.segmentedControls.buttons["Other"].tap()
         XCTAssertTrue(app.segmentedControls.buttons["Other"].isSelected)
     }
-    
+
     func testSearchButtonShouldBeEnabledWhenTheSearchFieldIsNotBlank() {
         let locationField = app.textFields["locationField"]
         locationField.tap()

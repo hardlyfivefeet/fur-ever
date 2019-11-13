@@ -5,7 +5,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var api: Api = ProcessInfo.processInfo.arguments.contains(TESTING_UI) ?
-           MockApiService() : RealApiService()
+           MockApiService() : PlaceholderApiService()
     var failureCallback: ((Error) -> Void)?
 
     let requestParams = TokenRequestParams()

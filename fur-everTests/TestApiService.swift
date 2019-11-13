@@ -4,6 +4,9 @@ import XCTest
 // For tests, we don't call the callback because we just want to make sure the right parameters were sent.
 class TestApiService: Api {
     func api(host: String) {}
+    func getToken(with params: TokenRequestParams,
+                  fail: ((Error) -> Void)?) {}
+    func tokenHasExpired() -> Bool { return false }
     func searchAnimals(with params: AnimalSearchParams,
             then: ((AnimalSearchResult) -> Void)?,
             fail: ((Error) -> Void)?) {
@@ -26,6 +29,9 @@ class TestApiService: Api {
 // For these tests, we call the fail function unconditionally because we want to test the error.
 class FailingApiService: Api {
     func api(host: String) {}
+    func getToken(with params: TokenRequestParams,
+                  fail: ((Error) -> Void)?) {}
+    func tokenHasExpired() -> Bool { return false }
     func searchAnimals(with params: AnimalSearchParams,
             then: ((AnimalSearchResult) -> Void)?,
             fail: ((Error) -> Void)?) {

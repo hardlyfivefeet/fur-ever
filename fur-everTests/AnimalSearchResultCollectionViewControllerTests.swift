@@ -3,12 +3,6 @@ import XCTest
 
 class AnimalSearchResultCollectionViewControllerTests: XCTestCase {
 
-    override func setUp() {
-    }
-
-    override func tearDown() {
-    }
-
     func testShouldReturnTheCorrectNumberOfSectionsAndItems() {
         guard let animalSearchResultCollectionViewController = UIStoryboard(name: "Main", bundle: nil)
                 .instantiateViewController(withIdentifier: "animalSearchResultCollectionViewController")

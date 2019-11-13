@@ -112,7 +112,7 @@ struct Breed: Codable, Equatable {
 }
 
 struct Photo: Codable, Equatable {
-    var full: String?
+    var medium: String?
 }
 
 struct OrganizationSearchParams {

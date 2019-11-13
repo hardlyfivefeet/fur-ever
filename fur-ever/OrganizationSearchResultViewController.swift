@@ -25,8 +25,8 @@ class OrganizationSearchResultViewController: UIViewController {
 
     private func displayInfo() {
         if organization.photos.count != 0 {
-            if (organization.photos[0].full != nil) {
-                image.imageURL = organization.photos[0].full
+            if (organization.photos[0].medium != nil) {
+                image.imageURL = organization.photos[0].medium
             } else {
                 image.image = UIImage(named: "NoImageAvailable")
             }

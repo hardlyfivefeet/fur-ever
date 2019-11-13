@@ -43,8 +43,8 @@ class AnimalSearchResultViewController: UIViewController {
     private func display(animalResult: AnimalResultInfo) {
         let animal: Animal = animalResult.animal
         if animal.photos.count != 0 {
-            if (animal.photos[0].full != nil) {
-                image.imageURL = animal.photos[0].full
+            if (animal.photos[0].medium != nil) {
+                image.imageURL = animal.photos[0].medium
             } else {
                 image.image = UIImage(named: "NoImageAvailable")
             }

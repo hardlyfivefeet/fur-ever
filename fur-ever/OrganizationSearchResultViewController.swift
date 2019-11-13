@@ -25,7 +25,11 @@ class OrganizationSearchResultViewController: UIViewController {
 
     private func displayInfo() {
         if organization.photos.count != 0 {
-            image.imageURL = organization.photos[0].full
+            if (organization.photos[0].full != nil) {
+                image.imageURL = organization.photos[0].full
+            } else {
+                image.image = UIImage(named: "NoImageAvailable")
+            }
         } else {
             image.image = UIImage(named: "NoImageAvailable")
         }
@@ -51,7 +55,7 @@ class OrganizationSearchResultViewController: UIViewController {
         contactInfo = contactInfo + (address.isEmpty ? "" : "Address: " + address)
         contact.text = contactInfo.isEmpty ? "No contact information available" : contactInfo
 
-        urlToWebsite = organization.url!
+        urlToWebsite = organization.url ?? ""
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -43,7 +43,11 @@ class AnimalSearchResultViewController: UIViewController {
     private func display(animalResult: AnimalResultInfo) {
         let animal: Animal = animalResult.animal
         if animal.photos.count != 0 {
-            image.imageURL = animal.photos[0].full
+            if (animal.photos[0].full != nil) {
+                image.imageURL = animal.photos[0].full
+            } else {
+                image.image = UIImage(named: "NoImageAvailable")
+            }
         } else {
             image.image = UIImage(named: "NoImageAvailable")
         }
@@ -74,7 +78,7 @@ class AnimalSearchResultViewController: UIViewController {
         contactInfo = contactInfo + (address.isEmpty ? "" : "Address: " + address)
         contact.text = contactInfo.isEmpty ? "No contact information available" : contactInfo
 
-        urlToWebsite = animal.url!
+        urlToWebsite = animal.url ?? ""
     }
 
     private func report(error: Error) {

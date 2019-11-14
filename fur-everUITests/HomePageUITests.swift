@@ -13,13 +13,11 @@ class HomePageUITests: XCTestCase {
     func testShouldDisplaySearchByLocationFormWhenLocationButtonIsPressed() {
         app.buttons["locationButton"].tap()
         XCTAssertEqual(app.navigationBars.element.identifier, "FurEver.SearchByLocationFormView")
-
     }
 
     func testShouldDisplaySearchByOrganizationFormWhenOrganizationButtonIsPressed() {
         app.buttons["organizationButton"].tap()
         XCTAssertEqual(app.navigationBars.element.identifier, "FurEver.SearchByOrganizationFormView")
-
     }
 
     func testShouldNavigateToCorrectFormsWhenTabBarButtonsAreTapped() {

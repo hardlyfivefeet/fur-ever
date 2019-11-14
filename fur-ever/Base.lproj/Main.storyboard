@@ -477,6 +477,7 @@ FUR-EVER HOME</string>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7zJ-gG-hSc">
                                 <rect key="frame" x="326" y="27.5" width="57" height="33"/>
+                                <accessibility key="accessibilityConfiguration" identifier="saveFilterSelection"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="57" id="WPB-Pk-tqk"/>
                                 </constraints>
@@ -488,6 +489,7 @@ FUR-EVER HOME</string>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7EI-Vk-Sa0">
                                 <rect key="frame" x="31" y="27.5" width="53" height="33"/>
+                                <accessibility key="accessibilityConfiguration" identifier="cancelFilterSelection"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="53" id="1Np-fC-7ib"/>
                                 </constraints>

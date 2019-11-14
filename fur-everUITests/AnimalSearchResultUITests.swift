@@ -15,9 +15,7 @@ class AnimalSearchResultUITests: XCTestCase {
         locationField.typeText("testy test")
 
         app.buttons["done"].tap()
-
-        let searchButton = app.buttons["searchButton"]
-        searchButton.tap()
+        app.buttons["searchButton"].tap()
     }
 
     func testShouldDisableReturnKeyWhenSearchBarIsEmpty() {
@@ -32,9 +30,7 @@ class AnimalSearchResultUITests: XCTestCase {
 
     func testShouldEnableReturnKeyWhenSearchBarIsNotEmpty() {
         testShouldDisableReturnKeyWhenSearchBarIsEmpty()
-        let searchBar = app.searchFields.element
-        searchBar.typeText("woohoo tests")
-
+        app.searchFields.element.typeText("woohoo tests")
         XCTAssert(app.buttons["search"].isEnabled)
     }
 
@@ -59,8 +55,7 @@ class AnimalSearchResultUITests: XCTestCase {
 
     func testShouldScrollToBottomOfTextFieldInIndividualResultView() {
         let collectionView = app.collectionViews.element
-        let cell = collectionView.cells.element(boundBy: 0)
-        cell.tap()
+        collectionView.cells.element(boundBy: 0).tap()
 
         let scroll = app.scrollViews.element
         let contact = app.staticTexts["contact"]

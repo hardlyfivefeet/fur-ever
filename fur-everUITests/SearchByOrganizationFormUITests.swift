@@ -19,8 +19,7 @@ class SearchByOrganizationFormUITests: XCTestCase {
     }
 
     func testAppShouldStartWithADisabledSearchButton() {
-        let searchButton = app.buttons["searchButton"]
-        XCTAssert(!searchButton.isEnabled)
+        XCTAssert(!app.buttons["searchButton"].isEnabled)
     }
 
     func testSearchButtonShouldBeEnabledWhenLocationFieldIsNotBlank() {
@@ -28,8 +27,7 @@ class SearchByOrganizationFormUITests: XCTestCase {
         locationField.tap()
         locationField.typeText("testy test")
 
-        let searchButton = app.buttons["searchButton"]
-        XCTAssert(searchButton.isEnabled)
+        XCTAssert(app.buttons["searchButton"].isEnabled)
     }
 
     func testSearchButtonShouldBeEnabledWhenNameFieldIsNotBlank() {
@@ -37,8 +35,7 @@ class SearchByOrganizationFormUITests: XCTestCase {
         nameField.tap()
         nameField.typeText("testy test")
 
-        let searchButton = app.buttons["searchButton"]
-        XCTAssert(searchButton.isEnabled)
+        XCTAssert(app.buttons["searchButton"].isEnabled)
     }
 
     func testSearchButtonShouldBeDisabledWhenSearchFieldsAreBlank() {
@@ -56,8 +53,7 @@ class SearchByOrganizationFormUITests: XCTestCase {
         deleteString = String(repeating: XCUIKeyboardKey.delete.rawValue, count: locationText.count)
         locationField.typeText(deleteString)
 
-        let searchButton = app.buttons["searchButton"]
-        XCTAssert(!searchButton.isEnabled)
+        XCTAssert(!app.buttons["searchButton"].isEnabled)
     }
 
     func testShouldPopulateTheTableViewWhenSearchResultsArrive() {
@@ -71,9 +67,7 @@ class SearchByOrganizationFormUITests: XCTestCase {
         locationField.typeText("testy test")
 
         app.buttons["done"].tap()
-
-        let searchButton = app.buttons["searchButton"]
-        searchButton.tap()
+        app.buttons["searchButton"].tap()
 
         let tableView = app.tables.element
         XCTAssertTrue(tableView.exists)

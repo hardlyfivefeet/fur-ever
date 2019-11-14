@@ -17,8 +17,7 @@ class SearchByLocationFormUITests: XCTestCase {
     }
 
     func testAppShouldStartWithADisabledSearchButton() {
-        let searchButton = app.buttons["searchButton"]
-        XCTAssert(!searchButton.isEnabled)
+        XCTAssert(!app.buttons["searchButton"].isEnabled)
     }
 
     func testSegmentedControlsShouldChangeWhenTapped() {
@@ -39,8 +38,7 @@ class SearchByLocationFormUITests: XCTestCase {
         locationField.tap()
         locationField.typeText("testy test")
 
-        let searchButton = app.buttons["searchButton"]
-        XCTAssert(searchButton.isEnabled)
+        XCTAssert(app.buttons["searchButton"].isEnabled)
     }
 
     func testSearchButtonShouldBeDisabledWhenTheSearchFieldIsBlank() {
@@ -51,8 +49,7 @@ class SearchByLocationFormUITests: XCTestCase {
         let deleteString = String(repeating: XCUIKeyboardKey.delete.rawValue, count: searchText.count)
         locationField.typeText(deleteString)
 
-        let searchButton = app.buttons["searchButton"]
-        XCTAssert(!searchButton.isEnabled)
+        XCTAssert(!app.buttons["searchButton"].isEnabled)
     }
 
     func testShouldPopulateTheCollectionViewWhenSearchResultsArrive() {
@@ -61,9 +58,7 @@ class SearchByLocationFormUITests: XCTestCase {
         locationField.typeText("testy testy")
 
         app.buttons["done"].tap()
-
-        let searchButton = app.buttons["searchButton"]
-        searchButton.tap()
+        app.buttons["searchButton"].tap()
 
         let collectionView = app.collectionViews.element
         XCTAssertTrue(collectionView.exists)

@@ -15,9 +15,7 @@ class OrganizationSearchResultUITests: XCTestCase {
         locationField.typeText("testy test")
 
         app.buttons["done"].tap()
-
-        let searchButton = app.buttons["searchButton"]
-        searchButton.tap()
+        app.buttons["searchButton"].tap()
     }
 
     func testShouldDisplayViewWhenSearchResultIsTapped() {
@@ -34,7 +32,6 @@ class OrganizationSearchResultUITests: XCTestCase {
         testShouldDisplayViewWhenSearchResultIsTapped()
 
         app.buttons["getPetsButton"].tap()
-
         let collectionView = app.collectionViews.element
         XCTAssertTrue(collectionView.exists)
         XCTAssertEqual(1, collectionView.children(matching: .cell).count)
@@ -42,9 +39,7 @@ class OrganizationSearchResultUITests: XCTestCase {
 
     func testShouldScrollToBottomOfTextFieldInIndividualResultView() {
         let tableView = app.tables.element
-        let cell = tableView.cells.element(boundBy: 0)
-        cell.tap()
-
+        tableView.cells.element(boundBy: 0).tap()
         let scroll = app.scrollViews.element
         let contact = app.staticTexts["contact"]
         scroll.swipeUp()

@@ -26,7 +26,6 @@
 		C9A2FF50237BF71600E92CF1 /* AnimalResultFiltersUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A2FF4F237BF71600E92CF1 /* AnimalResultFiltersUITests.swift */; };
 		C9A2FF52237BF80000E92CF1 /* AnimalResultFilterSelectionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A2FF51237BF80000E92CF1 /* AnimalResultFilterSelectionUITests.swift */; };
 		C9A2FF54237BF89200E92CF1 /* AnimalResultFilterSelectionViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A2FF53237BF89200E92CF1 /* AnimalResultFilterSelectionViewControllerTests.swift */; };
-		C9A2FF56237BF98800E92CF1 /* WebViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A2FF55237BF98800E92CF1 /* WebViewUITests.swift */; };
 		C9B6E05F2362D25A003452B7 /* InfoPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B6E05E2362D25A003452B7 /* InfoPageViewController.swift */; };
 		C9B6E06A2362D742003452B7 /* AnimalSearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B6E0692362D742003452B7 /* AnimalSearchResultViewController.swift */; };
 		C9C7F373236504A10020716D /* SearchByLocationFormUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C7F372236504A10020716D /* SearchByLocationFormUITests.swift */; };
@@ -194,7 +193,6 @@
 		C9A2FF4F237BF71600E92CF1 /* AnimalResultFiltersUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalResultFiltersUITests.swift; sourceTree = "<group>"; };
 		C9A2FF51237BF80000E92CF1 /* AnimalResultFilterSelectionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalResultFilterSelectionUITests.swift; sourceTree = "<group>"; };
 		C9A2FF53237BF89200E92CF1 /* AnimalResultFilterSelectionViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalResultFilterSelectionViewControllerTests.swift; sourceTree = "<group>"; };
-		C9A2FF55237BF98800E92CF1 /* WebViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewUITests.swift; sourceTree = "<group>"; };
 		C9B6E05E2362D25A003452B7 /* InfoPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoPageViewController.swift; sourceTree = "<group>"; };
 		C9B6E0692362D742003452B7 /* AnimalSearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalSearchResultViewController.swift; sourceTree = "<group>"; };
 		C9C7F372236504A10020716D /* SearchByLocationFormUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchByLocationFormUITests.swift; sourceTree = "<group>"; };
@@ -330,7 +328,6 @@
 				C917BCE923656D5700781E14 /* OrganizationSearchResultUITests.swift */,
 				C9C7F372236504A10020716D /* SearchByLocationFormUITests.swift */,
 				F713902B2162C87D002B158F /* SearchByOrganizationFormUITests.swift */,
-				C9A2FF55237BF98800E92CF1 /* WebViewUITests.swift */,
 			);
 			path = "fur-everUITests";
 			sourceTree = "<group>";
@@ -631,7 +628,6 @@
 				C94D2D8523656C6600BBBD0E /* AnimalSearchResultUITests.swift in Sources */,
 				F713902C2162C87D002B158F /* SearchByOrganizationFormUITests.swift in Sources */,
 				C917BCEA23656D5700781E14 /* OrganizationSearchResultUITests.swift in Sources */,
-				C9A2FF56237BF98800E92CF1 /* WebViewUITests.swift in Sources */,
 				C9C7F373236504A10020716D /* SearchByLocationFormUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

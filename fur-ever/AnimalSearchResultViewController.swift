@@ -27,10 +27,12 @@ class AnimalSearchResultViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        api = appDelegate.api
-        if api.tokenHasExpired() {
-            api.getToken(with: TokenRequestParams(), fail: failureCallback ?? report)
+        if !isRunningTests {
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            api = appDelegate.api
+            if api.tokenHasExpired() {
+                api.getToken(with: TokenRequestParams(), fail: failureCallback ?? report)
+            }
         }
         api.getAnimal(with: animalId, then: display, fail: failureCallback ?? report)
     }

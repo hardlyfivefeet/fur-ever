@@ -12,12 +12,10 @@ class SearchByOrganizationFormUITests: XCTestCase {
     }
 
     func testAppShouldStartWithEmptySearchFields() {
-        let locationPlaceholder = "Zip Code/City/State"
-        let namePlaceholder = "Keyword, e.g. Rescue"
         let locationField = app.textFields["locationField"]
         let nameField = app.textFields["nameField"]
-        XCTAssertEqual(locationField.value as? String ?? "", locationPlaceholder)
-        XCTAssertEqual(nameField.value as? String ?? "", namePlaceholder)
+        XCTAssertEqual(locationField.value as? String ?? "", "Zip Code/City, State")
+        XCTAssertEqual(nameField.value as? String ?? "", "Keyword, e.g. Rescue")
     }
 
     func testAppShouldStartWithADisabledSearchButton() {

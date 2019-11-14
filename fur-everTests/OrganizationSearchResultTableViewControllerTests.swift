@@ -10,6 +10,7 @@ class OrganizationSearchResultTableViewControllerTests: XCTestCase {
             XCTFail()
             return
         }
+        organizationSearchResultTableViewController.api = PlaceholderApiService()
         guard let tableView = organizationSearchResultTableViewController.tableView else {
             XCTFail()
             return
@@ -25,7 +26,9 @@ class OrganizationSearchResultTableViewControllerTests: XCTestCase {
             XCTFail()
             return
         }
-        XCTAssertNotNil(organizationSearchResultTableViewController.tableView(organizationSearchResultTableViewController.tableView, willSelectRowAt: IndexPath(row: 5, section: 0)))
+
+        organizationSearchResultTableViewController.api = PlaceholderApiService()
+    XCTAssertNotNil(organizationSearchResultTableViewController.tableView(organizationSearchResultTableViewController.tableView, willSelectRowAt: IndexPath(row: 5, section: 0)))
     }
 
     func testShouldTriggerPetfinderSearchWhenOrganizationSearchResultTableViewControllerLoads() {

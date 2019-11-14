@@ -14,15 +14,17 @@ class OrganizationSearchResultTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: self.tabBarController!.tabBar.frame.height, right: 0)
+        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: self.tabBarController?.tabBar.frame.height ?? 0, right: 0)
         loadingView = UIActivityIndicatorView(style: .large)
         tableView.backgroundView = loadingView
 
-        // set up API
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        api = appDelegate.api
-        if api.tokenHasExpired() {
-            api.getToken(with: TokenRequestParams(), fail: failureCallback ?? report)
+        // set up API to use the app delegate one if not running unit tests
+        if !isRunningTests {
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            api = appDelegate.api
+            if api.tokenHasExpired() {
+                api.getToken(with: TokenRequestParams(), fail: failureCallback ?? report)
+            }
         }
         api.searchOrganizations(with: searchParams, then: display, fail: failureCallback ?? report)
     }

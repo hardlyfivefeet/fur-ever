@@ -22,16 +22,18 @@ class AnimalSearchResultCollectionViewController: UICollectionViewController, UI
         super.viewDidLoad()
         filterButton.isEnabled = shouldAllowFilters
 
-        collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: self.tabBarController!.tabBar.frame.height, right: 0)
+        collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: self.tabBarController?.tabBar.frame.height ?? 0, right: 0)
         loadingView = UIActivityIndicatorView(style: .large)
         collectionView.backgroundView = loadingView
         if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             layout.sectionHeadersPinToVisibleBounds = true
         }
 
-        // set up API
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        api = appDelegate.api
+        // set up API to use the app delegate one if not running unit tests
+        if !isRunningTests {
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            api = appDelegate.api
+        }
         makeApiCall()
     }
 

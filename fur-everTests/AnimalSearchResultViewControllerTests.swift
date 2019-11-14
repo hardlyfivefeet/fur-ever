@@ -42,6 +42,7 @@ class AnimalSearchResultViewControllerTests: XCTestCase {
            return
         }
 
+        animalSearchResultViewController.api = PlaceholderApiService()
         animalSearchResultViewController.animalId = 0001
 
         guard let _ = animalSearchResultViewController.view else {
@@ -51,10 +52,10 @@ class AnimalSearchResultViewControllerTests: XCTestCase {
 
         XCTAssertEqual(animalSearchResultViewController.name.text, "Hopper")
         XCTAssertEqual(animalSearchResultViewController.image.imageURL, "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/46278443/1/?bust=1571149006&width=1080")
-        XCTAssertEqual(animalSearchResultViewController.breed.text, "Dachshund, Chihuahua Mix")
-        XCTAssertEqual(animalSearchResultViewController.age.text, "Baby")
-        XCTAssertEqual(animalSearchResultViewController.gender.text, "Male")
-        XCTAssertEqual(animalSearchResultViewController.size.text, "Small")
+        XCTAssertEqual(animalSearchResultViewController.breed.text, "Breed: Dachshund, Chihuahua Mix")
+        XCTAssertEqual(animalSearchResultViewController.age.text, "Age: Baby")
+        XCTAssertEqual(animalSearchResultViewController.gender.text, "Gender: Male")
+        XCTAssertEqual(animalSearchResultViewController.size.text, "Size: Small")
         XCTAssertNotNil(animalSearchResultViewController.attributes!.text)
         XCTAssertNotNil(animalSearchResultViewController.contact!.text)
     }

@@ -12,9 +12,8 @@ class SearchByLocationFormUITests: XCTestCase {
     }
 
     func testAppShouldStartWithAnEmptySearchField() {
-        let placeholderText = "Zip Code/City/State"
         let locationField = app.textFields["locationField"]
-        XCTAssertEqual(locationField.value as? String ?? "", placeholderText)
+        XCTAssertEqual(locationField.value as? String ?? "", "Zip Code/City, State")
     }
 
     func testAppShouldStartWithADisabledSearchButton() {
@@ -28,8 +27,11 @@ class SearchByLocationFormUITests: XCTestCase {
         app.segmentedControls.buttons["Cat"].tap()
         XCTAssertTrue(app.segmentedControls.buttons["Cat"].isSelected)
 
-        app.segmentedControls.buttons["Other"].tap()
-        XCTAssertTrue(app.segmentedControls.buttons["Other"].isSelected)
+        app.segmentedControls.buttons["Bird"].tap()
+        XCTAssertTrue(app.segmentedControls.buttons["Bird"].isSelected)
+
+        app.segmentedControls.buttons["Rabbit"].tap()
+        XCTAssertTrue(app.segmentedControls.buttons["Rabbit"].isSelected)
     }
 
     func testSearchButtonShouldBeEnabledWhenTheSearchFieldIsNotBlank() {

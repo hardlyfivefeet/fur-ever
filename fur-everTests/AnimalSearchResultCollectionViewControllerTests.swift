@@ -10,6 +10,7 @@ class AnimalSearchResultCollectionViewControllerTests: XCTestCase {
             XCTFail()
             return
         }
+        animalSearchResultCollectionViewController.api = PlaceholderApiService()
         guard let collectionView = animalSearchResultCollectionViewController.collectionView else {
             XCTFail()
             return
@@ -26,6 +27,7 @@ class AnimalSearchResultCollectionViewControllerTests: XCTestCase {
             return
         }
 
+        animalSearchResultCollectionViewController.api = PlaceholderApiService()
         XCTAssert(animalSearchResultCollectionViewController.collectionView(
             animalSearchResultCollectionViewController.collectionView, shouldSelectItemAt: IndexPath(row: 5, section: 0)))
     }

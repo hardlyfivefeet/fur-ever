@@ -40,7 +40,7 @@ class MockApiService: Api {
                 fail: ((Error) -> Void)?) {
         if let callback = then {
             callback(OrganizationSearchResult(organizations: [
-                Organization(id: "0001", name: "Pacific Pups Rescue", email: "pacificpupsrescue@gmail.com", phone: "012-345-6789", website: "http://pacificpupsrescue.org", address: Address(city: "Sacramento", state: "CA"), photos: [Photo(medium: "https://s3.amazonaws.com/petfinder-us-east-1-petimages-prod/organization-photos/46947/46947-1.jpg?bust=2017-11-29+07%3A54%3A33")])
+                Organization(id: "0001", name: "Pacific Pups Rescue", email: "pacificpupsrescue@gmail.com", phone: "012-345-6789", website: "http://pacificpupsrescue.org", address: Address(city: "Sacramento", state: "CA"), photos: [Photo(medium: "https://s3.amazonaws.com/petfinder-us-east-1-petimages-prod/organization-photos/46947/46947-1.jpg?bust=2017-11-29+07%3A54%3A33")]), Organization(id: "0002", name: "Silky Terrier Rescue Charitable Trust", address: Address(), photos: [], url: "https://www.petfinder.com/member/us/ca/los-angeles/silky-terrier-rescue-charitable-trust-ca172/?referrer_id=633652ae-f281-4379-9011-32a03ca842e6")
             ]))
         }
     }

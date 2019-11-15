@@ -62,7 +62,7 @@ class OrganizationSearchResultTableViewControllerTests: XCTestCase {
             return
         }
         XCTAssertEqual(1, viewControllerUnderTest.numberOfSections(in: tableView))
-        XCTAssertEqual(1, viewControllerUnderTest.tableView(tableView, numberOfRowsInSection: 0))
+        XCTAssertEqual(2, viewControllerUnderTest.tableView(tableView, numberOfRowsInSection: 0))
     }
 
     func testTableCellHasCorrectText() {
@@ -71,6 +71,8 @@ class OrganizationSearchResultTableViewControllerTests: XCTestCase {
 
         let cell0 = viewControllerUnderTest.tableView(viewControllerUnderTest.tableView, cellForRowAt: IndexPath(row: 0, section: 0)) as? OrganizationSearchResultTableViewCell
         XCTAssertEqual(cell0?.organizationName.text, "Pacific Pups Rescue")
+        let cell1 = viewControllerUnderTest.tableView(viewControllerUnderTest.tableView, cellForRowAt: IndexPath(row: 1, section: 0)) as? OrganizationSearchResultTableViewCell
+        XCTAssertEqual(cell1?.organizationName.text, "Silky Terrier Rescue Charitable Trust")
     }
 
     func testShouldAlwaysAllowRowSelection() {

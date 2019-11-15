@@ -63,14 +63,14 @@ class AnimalSearchResultUITests: XCTestCase {
         XCTAssertTrue(contact.isHittable)
     }
 
-    func testShouldNavigateToWebsiteWhenReadMoreButtonIsTapped() {
+    func testShouldLeaveResultPageWhenReadMoreButtonIsTapped() {
         testShouldScrollToBottomOfTextFieldInIndividualResultView()
         app.buttons["Read More"].tap()
         XCTAssertFalse(app.buttons["Read More"].isHittable)
     }
 
     func testShouldDisplayAlertIfWebsiteURLIsEmpty() {
-        testShouldNavigateToWebsiteWhenReadMoreButtonIsTapped()
+        testShouldLeaveResultPageWhenReadMoreButtonIsTapped()
         XCTAssertEqual(app.alerts.element.label, "URL not found")
     }
 

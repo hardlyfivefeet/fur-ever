@@ -46,14 +46,14 @@ class OrganizationSearchResultUITests: XCTestCase {
         XCTAssertTrue(contact.isHittable)
     }
 
-    func testShouldNavigateToWebsiteWhenReadMoreButtonIsTapped() {
+    func testShouldLeaveResultPageWhenReadMoreButtonIsTapped() {
         testShouldScrollToBottomOfTextFieldInIndividualResultView()
         app.buttons["Read More"].tap()
         XCTAssertFalse(app.buttons["Read More"].isHittable)
     }
 
     func testShouldDisplayAlertIfWebsiteURLIsEmpty() {
-        testShouldNavigateToWebsiteWhenReadMoreButtonIsTapped()
+        testShouldLeaveResultPageWhenReadMoreButtonIsTapped()
         XCTAssertEqual(app.alerts.element.label, "URL not found")
     }
 
@@ -62,5 +62,12 @@ class OrganizationSearchResultUITests: XCTestCase {
         app.alerts.element.buttons["Acknowledge"].tap()
         XCTAssertNotNil(app.staticTexts["organizationName"])
         XCTAssert(app.images["organizationImage"].exists)
+    }
+    
+    func testShouldNavigateToWebsiteWhenURLIsNotEmpty() {
+        let tableView = app.tables.element
+        tableView.cells.element(boundBy: 1).tap()
+        app.buttons["Read More"].tap()
+        XCTAssertFalse(app.buttons["Read More"].isHittable)
     }
 }

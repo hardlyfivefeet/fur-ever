@@ -14,7 +14,7 @@ class InfoPageUITests: XCTestCase {
 
     func testShouldLeaveAppWhenPetfinderLinkButtonIsTapped() {
         app.buttons["petfinderLink"].tap()
-        XCTAssertFalse(app.buttons["petfinderLink"].isHittable)
+        XCTAssertFalse(app.staticTexts["infoText"].isHittable)
     }
 
     func testShouldSeeAllTextWhenInfoPageLoads() {

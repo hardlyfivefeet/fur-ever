@@ -68,7 +68,7 @@ class OrganizationSearchResultTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "organizationSearchResultCollectionToSingleResult", sender: (Any).self)
+        performSegue(withIdentifier: "organizationSearchResultCollectionToSingleResult", sender: indexPath)
     }
 
     private func display(searchResult: OrganizationSearchResult) {

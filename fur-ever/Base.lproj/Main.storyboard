@@ -1102,7 +1102,6 @@ FUR-EVER HOME</string>
                                 </accessibility>
                                 <connections>
                                     <outlet property="organizationName" destination="orj-3g-3yu" id="xyT-Rb-lyH"/>
-                                    <segue destination="oQa-l8-Iqh" kind="show" identifier="organizationSearchResultCollectionToSingleResult" id="Mka-qv-UWA"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -1112,6 +1111,9 @@ FUR-EVER HOME</string>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="MNk-Bi-Wob"/>
+                    <connections>
+                        <segue destination="oQa-l8-Iqh" kind="show" identifier="organizationSearchResultCollectionToSingleResult" id="plf-76-44F"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IFo-80-71P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

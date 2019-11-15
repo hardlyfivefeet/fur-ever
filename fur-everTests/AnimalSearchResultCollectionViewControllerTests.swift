@@ -3,62 +3,45 @@ import XCTest
 
 class AnimalSearchResultCollectionViewControllerTests: XCTestCase {
 
+    var viewControllerUnderTest: AnimalSearchResultCollectionViewController!
+
+    override func setUp() {
+        super.setUp()
+
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        self.viewControllerUnderTest = storyboard.instantiateViewController(withIdentifier: "animalSearchResultCollectionViewController") as? AnimalSearchResultCollectionViewController
+    }
+
     func testShouldReturnTheCorrectNumberOfSectionsAndItems() {
-        guard let animalSearchResultCollectionViewController = UIStoryboard(name: "Main", bundle: nil)
-                .instantiateViewController(withIdentifier: "animalSearchResultCollectionViewController")
-                as? AnimalSearchResultCollectionViewController else {
+
+        viewControllerUnderTest.api = MockApiService()
+        guard let collectionView = viewControllerUnderTest.collectionView else {
             XCTFail()
             return
         }
-        animalSearchResultCollectionViewController.api = PlaceholderApiService()
-        guard let collectionView = animalSearchResultCollectionViewController.collectionView else {
-            XCTFail()
-            return
-        }
-        XCTAssertEqual(1, animalSearchResultCollectionViewController.numberOfSections(in: collectionView))
-        XCTAssertEqual(9, animalSearchResultCollectionViewController.collectionView(collectionView, numberOfItemsInSection: 0))
+        XCTAssertEqual(1, viewControllerUnderTest.numberOfSections(in: collectionView))
+        XCTAssertEqual(1, viewControllerUnderTest.collectionView(collectionView, numberOfItemsInSection: 0))
     }
 
     func testShouldAlwaysAllowItemSelection() {
-        guard let animalSearchResultCollectionViewController = UIStoryboard(name: "Main", bundle: nil)
-                .instantiateViewController(withIdentifier: "animalSearchResultCollectionViewController")
-                as? AnimalSearchResultCollectionViewController else {
-            XCTFail()
-            return
-        }
-
-        animalSearchResultCollectionViewController.api = PlaceholderApiService()
-        XCTAssert(animalSearchResultCollectionViewController.collectionView(
-            animalSearchResultCollectionViewController.collectionView, shouldSelectItemAt: IndexPath(row: 5, section: 0)))
+        viewControllerUnderTest.api = MockApiService()
+        XCTAssert(viewControllerUnderTest.collectionView(
+            viewControllerUnderTest.collectionView, shouldSelectItemAt: IndexPath(row: 5, section: 0)))
     }
 
     func testShouldTriggerPetfinderSearchWhenAnimalSearchResultCollectionViewControllerLoads() {
-        guard let animalSearchResultCollectionViewController = UIStoryboard(name: "Main", bundle: nil)
-                .instantiateViewController(withIdentifier: "animalSearchResultCollectionViewController")
-                as? AnimalSearchResultCollectionViewController else {
-            XCTFail()
-            return
-        }
-
-        animalSearchResultCollectionViewController.api = TestApiService()
-        animalSearchResultCollectionViewController.searchParams = AnimalSearchParams("Dog", "Los Angeles")
-        animalSearchResultCollectionViewController.viewDidLoad()
+        viewControllerUnderTest.api = TestApiService()
+        viewControllerUnderTest.searchParams = AnimalSearchParams("Dog", "Los Angeles")
+        viewControllerUnderTest.viewDidLoad()
     }
 
     func testShouldDisplayAlertWhenAPICallFails() {
-        guard let animalSearchResultCollectionViewController = UIStoryboard(name: "Main", bundle: nil)
-                .instantiateViewController(withIdentifier: "animalSearchResultCollectionViewController")
-                as? AnimalSearchResultCollectionViewController else {
-            XCTFail()
-            return
-        }
-
         var failureCallbackWasCalled = false
-        animalSearchResultCollectionViewController.failureCallback = { _ in failureCallbackWasCalled = true }
+        viewControllerUnderTest.failureCallback = { _ in failureCallbackWasCalled = true }
 
-        animalSearchResultCollectionViewController.api = FailingApiService()
-        animalSearchResultCollectionViewController.searchParams = AnimalSearchParams("Dog", "Los Angeles")
-        animalSearchResultCollectionViewController.viewDidLoad()
+        viewControllerUnderTest.api = FailingApiService()
+        viewControllerUnderTest.searchParams = AnimalSearchParams("Dog", "Los Angeles")
+        viewControllerUnderTest.viewDidLoad()
 
         XCTAssert(failureCallbackWasCalled)
     }

@@ -7,7 +7,6 @@ class AnimalSearchResultViewController: UIViewController {
     var api: Api!
     var failureCallback: ((Error) -> Void)?
 
-    var animalResult: AnimalResultInfo!
     var animalId: Int!
     var searchDistance: Double!
     var urlToWebsite: String?

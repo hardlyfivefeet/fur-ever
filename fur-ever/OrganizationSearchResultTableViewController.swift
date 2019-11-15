@@ -67,6 +67,10 @@ class OrganizationSearchResultTableViewController: UITableViewController {
         return indexPath
     }
 
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "organizationSearchResultCollectionToSingleResult", sender: (Any).self)
+    }
+
     private func display(searchResult: OrganizationSearchResult) {
         searchResults = searchResult.organizations
         loadingView.stopAnimating()

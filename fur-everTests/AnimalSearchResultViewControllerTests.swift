@@ -3,60 +3,66 @@ import XCTest
 
 class AnimalSearchResultViewControllerTests: XCTestCase {
 
-    func testShouldTriggerPetfinderSearchWhenAnimalSearchResultViewControllerLoads() {
-        guard let animalSearchResultViewController = UIStoryboard(name: "Main", bundle: nil)
-                       .instantiateViewController(withIdentifier: "animalSearchResultViewController")
-                       as? AnimalSearchResultViewController else {
-           XCTFail()
-           return
-        }
+    var viewControllerUnderTest: AnimalSearchResultViewController!
 
-        animalSearchResultViewController.api = TestApiService()
-        animalSearchResultViewController.animalId = 12345
-        animalSearchResultViewController.viewDidLoad()
+    override func setUp() {
+        super.setUp()
+
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        self.viewControllerUnderTest = storyboard.instantiateViewController(withIdentifier: "animalSearchResultViewController") as? AnimalSearchResultViewController
+    }
+
+    func testShouldTriggerPetfinderSearchWhenAnimalSearchResultViewControllerLoads() {
+        viewControllerUnderTest.api = TestApiService()
+        viewControllerUnderTest.animalId = 12345
+        viewControllerUnderTest.viewDidLoad()
     }
 
     func testShouldDisplayAlertWhenAPICallFails() {
-        guard let animalSearchResultViewController = UIStoryboard(name: "Main", bundle: nil)
-                       .instantiateViewController(withIdentifier: "animalSearchResultViewController")
-                       as? AnimalSearchResultViewController else {
-           XCTFail()
-           return
-        }
-
         var failureCallbackWasCalled = false
-        animalSearchResultViewController.failureCallback = { _ in failureCallbackWasCalled = true }
+        viewControllerUnderTest.failureCallback = { _ in failureCallbackWasCalled = true }
 
-        animalSearchResultViewController.api = FailingApiService()
-        animalSearchResultViewController.animalId = 12345
-        animalSearchResultViewController.viewDidLoad()
+        viewControllerUnderTest.api = FailingApiService()
+        viewControllerUnderTest.animalId = 12345
+        viewControllerUnderTest.viewDidLoad()
 
         XCTAssert(failureCallbackWasCalled)
     }
 
-    func testShouldDisplayCorrectAnimalWhenAnimalSearchResultViewControllerLoads() {
-        guard let animalSearchResultViewController = UIStoryboard(name: "Main", bundle: nil)
-                       .instantiateViewController(withIdentifier: "animalSearchResultViewController")
-                       as? AnimalSearchResultViewController else {
-           XCTFail()
-           return
-        }
-
-        animalSearchResultViewController.api = PlaceholderApiService()
-        animalSearchResultViewController.animalId = 0001
-
-        guard let _ = animalSearchResultViewController.view else {
+    func testShouldDisplayCorrectEmptyInfoWhenFieldsInAnimalResultAreNil() {
+        viewControllerUnderTest.api = TestNilApiService()
+        viewControllerUnderTest.animalId = 12345
+        guard let _ = viewControllerUnderTest.view else {
             XCTFail()
             return
         }
 
-        XCTAssertEqual(animalSearchResultViewController.name.text, "Hopper")
-        XCTAssertEqual(animalSearchResultViewController.image.imageURL, "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/46278443/1/?bust=1571149006&width=1080")
-        XCTAssertEqual(animalSearchResultViewController.breed.text, "Breed: Dachshund, Chihuahua Mix")
-        XCTAssertEqual(animalSearchResultViewController.age.text, "Age: Baby")
-        XCTAssertEqual(animalSearchResultViewController.gender.text, "Gender: Male")
-        XCTAssertEqual(animalSearchResultViewController.size.text, "Size: Small")
-        XCTAssertNotNil(animalSearchResultViewController.attributes!.text)
-        XCTAssertNotNil(animalSearchResultViewController.contact!.text)
+        XCTAssertEqual(viewControllerUnderTest.name.text, "Test")
+        XCTAssertEqual(viewControllerUnderTest.image.image, UIImage(named: "NoImageAvailable"))
+        XCTAssertEqual(viewControllerUnderTest.breed.text, "Breed: Unknown")
+        XCTAssertEqual(viewControllerUnderTest.age.text, "Age: Not Available")
+        XCTAssertEqual(viewControllerUnderTest.gender.text, "Gender: Not Available")
+        XCTAssertEqual(viewControllerUnderTest.size.text, "Size: Not Available")
+        XCTAssertEqual(viewControllerUnderTest.attributes.text, "Not house-trained\nNot spayed/neutered")
+        XCTAssertNotNil(viewControllerUnderTest.contact!.text)
+    }
+
+    func testShouldDisplayCorrectAnimalWhenAnimalSearchResultViewControllerLoads() {
+        viewControllerUnderTest.api = MockApiService()
+        viewControllerUnderTest.searchDistance = 1.00
+        viewControllerUnderTest.animalId = 0001
+        guard let _ = viewControllerUnderTest.view else {
+            XCTFail()
+            return
+        }
+
+        XCTAssertEqual(viewControllerUnderTest.name.text, "Diamond")
+        XCTAssertEqual(viewControllerUnderTest.image.imageURL, "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/44425877/1/?bust=1554850023&width=1080")
+        XCTAssertEqual(viewControllerUnderTest.breed.text, "Breed: Dachshund, Chihuahua Mix")
+        XCTAssertEqual(viewControllerUnderTest.age.text, "Age: Baby")
+        XCTAssertEqual(viewControllerUnderTest.gender.text, "Gender: Female")
+        XCTAssertEqual(viewControllerUnderTest.size.text, "Size: Small")
+        XCTAssertEqual(viewControllerUnderTest.attributes.text, "House-trained\nSpayed/Neutered")
+        XCTAssertNotNil(viewControllerUnderTest.contact!.text)
     }
 }

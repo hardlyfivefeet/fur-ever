@@ -1,6 +1,6 @@
 import Foundation
 
-// Mock API service for UI tests
+// Mock API service for tests
 class MockApiService: Api {
     func api(host: String) {
         // No-op in the mock version.
@@ -30,7 +30,7 @@ class MockApiService: Api {
                 then: ((AnimalResultInfo) -> Void)?,
                 fail: ((Error) -> Void)?) {
         if let callback = then {
-            callback(AnimalResultInfo(animal: Animal(id: 0002, name: "Diamond", photos: [Photo(medium: "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/44425877/1/?bust=1554850023&width=1080")], age: "Baby", gender: "Female", size: "Small", breeds: Breed(primary: "Dachshund", secondary: "Chihuahua"), attributes: Attributes(spayed_neutered: true, house_trained: true), environment: Environment(children: true, dogs: true, cats: false), contact: Contact(email: "fake2@gmail.com", phone: "123-456-7890", address: Address(city: "Pasadena", state: "CA"))))
+            callback(AnimalResultInfo(animal: Animal(id: 0002, name: "Diamond", photos: [Photo(medium: "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/44425877/1/?bust=1554850023&width=1080")], age: "Baby", gender: "Female", size: "Small", breeds: Breed(primary: "Dachshund", secondary: "Chihuahua", mixed: true), attributes: Attributes(spayed_neutered: true, house_trained: true), environment: Environment(children: true, dogs: true, cats: false), contact: Contact(email: "fake2@gmail.com", phone: "123-456-7890", address: Address(city: "Pasadena", state: "CA"))))
             )
         }
     }

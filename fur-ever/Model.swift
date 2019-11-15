@@ -18,7 +18,19 @@ protocol Copyable: class {
     init(copy: Self)
 }
 
-class AnimalSearchParams: Copyable {
+class AnimalSearchParams: Copyable, Equatable {
+    static func == (lhs: AnimalSearchParams, rhs: AnimalSearchParams) -> Bool {
+        return
+            lhs.animalType == rhs.animalType &&
+            lhs.location == rhs.location &&
+            lhs.organizationId == rhs.organizationId &&
+            lhs.breeds == rhs.breeds &&
+            lhs.age == rhs.age &&
+            lhs.size == rhs.size &&
+            lhs.gender == rhs.gender &&
+            lhs.distance == rhs.distance
+    }
+
     var animalType: String?
     var location: String?
     var organizationId: String?
@@ -136,7 +148,13 @@ struct Organization: Codable, Equatable {
     var url: String?
 }
 
-class Filter: Copyable {
+class Filter: Copyable, Equatable {
+    static func == (lhs: Filter, rhs: Filter) -> Bool {
+        return
+            lhs.appliedFilters == rhs.appliedFilters &&
+            lhs.availableValues == rhs.availableValues
+    }
+
     var appliedFilters: [Int] = []
     var availableValues: [String]
     init(_ availableValues: [String]) {
